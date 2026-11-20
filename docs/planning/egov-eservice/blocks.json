@@ -1,0 +1,685 @@
+{
+  "name": "egov-eservice",
+  "goal": "Continue the approved C municipal e-Service from verified T001-T020 to full source-contract acceptance; planning and review only.",
+  "schema_version": 1,
+  "prepared_on": "2026-11-18",
+  "mode": "host-replan-assumed-quota",
+  "application_root": "../../../assignments/week-02/municipal-eservice",
+  "local_plan_root": ".",
+  "container_plan_root": "/workspace/plans/egov-eservice",
+  "future_app_root": "/workspace/plans/egov-eservice/app",
+  "future_app_contents": "Sanitized copy of whole week2_student, including web/ and specs/; source docs remain read-only. No runtime/private data.",
+  "authorization": "Steps 1-2 re-planned with Claude + Codex. No export/run/report or T021+ implementation yet.",
+  "runtime_gate": {
+    "ready": false,
+    "reason": "dockerDesktopLinuxEngine named pipe missing",
+    "docker_error": "open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.",
+    "required_before_run": [
+      "User authorizes step3",
+      "Existing Docker engine/container reachable; do not create/start/stop containers without instruction",
+      "Read installed dag-planner/agent-team skills and run doctor in container",
+      "Verify yolo/cyolo accounts with team.py check + quota; re-run plan from real quota",
+      "Prepare sanitized app snapshot and reproducible Compose boundary",
+      "Validate graph export without calling models before actual run"
+    ]
+  },
+  "account_policy": {
+    "orchestrator": "User-started Claude Code session on host, driving the container via docker exec only",
+    "providers": [
+      "claude",
+      "codex"
+    ],
+    "planned_accounts": {
+      "yolo1": "Claude",
+      "cyolo1": "Codex"
+    },
+    "quotas": "ASSUMED yolo1:80,cyolo1:80 for planning (PROMPTS allows assumed quota); re-run plan in container after team.py check/quota.",
+    "dispatch": "export sends sides yolo/cyolo (not fixed accounts) so agent-team failover works.",
+    "reviews": "B03/B09/B11 use stock review node: worker and reviewer on different CLIs."
+  },
+  "blocks": [
+    {
+      "id": "B01",
+      "title": "Foundation carry-forward and reproducible packaging",
+      "size": "S",
+      "difficulty": 3,
+      "skill": "cyolo",
+      "depends_on": [],
+      "output": "handoffs/B01-baseline.md",
+      "outputs": [
+        "handoffs/B01-baseline.md",
+        "compose.yaml",
+        "web/Dockerfile",
+        ".dockerignore"
+      ],
+      "done": "Preserve the verified T001-T020 application; document reproducible Compose packaging and verify source/media hashes before any future run.",
+      "detail": "T001-T020 are carried historical completions, not new pipeline results. Main week2_student is authoritative. Prepare a sanitized execution snapshot only after run authorization; never copy .env.local, var databases, node_modules, .next or evidence. Keep user DB intact. Own no existing feature source files. Compose is an additional PROMPTS delivery obligation, currently pending; do not claim Docker build/run passed.",
+      "exclusive": false,
+      "task_ids": [
+        "T001",
+        "T002",
+        "T003",
+        "T004",
+        "T005",
+        "T006",
+        "T007",
+        "T008",
+        "T009",
+        "T010",
+        "T011",
+        "T012",
+        "T013",
+        "T014",
+        "T015",
+        "T016",
+        "T017",
+        "T018",
+        "T019",
+        "T020"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md",
+        "PROMPTS.md",
+        "web/README.md",
+        "specs/001-municipal-eservice/auth/verification-20261118.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B02",
+      "title": "Independent source-oracle Playwright authoring",
+      "size": "L",
+      "difficulty": 3,
+      "skill": "yolo",
+      "depends_on": [],
+      "output": "web/tests/e2e/source-helpers.ts",
+      "outputs": [
+        "web/tests/e2e/source-helpers.ts",
+        "web/tests/e2e/drafts.spec.ts",
+        "web/tests/e2e/uploads.spec.ts",
+        "web/tests/e2e/payments.spec.ts",
+        "web/tests/e2e/citizen.spec.ts",
+        "web/tests/e2e/queue.spec.ts",
+        "web/tests/e2e/review.spec.ts",
+        "web/tests/e2e/sla.spec.ts",
+        "web/tests/e2e/approvals.spec.ts",
+        "web/tests/e2e/documents.spec.ts",
+        "web/tests/e2e/dashboard.spec.ts",
+        "web/tests/e2e/audit.spec.ts",
+        "web/tests/e2e/admin.spec.ts",
+        "web/tests/e2e/nfr.spec.ts",
+        "web/tests/e2e/nfr04-inspection.spec.ts",
+        "handoffs/B02-test-oracles.md"
+      ],
+      "done": "Author the missing canonical assertions from source, retain the five existing test IDs without duplicates, and discover exactly 51 IDs; execution awaits integration.",
+      "detail": "Read only TEST-PLAN.md, CONTRACT.md and TEST-DATA.md as oracle inputs, plus own output. Do not inspect application source, copied Spec Kit expectations or existing implementation-derived behavior. Existing AUTH01-04 and full RBAC03 are carried tests and must retain exact assertions. Implement remaining 46 canonical IDs, genuine boundary bytes, no skips/retries/passing placeholders. The NFR04 wrapper invokes the later inspector and is not storage proof by itself. No incoming web-block dependency; downstream builders may read these test files. Request clarification from orchestrator for source conflicts; do not invent expected outcomes.",
+      "exclusive": false,
+      "task_ids": [
+        "T021",
+        "T025",
+        "T029",
+        "T033",
+        "T037",
+        "T041",
+        "T046",
+        "T051",
+        "T055",
+        "T060",
+        "T064",
+        "T067",
+        "T073"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "TEST-PLAN.md",
+        "CONTRACT.md",
+        "TEST-DATA.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B03",
+      "title": "Fees and saved-draft domain",
+      "size": "M",
+      "difficulty": 3,
+      "skill": "review",
+      "depends_on": [
+        "B01",
+        "B02"
+      ],
+      "output": "web/src/server/domain/fees.ts",
+      "outputs": [
+        "web/src/server/domain/fees.ts",
+        "web/src/server/domain/drafts.ts",
+        "web/src/server/http/features/drafts.ts",
+        "web/tests/unit/fees.test.ts",
+        "handoffs/B03-drafts.md"
+      ],
+      "done": "SV01 quantity 1-5, SV02 fixed fee, SV03 area 1-500 and 101 boundary; owner-only draft CRUD and fee lock obey source tests.",
+      "detail": "Use integer baht; no EG before payment. B01 mutant affects only area101. Export HTTP feature handlers for later router assembly; do not edit the shared router. Codex builds, Claude reviews numbers via review node.",
+      "exclusive": false,
+      "task_ids": [
+        "T022",
+        "T023"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in.",
+      "worker": "cyolo",
+      "max_rounds": 2
+    },
+    {
+      "id": "B04",
+      "title": "Uploads and required-document completeness",
+      "size": "M",
+      "difficulty": 3,
+      "skill": "cyolo",
+      "depends_on": [
+        "B03"
+      ],
+      "output": "web/src/server/domain/uploads.ts",
+      "outputs": [
+        "web/src/server/domain/uploads.ts",
+        "web/src/server/http/features/uploads.ts",
+        "web/src/components/uploads/UploadSlots.tsx",
+        "web/src/components/uploads/UploadSlots.module.css",
+        "web/tests/unit/uploads.test.ts",
+        "handoffs/B04-uploads.md"
+      ],
+      "done": "Validate real magic bytes, inclusive 5242880-byte boundary, max five files, required slots and blueprint PDF; delete atomically without static public URLs.",
+      "detail": "Unpaid owned drafts only. Reject missing required documents before QR and payment callback; support body >=6MB without framework413. B02 mutant rejects only exact max. T028 composition belongs to B06; B04 owns the reusable UploadSlots module. Shared security/router changes go to B14.",
+      "exclusive": false,
+      "task_ids": [
+        "T026",
+        "T027"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B05",
+      "title": "Payment and atomic EG/RC numbering",
+      "size": "L",
+      "difficulty": 3,
+      "skill": "cyolo",
+      "depends_on": [
+        "B03",
+        "B04",
+        "B09"
+      ],
+      "output": "web/src/server/domain/payments.ts",
+      "outputs": [
+        "web/src/server/domain/payments.ts",
+        "web/src/server/http/features/payments.ts",
+        "web/tests/integration/payments.test.ts",
+        "handoffs/B05-payments.md"
+      ],
+      "done": "QR expires at 900 seconds, fee freezes, duplicate callbacks return original EG/RC, annual/concurrent numbering and case/receipt/audit writes are atomic.",
+      "detail": "Read B09 initial SLA calculation and B03/B04 completeness interfaces. Implement real test pay callback, no partial writes, same suffix per EG/RC. B05 mutant accepts exactly900 only. Shared test-hook dispatcher remains B14 owned.",
+      "exclusive": false,
+      "task_ids": [
+        "T030",
+        "T031"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B06",
+      "title": "Citizen service screens, tracking and corrections",
+      "size": "L",
+      "difficulty": 3,
+      "skill": "yolo",
+      "depends_on": [
+        "B05"
+      ],
+      "output": "web/src/server/domain/cases.ts",
+      "outputs": [
+        "web/src/server/domain/cases.ts",
+        "web/src/server/http/features/citizen-cases.ts",
+        "web/src/app/citizen/page.tsx",
+        "web/src/app/citizen/new/[service]/page.tsx",
+        "web/src/app/citizen/cases/[caseNo]/page.tsx",
+        "web/src/components/citizen/ServiceRequestForm.tsx",
+        "web/src/components/citizen/CitizenCaseActions.tsx",
+        "web/src/components/citizen/CitizenFlow.module.css",
+        "handoffs/B06-citizen.md"
+      ],
+      "done": "Catalog -> saved draft -> attachments -> simulated QR -> receipt -> own status/timeline; cancellation and 167:59/168:00 correction boundaries match source.",
+      "detail": "Reuse C tokens and approved video; preserve greeting translateY12px and staff gap20px. Integrate B04 UploadSlots. Foreign/missing cases identical404; cancellation/claim race has one winner; correction returns previous holder even above10. B04/B06 mutants only specified behaviors. Shared CaseDetail and router assembly remain B14 owned.",
+      "exclusive": false,
+      "task_ids": [
+        "T024",
+        "T028",
+        "T032",
+        "T034",
+        "T035",
+        "T036"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B07",
+      "title": "Department queues and exclusive claims",
+      "size": "M",
+      "difficulty": 3,
+      "skill": "cyolo",
+      "depends_on": [
+        "B01",
+        "B02",
+        "B09"
+      ],
+      "output": "web/src/server/domain/claims.ts",
+      "outputs": [
+        "web/src/server/domain/claims.ts",
+        "web/src/server/http/features/queue.ts",
+        "web/src/app/officer/queue/page.tsx",
+        "web/src/components/officer/QueueTable.tsx",
+        "web/src/components/officer/QueueTable.module.css",
+        "web/tests/integration/claims.test.ts",
+        "handoffs/B07-queue.md"
+      ],
+      "done": "Department queue ordering/filtering, 9->10 workload boundary and exclusive claim are correct; head is read-only and a second claimant gets409.",
+      "detail": "Snapshot role/dept. Preserve first registry claimant. B08 mutant deterministically bypasses already-owned guard; B09 mutant queue JSON leak only. Use B09 SLA text/status helpers. No e2e or shared router changes.",
+      "exclusive": false,
+      "task_ids": [
+        "T038",
+        "T039",
+        "T040"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B08",
+      "title": "Review, routing and privacy controls",
+      "size": "L",
+      "difficulty": 3,
+      "skill": "yolo",
+      "depends_on": [
+        "B04",
+        "B07"
+      ],
+      "output": "web/src/server/domain/review.ts",
+      "outputs": [
+        "web/src/server/domain/review.ts",
+        "web/src/server/security/attachment-policy.ts",
+        "web/src/server/http/features/review.ts",
+        "web/src/app/officer/cases/[caseNo]/page.tsx",
+        "web/src/components/officer/ReviewPanel.tsx",
+        "web/src/components/officer/ReviewPanel.module.css",
+        "handoffs/B08-review.md"
+      ],
+      "done": "Holder-only return/forward, max two returns, reason>=10 trimmed characters, fixed service routing and committed UNMASK-before-reveal are enforced.",
+      "detail": "Only citizen owner/current or past officer department/head may read protected files; anonymous401, wrongrole403 and foreigncitizen404. Third-return UI absent in baseline. B11 omits UNMASK only, B12 permits third return. Do not edit B04 uploads or global policy; provide attachment-policy adapter for B14.",
+      "exclusive": false,
+      "task_ids": [
+        "T042",
+        "T043",
+        "T044",
+        "T045"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B09",
+      "title": "Business-day SLA and routed notifications",
+      "size": "L",
+      "difficulty": 3,
+      "skill": "review",
+      "depends_on": [
+        "B01",
+        "B02"
+      ],
+      "output": "web/src/server/domain/sla.ts",
+      "outputs": [
+        "web/src/server/domain/sla.ts",
+        "web/src/server/domain/notifications.ts",
+        "web/src/server/domain/lifecycle.ts",
+        "web/src/server/http/features/notifications.ts",
+        "web/src/app/notifications/page.tsx",
+        "web/src/components/CaseStatus.tsx",
+        "web/src/components/SlaLevel.tsx",
+        "web/src/components/notifications/NotificationBell.tsx",
+        "web/tests/unit/sla.test.ts",
+        "handoffs/B09-sla.md"
+      ],
+      "done": "Cutoff16:30, business dates, pause extension, level boundaries and recipient/level deduplication match every source table; ordinary requests trigger lifecycle.",
+      "detail": "Build pure calculation and source/schema queries before payment/workflow writers; source event contracts are stable. Full event integration and end-to-end checks wait for B14. B03 weekend-only calendar must cover both initial/remaining values. Claude builds, Codex reviews arithmetic/calendar via review node. Do not edit shared RoleLayout; export a bell component for B14. Avoid a dependency cycle with payment.",
+      "exclusive": false,
+      "task_ids": [
+        "T047",
+        "T048",
+        "T049",
+        "T050"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in.",
+      "worker": "yolo",
+      "max_rounds": 2
+    },
+    {
+      "id": "B10",
+      "title": "Authorized approvals, signed PDF and public verify",
+      "size": "L",
+      "difficulty": 3,
+      "skill": "yolo",
+      "depends_on": [
+        "B08"
+      ],
+      "output": "web/src/server/domain/approvals.ts",
+      "outputs": [
+        "web/src/server/domain/approvals.ts",
+        "web/src/server/domain/documents.ts",
+        "web/src/server/output/document-pdf.ts",
+        "web/src/server/http/features/decisions-documents.ts",
+        "web/src/app/head/approvals/page.tsx",
+        "web/src/app/verify/[code]/page.tsx",
+        "web/src/components/approvals/DecisionControls.tsx",
+        "web/src/components/documents/DocumentLinks.tsx",
+        "web/tests/unit/document-validity.test.ts",
+        "handoffs/B10-documents.md"
+      ],
+      "done": "SV01 holder vs SV02/03 head authorization, actual signer/original registry issuer, unique DOC/signature/PDF and public mask/tamper/expiry all match source.",
+      "detail": "Implement sequential substeps: decisions then issuance/verify. APPROVED stays open until ISSUE. B07 bypasses only specified server check. Preserve source code K7M2Q9XA, exact found200/unknown404, ASCII extractable PDF number and leap-day clamp. Use approved3A on verification. Shared PDF facade, test tamper dispatcher and CaseDetail integration belong to B14.",
+      "exclusive": false,
+      "task_ids": [
+        "T052",
+        "T053",
+        "T054",
+        "T056",
+        "T057",
+        "T058",
+        "T059"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B11",
+      "title": "Dashboard KPIs and matching exports",
+      "size": "L",
+      "difficulty": 3,
+      "skill": "review",
+      "depends_on": [
+        "B09"
+      ],
+      "output": "web/src/server/domain/dashboard.ts",
+      "outputs": [
+        "web/src/server/domain/dashboard.ts",
+        "web/src/server/output/dashboard-pdf.ts",
+        "web/src/server/output/xlsx.ts",
+        "web/src/server/http/features/dashboard.ts",
+        "web/src/app/dashboard/page.tsx",
+        "web/src/components/dashboard/Dashboard.module.css",
+        "handoffs/B11-dashboard.md"
+      ],
+      "done": "Source period/service KPIs, closure cutoff, half-up percentage, zero denominator and XLSX/PDF values agree; no applicant PII.",
+      "detail": "Codex builds, Claude reviews KPI arithmetic via review node. Seed permits query implementation now; action/closure integration waits for B14. B10 divides by received only. Separate document-pdf.ts from dashboard-pdf.ts prevents shared PDF-file collisions.",
+      "exclusive": false,
+      "task_ids": [
+        "T061",
+        "T062",
+        "T063"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in.",
+      "worker": "cyolo",
+      "max_rounds": 2
+    },
+    {
+      "id": "B12",
+      "title": "Read-only audit queries and CSV",
+      "size": "M",
+      "difficulty": 3,
+      "skill": "cyolo",
+      "depends_on": [
+        "B01",
+        "B02"
+      ],
+      "output": "web/src/server/domain/audit.ts",
+      "outputs": [
+        "web/src/server/domain/audit.ts",
+        "web/src/server/output/csv.ts",
+        "web/src/server/http/features/audit.ts",
+        "web/src/app/audit/page.tsx",
+        "web/src/components/audit/AuditTable.tsx",
+        "handoffs/B12-audit.md"
+      ],
+      "done": "Auditor-only read/filter/detail/export, stable Bangkok ordering and CSV snapshot-before-EXPORT work; mutation methods return405.",
+      "detail": "Extend existing append-only audit module without changing writer signature; all event producers call the carried writer contract. Full16-action audit flow is verified in B14 after producers integrate. No other block edits audit.ts before final integration.",
+      "exclusive": false,
+      "task_ids": [
+        "T065",
+        "T066"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B13",
+      "title": "Admin service, holiday and role settings",
+      "size": "M",
+      "difficulty": 3,
+      "skill": "cyolo",
+      "depends_on": [
+        "B03",
+        "B09"
+      ],
+      "output": "web/src/server/domain/admin.ts",
+      "outputs": [
+        "web/src/server/domain/admin.ts",
+        "web/src/server/http/features/admin.ts",
+        "web/src/app/admin/services/page.tsx",
+        "web/src/app/admin/holidays/page.tsx",
+        "web/src/app/admin/users/page.tsx",
+        "web/src/components/admin/AdminForms.tsx",
+        "handoffs/B13-admin.md"
+      ],
+      "done": "Fee/SLA integer bounds, duplicate-holiday409, preserved locked fee/due, self-change denial and next-login role changes match source.",
+      "detail": "Use B03 fee/draft and B09 calendar interfaces. Existing session role snapshots remain intact. Record exact ADMIN_CHANGE; admin gains no case action permission. UI uses C tokens and scoped components.",
+      "exclusive": false,
+      "task_ids": [
+        "T068",
+        "T069",
+        "T070"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    },
+    {
+      "id": "B14",
+      "title": "Exclusive integration, full acceptance and mutation evidence",
+      "size": "L",
+      "difficulty": 3,
+      "skill": "yolo",
+      "depends_on": [
+        "B02",
+        "B06",
+        "B10",
+        "B11",
+        "B12",
+        "B13"
+      ],
+      "output": "handoffs/B14-final-evidence.md",
+      "outputs": [
+        "handoffs/B14-final-evidence.md",
+        "web/src/server/http/router.ts",
+        "web/src/server/http/test-hooks.ts",
+        "web/src/server/security/policy.ts",
+        "web/src/server/security/serializers.ts",
+        "web/src/server/http/page-access.ts",
+        "web/src/components/CaseDetail.tsx",
+        "web/src/components/RoleLayout.tsx",
+        "web/src/styles/civic.css",
+        "web/src/server/output/pdf.ts",
+        "web/scripts/inspect-at-rest.ts",
+        "web/scripts/run-campaign.ts",
+        "web/scripts/compare-results.ts",
+        "web/tests/unit/time-boundaries.test.ts",
+        "web/tests/integration/transactions.test.ts",
+        "web/tests/integration/inspection.test.ts",
+        "web/README.md"
+      ],
+      "done": "All features integrated; 51 canonical baseline cases pass twice on one server; 12 single/2 combined mutants, final clean baseline, NFR04 and disabled-hook evidence are real and complete.",
+      "detail": "Run alone, with no other writing or shared-DB tests. Assemble per-feature HTTP adapters and CaseDetail panels here. Only this final block may change earlier-owned files, with an explicit integration diff. Preserve source assertions; classify failures using source, never weaken expectations. Use isolated TEST_MODE DBs, never reset the user preview DB. Campaign runs the same unchanged suite; enforce required/allowed observed-failure sets, no skips/timeouts/infra failures. Store actual-vs-plan only after actual execution; do not manufacture REPORT/gantt-actual/compare artifacts now. Keep availability/capacity/TLS questions open. Recheck all source/token/media hashes and 20px login gap.",
+      "exclusive": true,
+      "task_ids": [
+        "T071",
+        "T072",
+        "T074",
+        "T075",
+        "T076",
+        "T077",
+        "T078"
+      ],
+      "execution_status": "not_run",
+      "input_sources": [
+        "README.md",
+        "USER-STORIES.md",
+        "REQUIREMENTS.md",
+        "CONTRACT.md",
+        "TEST-DATA.md",
+        "DECISIONS.md",
+        "specs/001-municipal-eservice/tasks.md",
+        "specs/001-municipal-eservice/design-system.md",
+        "specs/001-municipal-eservice/contracts/ui-layouts.md",
+        "TEST-PLAN.md",
+        "BUGS.md",
+        "PROMPTS.md"
+      ],
+      "model_policy": "difficulty maps to model/effort via agent-team; do not change account config or log in."
+    }
+  ]
+}

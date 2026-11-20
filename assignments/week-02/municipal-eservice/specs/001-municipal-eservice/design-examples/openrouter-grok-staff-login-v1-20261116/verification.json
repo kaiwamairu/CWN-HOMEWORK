@@ -1,0 +1,12 @@
+{
+  "file": "staff-login-grok-v1.mp4",
+  "raw_provider_bytes_preserved": true,
+  "bytes": 3618061,
+  "sha256": "671ee2885338c36d0fc6e012be5fa839cb6cd14b5294fbf5cc1b244be2b697eb",
+  "content_type": "video/mp4",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "downloaded_at": "2026-11-16T16:54:55.681843+00:00"
+}

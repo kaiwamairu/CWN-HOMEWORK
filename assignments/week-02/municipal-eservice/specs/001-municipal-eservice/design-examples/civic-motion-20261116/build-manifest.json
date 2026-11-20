@@ -1,0 +1,61 @@
+{
+  "generator": "ChatGPT image_gen keyframes; local Node.js GIF assembly",
+  "source_preservation": "Approved still files retained without overwriting; rendered keyframes used for motion preview",
+  "scope": "GIF review assets, not yet integrated into the wireframe UI",
+  "animations": [
+    {
+      "selected": "1A",
+      "file": "municipal-office-1A.gif",
+      "width": 448,
+      "height": 560,
+      "keyframes": 6,
+      "frames": 36,
+      "frame_ms": 100,
+      "duration_ms": 3600,
+      "loop": 0,
+      "bytes": 912342,
+      "sha256": "297f8dafa08d72213303ee75e8ec99951e4f5b0662e6cce34763b4f4c06e0396",
+      "frame_source_sha256": "1ccf4417b7c9078ecf1d5990633cb31f3708e280ed97eccb90e2c34e7d971f12",
+      "approved_source_sha256": "a12fd1e43768c0cdf8cac0a3ffa069d32dd9eb2c146d157c93b09a23fc0beb58",
+      "stationary_region_changed_pixels": 0,
+      "motion_region_pixels": 50568,
+      "changed_pixels_encoded": 652043
+    },
+    {
+      "selected": "2A",
+      "file": "citizen-writing-2A.gif",
+      "width": 448,
+      "height": 560,
+      "keyframes": 6,
+      "frames": 36,
+      "frame_ms": 100,
+      "duration_ms": 3600,
+      "loop": 0,
+      "bytes": 323905,
+      "sha256": "4f8674fc38215b15d4fd947d73ae7eb228127d142c3257e349de21ddd938f2a4",
+      "frame_source_sha256": "90f4a670971c1d5cb04d900121a63e388207a865442a2a207bb2d74c12d73437",
+      "approved_source_sha256": "37eca38d17d402651e01ff53954e2e6941900a76ddfbc16c354acf60e5ec5663",
+      "stationary_region_changed_pixels": 0,
+      "motion_region_pixels": 13384,
+      "changed_pixels_encoded": 349283
+    },
+    {
+      "selected": "3A",
+      "file": "officer-review-3A.gif",
+      "width": 448,
+      "height": 560,
+      "keyframes": 6,
+      "frames": 36,
+      "frame_ms": 100,
+      "duration_ms": 3600,
+      "loop": 0,
+      "bytes": 396198,
+      "sha256": "540361f19a49a62bd445c8e0fb4fc3aed1fb93c0a6295d8773d57df329b9e36e",
+      "frame_source_sha256": "483ed8c5837ae78afceb4239ee1a40ece18471c4b8b6c493a5cb72677d251b0a",
+      "approved_source_sha256": "c58a2604c6b5ec6a2adffcd189aac0fe20964862fd6da19d76459b03b9ca9e02",
+      "stationary_region_changed_pixels": 0,
+      "motion_region_pixels": 23081,
+      "changed_pixels_encoded": 378860
+    }
+  ]
+}

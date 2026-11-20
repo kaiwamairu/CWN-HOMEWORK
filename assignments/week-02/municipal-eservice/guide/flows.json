@@ -1,0 +1,2118 @@
+[
+  {
+    "id": "citizen",
+    "title": "ประชาชน · ยื่นคำขอจนได้รับเอกสาร",
+    "description": "วงจรหลักตั้งแต่ยืนยันตัวตน ยื่นและจ่ายเงิน จนได้รับ PDF รวมการแก้ไขและยกเลิกตามเงื่อนไข โดยผู้ใช้เห็นเฉพาะคำขอของตนเอง",
+    "nodes": [
+      {
+        "id": "identity",
+        "label": "ยืนยันตัวตน",
+        "sub": "ThaiD จำลอง + OTP",
+        "actor": "ประชาชน",
+        "route": "/login",
+        "state": "ยังไม่เข้าสู่ระบบ → มี session",
+        "rules": [
+          "เลขบัตร 13 หลักและ checksum ถูกต้อง",
+          "OTP 123456; ผิดสามครั้งล็อก 15 นาที"
+        ],
+        "tests": [
+          "TC-AUTH-01",
+          "TC-AUTH-02"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 30
+      },
+      {
+        "id": "registered",
+        "label": "เคยลงทะเบียนแล้ว?",
+        "sub": "แยกผู้ใช้เดิม / ผู้ใช้ใหม่",
+        "actor": "ระบบ",
+        "route": "/register หรือ /citizen",
+        "state": "registered true / false",
+        "rules": [
+          "ผู้ใช้ใหม่มี session จำกัดเฉพาะลงทะเบียน",
+          "ผู้ใช้เดิมไปหน้ารายการได้ทันที"
+        ],
+        "tests": [
+          "TC-AUTH-03"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "register",
+        "label": "ลงทะเบียนครั้งแรก",
+        "sub": "ชื่อจาก ThaiD แก้ไม่ได้",
+        "actor": "ประชาชน",
+        "route": "/register",
+        "state": "เป็นผู้ใช้ที่ลงทะเบียนแล้ว",
+        "rules": [
+          "มือถือ 10 หลักขึ้นต้น 0; อีเมลไม่บังคับ",
+          "ต้องยินยอม PDPA ก่อนใช้งานบริการ"
+        ],
+        "tests": [
+          "TC-AUTH-03"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 30
+      },
+      {
+        "id": "choose",
+        "label": "เลือกบริการและบันทึกร่าง",
+        "sub": "SV-01 / SV-02 / SV-03",
+        "actor": "ประชาชน",
+        "route": "/citizen/new/:service",
+        "state": "DRAFT",
+        "rules": [
+          "กรอกจำนวนหรือพื้นที่ตามบริการ",
+          "ร่างยังไม่มีเลข EG และกลับมาทำต่อได้"
+        ],
+        "tests": [
+          "TC-FEE-01",
+          "TC-SUBMIT-03"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 180
+      },
+      {
+        "id": "files",
+        "label": "แนบหลักฐานให้ครบ",
+        "sub": "PDF / JPG / PNG จริง",
+        "actor": "ประชาชน",
+        "route": "/citizen/new/:service",
+        "state": "DRAFT พร้อมไปชำระ",
+        "rules": [
+          "ชนิดจากเนื้อไฟล์; ไฟล์ละ ≤5,242,880 ไบต์ รวม ≤5 ไฟล์",
+          "แบบแปลนเป็น PDF; ขาดเอกสารบังคับไปชำระไม่ได้"
+        ],
+        "tests": [
+          "TC-UPLOAD-01",
+          "TC-UPLOAD-02",
+          "TC-SUBMIT-02"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 180
+      },
+      {
+        "id": "payment",
+        "label": "สร้าง QR และชำระ",
+        "sub": "ล็อกยอดเมื่อเข้า PENDING_PAYMENT",
+        "actor": "ประชาชน / ธนาคารจำลอง",
+        "route": "/api/test/payments/:ref/pay",
+        "state": "PENDING_PAYMENT → SUBMITTED",
+        "rules": [
+          "อายุ QR <15 นาที; ครบ 15:00 หมดอายุ",
+          "ยอดต้องตรง; callback เดิมไม่สร้างคำขอซ้ำ"
+        ],
+        "tests": [
+          "TC-PAY-01",
+          "TC-PAY-02",
+          "TC-PAY-03"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 180
+      },
+      {
+        "id": "submitted",
+        "label": "ได้เลขคำขอและใบเสร็จ",
+        "sub": "เลขออกเมื่อชำระสำเร็จเท่านั้น",
+        "actor": "ระบบ / ประชาชน",
+        "route": "/citizen/cases/:caseNo",
+        "state": "SUBMITTED",
+        "rules": [
+          "EG/RC ตามปี พ.ศ. ของเวลาชำระ",
+          "ยกเลิกได้เฉพาะยังไม่มีผู้รับเรื่อง พร้อมยืนยันไม่คืนเงิน"
+        ],
+        "tests": [
+          "TC-SUBMIT-01",
+          "TC-SUBMIT-03",
+          "TC-PAY-04"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 330
+      },
+      {
+        "id": "review",
+        "label": "ติดตามการตรวจพิจารณา",
+        "sub": "คิว → ตรวจ → ส่งต่อ",
+        "actor": "เจ้าหน้าที่ / หัวหน้า",
+        "route": "/citizen/cases/:caseNo",
+        "state": "IN_REVIEW / PENDING_APPROVAL",
+        "rules": [
+          "เส้นทางอนุมัติตามบริการ ผู้ใช้เลือกปลายทางเองไม่ได้",
+          "สถานะ กำหนดเสร็จและเส้นเวลาตรวจสอบได้"
+        ],
+        "tests": [
+          "TC-WORKFLOW-01",
+          "TC-WORKFLOW-02",
+          "TC-WORKFLOW-03"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 330
+      },
+      {
+        "id": "fix",
+        "label": "แก้ไขเอกสาร",
+        "sub": "ตีกลับรวมไม่เกิน 2 ครั้ง",
+        "actor": "ประชาชน",
+        "route": "/api/cases/:caseNo/resubmit",
+        "state": "NEED_FIX → IN_REVIEW",
+        "rules": [
+          "ส่งกลับก่อนครบ 168 ชั่วโมงและคืนผู้ถือเดิม",
+          "ขยาย SLA ตามวันทำการใน (วันตีกลับ, วันส่งแก้]"
+        ],
+        "tests": [
+          "TC-SLA-02",
+          "TC-WORKFLOW-06"
+        ],
+        "kind": "decision",
+        "x": 690,
+        "y": 330
+      },
+      {
+        "id": "cancelled",
+        "label": "ยกเลิกคำขอ",
+        "sub": "ยืนยันเอง / หมดเวลาแก้ไข",
+        "actor": "ประชาชน / ระบบ",
+        "route": "/citizen/cases/:caseNo",
+        "state": "CANCELLED",
+        "rules": [
+          "ครบ 168:00 ชั่วโมง ระบบยกเลิกที่เวลา deadline",
+          "ไม่คืนค่าธรรมเนียม; CANCELLED ไม่ใช่ปิดงานใน KPI"
+        ],
+        "tests": [
+          "TC-SUBMIT-03",
+          "TC-WORKFLOW-06"
+        ],
+        "kind": "alert",
+        "x": 690,
+        "y": 480
+      },
+      {
+        "id": "approved",
+        "label": "อนุมัติแล้ว รอออกเอกสาร",
+        "sub": "ผู้อนุมัติตามบริการ",
+        "actor": "เจ้าหน้าที่ / หัวหน้า",
+        "route": "/citizen/cases/:caseNo",
+        "state": "APPROVED",
+        "rules": [
+          "SV-01 ผู้ถือเรื่องอนุมัติ; SV-02/03 หัวหน้าอนุมัติ",
+          "APPROVED ยังมี SLA จนออกเอกสารเสร็จ"
+        ],
+        "tests": [
+          "TC-WORKFLOW-01",
+          "TC-WORKFLOW-02",
+          "TC-WORKFLOW-03"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 480
+      },
+      {
+        "id": "completed",
+        "label": "ดาวน์โหลดและตรวจเอกสาร",
+        "sub": "PDF + รหัสตรวจสอบ",
+        "actor": "ประชาชน",
+        "route": "/api/documents/:docNo/pdf",
+        "state": "COMPLETED",
+        "rules": [
+          "ผู้รับทะเบียนครั้งแรกออกเอกสาร SV-02/03",
+          "ผู้ลงนามคือผู้อนุมัติ; ตรวจสาธารณะโดยปิดบังชื่อ"
+        ],
+        "tests": [
+          "TC-DOC-01",
+          "TC-DOC-02",
+          "TC-DOC-03"
+        ],
+        "kind": "end",
+        "x": 30,
+        "y": 480
+      }
+    ],
+    "edges": [
+      {
+        "to": "registered",
+        "label": "",
+        "from": "identity"
+      },
+      {
+        "to": "register",
+        "label": "ผู้ใช้ใหม่",
+        "from": "registered"
+      },
+      {
+        "to": "choose",
+        "label": "ลงทะเบียนแล้ว",
+        "from": "registered"
+      },
+      {
+        "to": "choose",
+        "label": "",
+        "from": "register"
+      },
+      {
+        "to": "files",
+        "label": "",
+        "from": "choose"
+      },
+      {
+        "to": "payment",
+        "label": "ครบแล้ว",
+        "from": "files"
+      },
+      {
+        "to": "submitted",
+        "label": "จ่ายสำเร็จ",
+        "from": "payment"
+      },
+      {
+        "to": "review",
+        "label": "มีผู้รับเรื่อง",
+        "from": "submitted"
+      },
+      {
+        "to": "fix",
+        "label": "ตีกลับ",
+        "from": "review"
+      },
+      {
+        "to": "review",
+        "label": "ส่งแก้ทันเวลา",
+        "arc": true,
+        "from": "fix"
+      },
+      {
+        "to": "cancelled",
+        "label": "ครบ 168 ชม.",
+        "from": "fix"
+      },
+      {
+        "to": "approved",
+        "label": "ผ่านตามอำนาจ",
+        "from": "review"
+      },
+      {
+        "to": "completed",
+        "label": "ออก PDF",
+        "from": "approved"
+      },
+      {
+        "to": "cancelled",
+        "label": "ยังไม่มีผู้ถือ",
+        "path": "M 30 368 H 8 V 620 H 810 V 556",
+        "labelX": 420,
+        "labelY": 613,
+        "maxY": 620,
+        "from": "submitted"
+      }
+    ],
+    "width": 1000,
+    "height": 640
+  },
+  {
+    "id": "identity",
+    "title": "ยืนยันตัวตน · OTP และการลงทะเบียน",
+    "description": "ขยายเส้นทางเข้าสู่ระบบประชาชน โดยยึดเวลาเดียวกับเซิร์ฟเวอร์ และไม่ข้ามการลงทะเบียนครั้งแรก",
+    "nodes": [
+      {
+        "id": "id",
+        "label": "กรอกเลขบัตร",
+        "sub": "13 หลัก + checksum",
+        "actor": "ประชาชน",
+        "route": "/login",
+        "state": "รอเริ่ม OTP",
+        "rules": [
+          "รับการกรอก 14 หลักแล้วตรวจให้ผิดได้",
+          "ไม่ถูกต้องตอบ INVALID_ID"
+        ],
+        "tests": [
+          "TC-AUTH-01"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 30
+      },
+      {
+        "id": "check",
+        "label": "เลขบัตรถูกต้อง?",
+        "sub": "ตรวจรูปแบบและหลักตรวจสอบ",
+        "actor": "ระบบ",
+        "route": "/api/auth/thaid/start",
+        "state": "OTP_SENT เมื่อผ่าน",
+        "rules": [
+          "ไม่ผ่านยังอยู่ขั้นเลขบัตร",
+          "เลขที่ถูกล็อกตอบ LOCKED"
+        ],
+        "tests": [
+          "TC-AUTH-01",
+          "TC-AUTH-02"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "otp",
+        "label": "รับและกรอก OTP",
+        "sub": "123456 ในตัวจำลอง",
+        "actor": "ประชาชน",
+        "route": "/api/auth/thaid/verify",
+        "state": "กำลังยืนยันตัวตน",
+        "rules": [
+          "ผูกจำนวนครั้งผิดกับเลขบัตร ไม่ใช่แค่ tab",
+          "เวลาทั้งหมดอ่านจาก Clock กลาง"
+        ],
+        "tests": [
+          "TC-AUTH-02"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 30
+      },
+      {
+        "id": "verify",
+        "label": "OTP ถูกต้องหรือไม่?",
+        "sub": "สำเร็จล้างตัวนับผิด",
+        "actor": "ระบบ",
+        "route": "/api/auth/thaid/verify",
+        "state": "สำเร็จ / OTP_INVALID",
+        "rules": [
+          "OTP ถูกทำให้จำนวนผิดกลับเป็น 0",
+          "หากยังล็อกอยู่ OTP ถูกก็เข้าไม่ได้"
+        ],
+        "tests": [
+          "TC-AUTH-02"
+        ],
+        "kind": "decision",
+        "x": 690,
+        "y": 180
+      },
+      {
+        "id": "attempts",
+        "label": "เพิ่มจำนวนครั้งที่ผิด",
+        "sub": "ผิด 2 ครั้งยังลองได้",
+        "actor": "ระบบ",
+        "route": "/api/auth/thaid/verify",
+        "state": "ครั้งที่ 3 → LOCKED",
+        "rules": [
+          "ครั้งแรกเหลือ 2; ครั้งที่สองเหลือ 1",
+          "ครั้งที่สามเริ่มนับเวลาล็อก 15 นาที"
+        ],
+        "tests": [
+          "TC-AUTH-02"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 180
+      },
+      {
+        "id": "locked",
+        "label": "ล็อก 15 นาที",
+        "sub": "นับจากครั้งที่ 3",
+        "actor": "ระบบ",
+        "route": "HTTP 423 LOCKED",
+        "state": "ยังยืนยันไม่ได้",
+        "rules": [
+          "ผ่าน 14:59 ยังล็อก",
+          "ครบ 15:00 ปลดล็อกและตัวนับเริ่มใหม่"
+        ],
+        "tests": [
+          "TC-AUTH-02"
+        ],
+        "kind": "alert",
+        "x": 30,
+        "y": 180
+      },
+      {
+        "id": "retry",
+        "label": "ครบเวลาแล้วลองใหม่",
+        "sub": "ไม่ต้องสร้างบัญชีใหม่",
+        "actor": "ประชาชน",
+        "route": "/login",
+        "state": "OTP เริ่มรอบใหม่",
+        "rules": [
+          "ครั้งแรกที่ผิดหลังปลดล็อกนับเป็นครั้งที่ 1",
+          "reset ล้างล็อกและ session ทุกคน"
+        ],
+        "tests": [
+          "TC-AUTH-02",
+          "TC-NFR-03"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 330
+      },
+      {
+        "id": "registered",
+        "label": "เป็นผู้ใช้ที่ลงทะเบียนแล้ว?",
+        "sub": "session ใหม่หลังยืนยันสำเร็จ",
+        "actor": "ระบบ",
+        "route": "/register หรือ /citizen",
+        "state": "registered true / false",
+        "rules": [
+          "ยังไม่ลงทะเบียนเข้าได้เฉพาะ /register",
+          "ผู้ลงทะเบียนแล้วไป /citizen"
+        ],
+        "tests": [
+          "TC-AUTH-03"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 330
+      },
+      {
+        "id": "register",
+        "label": "ลงทะเบียนและยินยอม",
+        "sub": "มือถือ + PDPA",
+        "actor": "ประชาชน",
+        "route": "/register",
+        "state": "registered = true",
+        "rules": [
+          "ชื่ออ่านอย่างเดียว; มือถือ 0 ตามด้วย 9 หลัก",
+          "ไม่ติ๊กยินยอมสมัครไม่ได้; อีเมลเว้นว่างได้"
+        ],
+        "tests": [
+          "TC-AUTH-03"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 330
+      },
+      {
+        "id": "ready",
+        "label": "เข้าสู่บริการของฉัน",
+        "sub": "ดูเฉพาะทรัพยากรตนเอง",
+        "actor": "ประชาชน",
+        "route": "/citizen",
+        "state": "พร้อมยื่นบริการ",
+        "rules": [
+          "คนอื่นเปิดคำขอของเราได้ 404",
+          "ออกจากระบบได้ผ่าน logout"
+        ],
+        "tests": [
+          "TC-RBAC-01",
+          "TC-RBAC-03"
+        ],
+        "kind": "end",
+        "x": 690,
+        "y": 480
+      }
+    ],
+    "edges": [
+      {
+        "to": "check",
+        "label": "",
+        "from": "id"
+      },
+      {
+        "to": "id",
+        "label": "ไม่ถูกต้อง",
+        "arc": true,
+        "from": "check"
+      },
+      {
+        "to": "otp",
+        "label": "ผ่าน",
+        "from": "check"
+      },
+      {
+        "to": "verify",
+        "label": "",
+        "from": "otp"
+      },
+      {
+        "to": "attempts",
+        "label": "ผิด",
+        "from": "verify"
+      },
+      {
+        "to": "otp",
+        "label": "ยังไม่ครบ 3",
+        "from": "attempts"
+      },
+      {
+        "to": "locked",
+        "label": "ครั้งที่ 3",
+        "from": "attempts"
+      },
+      {
+        "to": "retry",
+        "label": "ครบ 15:00",
+        "from": "locked"
+      },
+      {
+        "to": "otp",
+        "label": "ลองใหม่",
+        "path": "M 30 368 H 8 V 135 H 810 V 106",
+        "labelX": 500,
+        "labelY": 128,
+        "maxY": 368,
+        "from": "retry"
+      },
+      {
+        "to": "registered",
+        "label": "ถูกต้อง",
+        "from": "verify"
+      },
+      {
+        "to": "register",
+        "label": "ผู้ใช้ใหม่",
+        "from": "registered"
+      },
+      {
+        "to": "ready",
+        "label": "ผู้ใช้เดิม",
+        "from": "registered"
+      },
+      {
+        "to": "ready",
+        "label": "",
+        "from": "register"
+      }
+    ],
+    "width": 1000,
+    "height": 605
+  },
+  {
+    "id": "officer",
+    "title": "เจ้าหน้าที่ · รับเรื่อง ตรวจและส่งต่อ",
+    "description": "คิวแยกตามแผนกและรับเรื่องแบบผู้ถือเดียว ตีกลับตามเงื่อนไข หรือส่งเข้าสู่ขั้นที่กำหนดโดยบริการ",
+    "nodes": [
+      {
+        "id": "queue",
+        "label": "เปิดคิวแผนก",
+        "sub": "กำหนดเร็วสุด → เลขคำขอ",
+        "actor": "เจ้าหน้าที่",
+        "route": "/officer/queue",
+        "state": "คิวงานของแผนก",
+        "rules": [
+          "กำหนดเท่ากันเรียงเลขน้อยก่อน",
+          "หัวหน้าเปิดคิวได้แบบอ่านอย่างเดียว"
+        ],
+        "tests": [
+          "TC-QUEUE-01"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 30
+      },
+      {
+        "id": "claim",
+        "label": "รับเรื่องแบบ atomic",
+        "sub": "ตรวจสิทธิ์ → ผู้ถือ → เพดาน",
+        "actor": "เจ้าหน้าที่",
+        "route": "/api/officer/cases/:caseNo/claim",
+        "state": "SUBMITTED → IN_REVIEW",
+        "rules": [
+          "คนที่สองรับซ้ำได้ 409 ALREADY_CLAIMED",
+          "มี 9 รับเป็น 10 ได้; มี 10 รับเพิ่มไม่ได้"
+        ],
+        "tests": [
+          "TC-QUEUE-02",
+          "TC-QUEUE-03"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "review",
+        "label": "ตรวจเอกสารและตัวตน",
+        "sub": "เปิดไฟล์ตามแผนกที่เคยผ่าน",
+        "actor": "ผู้ถือเรื่อง",
+        "route": "/officer/cases/:caseNo",
+        "state": "IN_REVIEW",
+        "rules": [
+          "ไฟล์: แผนกปัจจุบันหรือเคยผ่านเท่านั้น",
+          "unmask ต้องมีเหตุผลและบันทึก UNMASK ก่อนเผย"
+        ],
+        "tests": [
+          "TC-RBAC-05",
+          "TC-PDPA-01",
+          "TC-PDPA-02",
+          "TC-PDPA-03"
+        ],
+        "kind": "decision",
+        "x": 690,
+        "y": 30
+      },
+      {
+        "id": "return",
+        "label": "ตีกลับเพื่อแก้ไข",
+        "sub": "สูงสุด 2 ครั้งต่อคำขอ",
+        "actor": "ผู้ถือเรื่อง",
+        "route": "/api/officer/cases/:caseNo/return",
+        "state": "NEED_FIX",
+        "rules": [
+          "เหตุผล trim แล้ว ≥10 ตัวอักษร",
+          "SLA หยุดนับ; deadline เวลาตีกลับ +168 ชม."
+        ],
+        "tests": [
+          "TC-WORKFLOW-04",
+          "TC-WORKFLOW-05"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 180
+      },
+      {
+        "id": "resume",
+        "label": "ประชาชนส่งแก้กลับ",
+        "sub": "คืนผู้ถือเดิมอัตโนมัติ",
+        "actor": "ประชาชน / ระบบ",
+        "route": "/api/cases/:caseNo/resubmit",
+        "state": "IN_REVIEW",
+        "rules": [
+          "ส่งก่อนครบเวลาและขยาย dueAt ตามวันทำการ",
+          "คืนผู้ถือเดิมได้แม้งานรวมเกิน 10"
+        ],
+        "tests": [
+          "TC-SLA-02",
+          "TC-WORKFLOW-06",
+          "TC-QUEUE-03"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 180
+      },
+      {
+        "id": "routing",
+        "label": "ส่งให้ผู้มีอำนาจพิจารณา",
+        "sub": "เส้นทางตาม SV-01 / 02 / 03",
+        "actor": "ระบบ / เจ้าหน้าที่",
+        "route": "/api/officer/cases/:caseNo/forward",
+        "state": "IN_REVIEW / PENDING_APPROVAL",
+        "rules": [
+          "SV-01 ผู้ถือพิจารณาได้เอง",
+          "SV-02 ไปหัวหน้า; SV-03 ไปโยธาแล้วหัวหน้า"
+        ],
+        "tests": [
+          "TC-WORKFLOW-01",
+          "TC-WORKFLOW-02",
+          "TC-WORKFLOW-03"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 180
+      },
+      {
+        "id": "decision",
+        "label": "ตัดสินตามอำนาจบริการ",
+        "sub": "อนุมัติ / ไม่อนุมัติ",
+        "actor": "ผู้ถือ SV-01 / หัวหน้า SV-02,03",
+        "route": "/api/cases/:caseNo/approve | reject",
+        "state": "APPROVED / REJECTED",
+        "rules": [
+          "เจ้าหน้าที่อนุมัติ SV-02/03 เองไม่ได้",
+          "ปฏิเสธต้องมีเหตุผล ≥10 ตัวอักษร"
+        ],
+        "tests": [
+          "TC-RBAC-02",
+          "TC-WORKFLOW-05"
+        ],
+        "kind": "decision",
+        "x": 30,
+        "y": 330
+      },
+      {
+        "id": "issue",
+        "label": "เจ้าหน้าที่ออกเอกสาร",
+        "sub": "ผู้ลงนามคือผู้อนุมัติ",
+        "actor": "ผู้ออกเอกสารที่กำหนด",
+        "route": "/api/officer/cases/:caseNo/issue",
+        "state": "APPROVED → COMPLETED",
+        "rules": [
+          "SV-02/03 ใช้ผู้รับทะเบียนครั้งแรก",
+          "ออกเลข DOC แยกจาก EG/RC พร้อม ISSUE audit"
+        ],
+        "tests": [
+          "TC-DOC-01"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 330
+      },
+      {
+        "id": "reject",
+        "label": "ปิดแบบไม่อนุมัติ",
+        "sub": "บันทึกเหตุผลและเวลา",
+        "actor": "ผู้มีอำนาจ",
+        "route": "/officer/cases/:caseNo",
+        "state": "REJECTED",
+        "rules": [
+          "ไม่คืนเงิน; บันทึก REJECT",
+          "เป็น closed ใน KPI และใช้ closedAt เทียบ dueAt"
+        ],
+        "tests": [
+          "TC-WORKFLOW-05",
+          "TC-DASH-04"
+        ],
+        "kind": "alert",
+        "x": 690,
+        "y": 480
+      },
+      {
+        "id": "done",
+        "label": "ส่งมอบเอกสารให้ประชาชน",
+        "sub": "ดาวน์โหลดและ verify ได้",
+        "actor": "ระบบ",
+        "route": "/citizen/cases/:caseNo",
+        "state": "COMPLETED",
+        "rules": [
+          "บันทึก closedAt ตอนออกเอกสาร",
+          "หน้า verify ปิดบังข้อมูลผู้ยื่น"
+        ],
+        "tests": [
+          "TC-DOC-01",
+          "TC-DOC-02"
+        ],
+        "kind": "end",
+        "x": 360,
+        "y": 480
+      }
+    ],
+    "edges": [
+      {
+        "to": "claim",
+        "label": "",
+        "from": "queue"
+      },
+      {
+        "to": "review",
+        "label": "",
+        "from": "claim"
+      },
+      {
+        "to": "return",
+        "label": "ต้องแก้ไข",
+        "from": "review"
+      },
+      {
+        "to": "resume",
+        "label": "ส่งแก้ทันเวลา",
+        "from": "return"
+      },
+      {
+        "to": "review",
+        "label": "ตรวจอีกครั้ง",
+        "from": "resume"
+      },
+      {
+        "to": "routing",
+        "label": "ผ่านการตรวจ",
+        "from": "review"
+      },
+      {
+        "to": "decision",
+        "label": "",
+        "from": "routing"
+      },
+      {
+        "to": "issue",
+        "label": "อนุมัติ",
+        "from": "decision"
+      },
+      {
+        "to": "reject",
+        "label": "ไม่อนุมัติ",
+        "from": "decision"
+      },
+      {
+        "to": "done",
+        "label": "",
+        "from": "issue"
+      }
+    ],
+    "width": 1000,
+    "height": 605
+  },
+  {
+    "id": "head",
+    "title": "หัวหน้าฝ่าย · พิจารณาและอนุมัติ",
+    "description": "หัวหน้าตัดสิน SV-02/03 เมื่อถึง PENDING_APPROVAL ดูได้ทุกแผนก แต่รับเรื่องหรือตีกลับแทนเจ้าหน้าที่ไม่ได้",
+    "nodes": [
+      {
+        "id": "queue",
+        "label": "เข้ารายการรออนุมัติ",
+        "sub": "เฉพาะเรื่องที่ส่งถึงหัวหน้า",
+        "actor": "หัวหน้าฝ่าย",
+        "route": "/head/approvals",
+        "state": "PENDING_APPROVAL",
+        "rules": [
+          "SV-02 ผ่านทะเบียน; SV-03 ผ่านทะเบียนและโยธา",
+          "หน้าตั้งต้นหลัง login ของ head"
+        ],
+        "tests": [
+          "TC-AUTH-04",
+          "TC-WORKFLOW-02",
+          "TC-WORKFLOW-03"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "read",
+        "label": "เปิดคำขอและเอกสาร",
+        "sub": "ดูข้อมูลทุกแผนกตามสิทธิ์",
+        "actor": "หัวหน้าฝ่าย",
+        "route": "/officer/cases/:caseNo",
+        "state": "กำลังพิจารณา",
+        "rules": [
+          "ไฟล์แนบทุกแผนกเปิดได้",
+          "ID ยังปิดบัง; unmask ต้องมีเหตุผลและ audit"
+        ],
+        "tests": [
+          "TC-RBAC-05",
+          "TC-PDPA-01"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 160
+      },
+      {
+        "id": "decide",
+        "label": "อนุมัติหรือไม่อนุมัติ?",
+        "sub": "ตรวจ role + service + state",
+        "actor": "หัวหน้าฝ่าย",
+        "route": "/api/cases/:caseNo/approve | reject",
+        "state": "ตัดสินเฉพาะ SV-02/03",
+        "rules": [
+          "head อนุมัติ SV-01 ไม่ได้",
+          "การซ่อนปุ่มไม่แทนการตรวจสิทธิ์ API"
+        ],
+        "tests": [
+          "TC-RBAC-02",
+          "TC-RBAC-03"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 290
+      },
+      {
+        "id": "reason",
+        "label": "ระบุเหตุผลไม่อนุมัติ",
+        "sub": "trim แล้วอย่างน้อย 10 ตัว",
+        "actor": "หัวหน้าฝ่าย",
+        "route": "/api/cases/:caseNo/reject",
+        "state": "รอเหตุผลที่ผ่านเงื่อนไข",
+        "rules": [
+          "9 ตัวไม่ผ่าน; 10 ตัวผ่าน",
+          "ช่องว่างล้วนไม่ถือเป็นเหตุผล"
+        ],
+        "tests": [
+          "TC-WORKFLOW-05"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 420
+      },
+      {
+        "id": "rejected",
+        "label": "ปิดเรื่องไม่อนุมัติ",
+        "sub": "REJECT audit + closedAt",
+        "actor": "ระบบ",
+        "route": "/citizen/cases/:caseNo",
+        "state": "REJECTED",
+        "rules": [
+          "แสดงข้อความไม่คืนค่าธรรมเนียม",
+          "นับ closed รวมในการคำนวณทันกำหนด"
+        ],
+        "tests": [
+          "TC-WORKFLOW-05",
+          "TC-DASH-04"
+        ],
+        "kind": "alert",
+        "x": 690,
+        "y": 550
+      },
+      {
+        "id": "approved",
+        "label": "บันทึกผลอนุมัติ",
+        "sub": "หัวหน้าเป็นผู้ลงนาม",
+        "actor": "หัวหน้าฝ่าย",
+        "route": "/api/cases/:caseNo/approve",
+        "state": "APPROVED",
+        "rules": [
+          "บันทึก APPROVE ใน transaction เดียวกัน",
+          "ยังไม่ปิด SLA จนออกเอกสาร"
+        ],
+        "tests": [
+          "TC-WORKFLOW-02",
+          "TC-WORKFLOW-03"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 420
+      },
+      {
+        "id": "issuer",
+        "label": "ส่งให้ผู้ออกเอกสาร",
+        "sub": "ผู้รับทะเบียนครั้งแรก",
+        "actor": "เจ้าหน้าที่ทะเบียน",
+        "route": "/api/officer/cases/:caseNo/issue",
+        "state": "รอ PDF พร้อมส่งมอบ",
+        "rules": [
+          "ไม่ใช้หัวหน้าหรือผู้ถือขั้นโยธาเป็นผู้ออก",
+          "เอกสารแสดงชื่อผู้อนุมัติเป็น signer"
+        ],
+        "tests": [
+          "TC-DOC-01",
+          "TC-WORKFLOW-02"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 550
+      },
+      {
+        "id": "done",
+        "label": "ประชาชนรับเอกสาร",
+        "sub": "รหัสตรวจสอบ + PDF",
+        "actor": "ระบบ / ประชาชน",
+        "route": "/citizen/cases/:caseNo",
+        "state": "COMPLETED",
+        "rules": [
+          "ISSUE audit และ closedAt ตอนออกเอกสาร",
+          "ตรวจสาธารณะได้โดยไม่เข้าสู่ระบบ"
+        ],
+        "tests": [
+          "TC-DOC-01",
+          "TC-DOC-02"
+        ],
+        "kind": "end",
+        "x": 360,
+        "y": 550
+      }
+    ],
+    "edges": [
+      {
+        "to": "read",
+        "label": "",
+        "from": "queue"
+      },
+      {
+        "to": "decide",
+        "label": "",
+        "from": "read"
+      },
+      {
+        "to": "reason",
+        "label": "ไม่อนุมัติ",
+        "from": "decide"
+      },
+      {
+        "to": "rejected",
+        "label": "",
+        "from": "reason"
+      },
+      {
+        "to": "approved",
+        "label": "อนุมัติ",
+        "from": "decide"
+      },
+      {
+        "to": "issuer",
+        "label": "",
+        "from": "approved"
+      },
+      {
+        "to": "done",
+        "label": "",
+        "from": "issuer"
+      }
+    ],
+    "width": 1000,
+    "height": 675
+  },
+  {
+    "id": "executive",
+    "title": "ผู้บริหาร · Dashboard และรายงาน",
+    "description": "มองข้อมูลรวมตามเดือน ปี และบริการ แยกยอดในช่วงเวลาออกจากงานคงค้างปัจจุบัน โดยไม่มีข้อมูลผู้ยื่นส่วนบุคคล",
+    "nodes": [
+      {
+        "id": "login",
+        "label": "เข้าสู่บทบาทผู้บริหาร",
+        "sub": "exec1 → Dashboard",
+        "actor": "ผู้บริหาร",
+        "route": "/dashboard",
+        "state": "อ่านสรุปได้เท่านั้น",
+        "rules": [
+          "ทำรายการคำขอไม่ได้",
+          "ไม่มีชื่อผู้ยื่น เลขบัตรเต็ม หรือมือถือในหน้า/รายงาน"
+        ],
+        "tests": [
+          "TC-RBAC-03",
+          "TC-DASH-03"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 30
+      },
+      {
+        "id": "filter",
+        "label": "เลือกเดือน ปี และบริการ",
+        "sub": "period + service",
+        "actor": "ผู้บริหาร",
+        "route": "/api/dashboard?period=&service=",
+        "state": "ชุดตัวกรองที่เลือก",
+        "rules": [
+          "รายปีรวมยอดก่อนคำนวณเปอร์เซ็นต์",
+          "ตัวกรองบริการใช้กับ KPI ตามสัญญา"
+        ],
+        "tests": [
+          "TC-DASH-01",
+          "TC-DASH-02"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "counts",
+        "label": "อ่านยอดรับและปิดงาน",
+        "sub": "รับตาม paidAt / ปิดตาม closedAt",
+        "actor": "ระบบ",
+        "route": "/dashboard",
+        "state": "received / closed",
+        "rules": [
+          "รับรวมรายการชำระแล้วที่ยกเลิก",
+          "ปิดเฉพาะ COMPLETED + REJECTED ไม่รวม CANCELLED"
+        ],
+        "tests": [
+          "TC-DASH-01",
+          "TC-DASH-02"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 30
+      },
+      {
+        "id": "ratio",
+        "label": "อ่านสัดส่วนทันกำหนด",
+        "sub": "onTime ÷ closed ×100",
+        "actor": "ระบบ",
+        "route": "kpi-ontime-pct",
+        "state": "ทศนิยม 1 ตำแหน่ง",
+        "rules": [
+          "closedAt ≤ dueAt รวมวินาทีที่พอดี",
+          "ปิดงาน 0 แสดง –; ปัดครึ่งขึ้น"
+        ],
+        "tests": [
+          "TC-DASH-02",
+          "TC-DASH-04"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 180
+      },
+      {
+        "id": "backlog",
+        "label": "อ่านคงค้างและภาระงาน",
+        "sub": "ข้อมูล ณ นาฬิกาปัจจุบัน",
+        "actor": "ระบบ",
+        "route": "/dashboard",
+        "state": "backlog / overdue / workload",
+        "rules": [
+          "คงค้างไม่ถูกกรองตามเดือน; overdue ไม่นับ NEED_FIX",
+          "workload รายคนไม่เปลี่ยนตามตัวกรอง Dashboard"
+        ],
+        "tests": [
+          "TC-DASH-01",
+          "TC-DASH-02"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 180
+      },
+      {
+        "id": "export",
+        "label": "ส่งออก Excel หรือ PDF",
+        "sub": "ค่าเท่ากับหน้าจอ 5 KPI",
+        "actor": "ผู้บริหาร",
+        "route": "/api/dashboard/export",
+        "state": "ไฟล์รายงานข้อมูลรวม",
+        "rules": [
+          "ไม่มีชื่อผู้ยื่น เลขบัตร หรือมือถือ",
+          "ใช้ตัวกรองเดียวกันและรูปแบบไฟล์ตาม CONTRACT"
+        ],
+        "tests": [
+          "TC-DASH-03"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 180
+      },
+      {
+        "id": "audit",
+        "label": "บันทึก EXPORT แล้วส่งไฟล์",
+        "sub": "รูปแบบ + period + service",
+        "actor": "ระบบ",
+        "route": "Audit event: EXPORT",
+        "state": "ส่งออกรายงานสำเร็จ",
+        "rules": [
+          "ไฟล์ต้องสร้างสำเร็จก่อนบันทึกเหตุการณ์",
+          "ไม่อ้าง availability หรือ capacity จริงจาก Dashboard"
+        ],
+        "tests": [
+          "TC-AUDIT-01",
+          "TC-DASH-03"
+        ],
+        "kind": "end",
+        "x": 30,
+        "y": 330
+      }
+    ],
+    "edges": [
+      {
+        "to": "filter",
+        "label": "",
+        "from": "login"
+      },
+      {
+        "to": "counts",
+        "label": "",
+        "from": "filter"
+      },
+      {
+        "to": "ratio",
+        "label": "",
+        "from": "counts"
+      },
+      {
+        "to": "backlog",
+        "label": "",
+        "from": "ratio"
+      },
+      {
+        "to": "export",
+        "label": "",
+        "from": "backlog"
+      },
+      {
+        "to": "audit",
+        "label": "",
+        "from": "export"
+      }
+    ],
+    "width": 1000,
+    "height": 455
+  },
+  {
+    "id": "auditor",
+    "title": "ผู้ตรวจสอบ · Audit trail อ่านอย่างเดียว",
+    "description": "ค้นประวัติตามผู้ทำ เหตุการณ์ และวันตามเวลาไทย จากนั้นส่งออก snapshot โดยไม่แก้หรือลบรายการย้อนหลัง",
+    "nodes": [
+      {
+        "id": "login",
+        "label": "เข้าสู่บทบาทผู้ตรวจสอบ",
+        "sub": "auditor → Audit trail",
+        "actor": "ผู้ตรวจสอบ",
+        "route": "/audit",
+        "state": "อ่านประวัติได้",
+        "rules": [
+          "ไม่มีสิทธิ์ทำรายการคำขอ",
+          "ผู้ดูแลระบบไม่มีสิทธิ์อ่าน Audit แทนผู้ตรวจสอบ"
+        ],
+        "tests": [
+          "TC-RBAC-03"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 30
+      },
+      {
+        "id": "filters",
+        "label": "กรองผู้ทำ เหตุการณ์ และวัน",
+        "sub": "วันเริ่มและวันจบรวมทั้งวัน",
+        "actor": "ผู้ตรวจสอบ",
+        "route": "/api/audit?actor=&event=&from=&to=",
+        "state": "ชุดรายการที่ตรงเงื่อนไข",
+        "rules": [
+          "ใช้ [วันเริ่ม 00:00, วันถัดจากวันจบ 00:00)",
+          "เขตเวลา Asia/Bangkok"
+        ],
+        "tests": [
+          "TC-AUDIT-03"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "read",
+        "label": "ตรวจเวลาและสถานะก่อน–หลัง",
+        "sub": "ใหม่ก่อน; เวลาเท่ากัน ID ใหม่ก่อน",
+        "actor": "ผู้ตรวจสอบ",
+        "route": "/audit",
+        "state": "เหตุการณ์ 10 ประเภท",
+        "rules": [
+          "เห็น username, role, case, detail ตามสัญญา",
+          "รายการสำเร็จจึงมี audit; unmask ต้องมีเหตุผล"
+        ],
+        "tests": [
+          "TC-AUDIT-01"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 30
+      },
+      {
+        "id": "immutable",
+        "label": "ตรวจว่าแก้ย้อนหลังไม่ได้",
+        "sub": "ทุกบทบาทรวมถึง admin",
+        "actor": "ระบบ",
+        "route": "PUT / PATCH / DELETE /api/audit",
+        "state": "405 METHOD_NOT_ALLOWED",
+        "rules": [
+          "รวม collection และ ID ที่ไม่มีจริง",
+          "ไม่มีปุ่มแก้/ลบในหน้าผู้ตรวจสอบ"
+        ],
+        "tests": [
+          "TC-AUDIT-02"
+        ],
+        "kind": "decision",
+        "x": 690,
+        "y": 180
+      },
+      {
+        "id": "snapshot",
+        "label": "สร้าง CSV จาก snapshot",
+        "sub": "ฟิลเตอร์และลำดับเดียวกับจอ",
+        "actor": "ระบบ",
+        "route": "/api/audit/export.csv",
+        "state": "เนื้อไฟล์ก่อนเพิ่ม EXPORT ของตัวเอง",
+        "rules": [
+          "UTF-8 และหัวคอลัมน์ตรง CONTRACT",
+          "เช่นชุด TC-AUDIT-01 มี 16 แถวก่อน export"
+        ],
+        "tests": [
+          "TC-AUDIT-01"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 180
+      },
+      {
+        "id": "export",
+        "label": "บันทึก EXPORT แล้วส่ง CSV",
+        "sub": "detail = audit-csv",
+        "actor": "ระบบ",
+        "route": "Audit event: EXPORT",
+        "state": "มีบันทึกการส่งออกเพิ่มอีก 1 แถว",
+        "rules": [
+          "ตัว CSV ไม่รวม EXPORT ของการส่งออกครั้งนี้",
+          "เมื่อเปิดรายการใหม่เห็นเหตุการณ์ส่งออกแล้ว"
+        ],
+        "tests": [
+          "TC-AUDIT-01"
+        ],
+        "kind": "end",
+        "x": 30,
+        "y": 180
+      }
+    ],
+    "edges": [
+      {
+        "to": "filters",
+        "label": "",
+        "from": "login"
+      },
+      {
+        "to": "read",
+        "label": "",
+        "from": "filters"
+      },
+      {
+        "to": "immutable",
+        "label": "",
+        "from": "read"
+      },
+      {
+        "to": "snapshot",
+        "label": "",
+        "from": "immutable"
+      },
+      {
+        "to": "export",
+        "label": "",
+        "from": "snapshot"
+      }
+    ],
+    "width": 1000,
+    "height": 305
+  },
+  {
+    "id": "admin",
+    "title": "ผู้ดูแลระบบ · บริการ วันหยุด และผู้ใช้",
+    "description": "การเปลี่ยนค่าตั้งต้นไม่เปลี่ยนยอดหรือกำหนดเสร็จที่ล็อกไว้แล้ว ทุกการแก้ที่สำเร็จมี ADMIN_CHANGE",
+    "nodes": [
+      {
+        "id": "login",
+        "label": "เข้าสู่บทบาทผู้ดูแล",
+        "sub": "admin → ตั้งค่าบริการ",
+        "actor": "ผู้ดูแลระบบ",
+        "route": "/admin/services",
+        "state": "จัดการข้อมูลตั้งต้น",
+        "rules": [
+          "ไม่มีสิทธิ์ทำรายการคำขอ",
+          "แก้/ลบ Audit ไม่ได้"
+        ],
+        "tests": [
+          "TC-RBAC-03"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "choose",
+        "label": "เลือกสิ่งที่ต้องจัดการ",
+        "sub": "บริการ / วันหยุด / ผู้ใช้",
+        "actor": "ผู้ดูแลระบบ",
+        "route": "/admin/*",
+        "state": "เข้าสู่ฟอร์มตั้งค่า",
+        "rules": [
+          "ไม่เพิ่มหรือลบบริการนอก 3 รหัสเดิม",
+          "จัดการเฉพาะขอบเขตที่โจทย์กำหนด"
+        ],
+        "tests": [
+          "TC-RBAC-04"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 160
+      },
+      {
+        "id": "service",
+        "label": "แก้ค่าธรรมเนียมและ SLA",
+        "sub": "จำนวนเต็มในช่วงที่กำหนด",
+        "actor": "ผู้ดูแลระบบ",
+        "route": "PUT /api/admin/services/:id",
+        "state": "ค่าใหม่สำหรับรายการในอนาคต",
+        "rules": [
+          "ค่าธรรมเนียม 0–100,000 บาท; SLA 1–60 วัน",
+          "ยอดที่เข้า PENDING_PAYMENT แล้วไม่เปลี่ยน"
+        ],
+        "tests": [
+          "TC-RBAC-04",
+          "TC-RBAC-06"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 290
+      },
+      {
+        "id": "holiday",
+        "label": "เพิ่มหรือลบวันหยุด",
+        "sub": "ห้ามวันซ้ำ",
+        "actor": "ผู้ดูแลระบบ",
+        "route": "/api/admin/holidays",
+        "state": "ปฏิทินฉบับปัจจุบัน",
+        "rules": [
+          "dueAt ของคำขอชำระแล้วไม่คำนวณใหม่",
+          "ขยาย SLA เมื่อส่งแก้ใช้วันหยุด ณ ตอนส่งแก้"
+        ],
+        "tests": [
+          "TC-RBAC-04",
+          "TC-RBAC-06"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 290
+      },
+      {
+        "id": "users",
+        "label": "เปลี่ยนบทบาทและแผนก",
+        "sub": "ไม่แก้บทบาท/แผนกของตัวเอง",
+        "actor": "ผู้ดูแลระบบ",
+        "route": "PUT /api/admin/users/:username",
+        "state": "ค่าตัวตนที่แก้ไว้",
+        "rules": [
+          "เปลี่ยนของตัวเองตอบ SELF_ROLE_CHANGE",
+          "สิทธิ์ใหม่มีผลเมื่อคนนั้น login ครั้งถัดไป"
+        ],
+        "tests": [
+          "TC-RBAC-04",
+          "TC-RBAC-06"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 290
+      },
+      {
+        "id": "validate",
+        "label": "ตรวจสิทธิ์และค่าก่อนบันทึก",
+        "sub": "ค่าผิดไม่เปลี่ยนข้อมูล",
+        "actor": "ระบบ",
+        "route": "Admin domain service",
+        "state": "สำเร็จ / validation error",
+        "rules": [
+          "ตัวเลขนอกช่วงหรือไม่เป็นจำนวนเต็มได้ 400",
+          "วันหยุดซ้ำ / self-role change ได้ 409"
+        ],
+        "tests": [
+          "TC-RBAC-06"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 440
+      },
+      {
+        "id": "audit",
+        "label": "บันทึกพร้อม ADMIN_CHANGE",
+        "sub": "ค่าก่อน → ค่าหลัง",
+        "actor": "ระบบ",
+        "route": "Audit event: ADMIN_CHANGE",
+        "state": "การเปลี่ยนสำเร็จ atomic",
+        "rules": [
+          "ข้อมูลและ audit สำเร็จหรือ rollback พร้อมกัน",
+          "รูปแบบ detail ต้องตรง CONTRACT"
+        ],
+        "tests": [
+          "TC-AUDIT-01",
+          "TC-RBAC-04"
+        ],
+        "kind": "end",
+        "x": 360,
+        "y": 570
+      },
+      {
+        "id": "nextlogin",
+        "label": "ทดสอบผลเมื่อเข้าสู่ระบบใหม่",
+        "sub": "เฉพาะการแก้บทบาท",
+        "actor": "ผู้ใช้ที่ถูกเปลี่ยนบทบาท",
+        "route": "/login",
+        "state": "session ใหม่รับสิทธิ์ใหม่",
+        "rules": [
+          "session เดิมยังถือ role/dept snapshot",
+          "reset ล้างทุก session และคืน seed"
+        ],
+        "tests": [
+          "TC-RBAC-04"
+        ],
+        "kind": "end",
+        "x": 690,
+        "y": 570
+      }
+    ],
+    "edges": [
+      {
+        "to": "choose",
+        "label": "",
+        "from": "login"
+      },
+      {
+        "to": "service",
+        "label": "",
+        "from": "choose"
+      },
+      {
+        "to": "holiday",
+        "label": "",
+        "from": "choose"
+      },
+      {
+        "to": "users",
+        "label": "",
+        "from": "choose"
+      },
+      {
+        "to": "validate",
+        "label": "",
+        "from": "service"
+      },
+      {
+        "to": "validate",
+        "label": "",
+        "from": "holiday"
+      },
+      {
+        "to": "validate",
+        "label": "",
+        "from": "users"
+      },
+      {
+        "to": "audit",
+        "label": "ผ่าน",
+        "from": "validate"
+      },
+      {
+        "to": "nextlogin",
+        "label": "แก้บทบาท",
+        "from": "audit"
+      }
+    ],
+    "width": 1000,
+    "height": 695
+  },
+  {
+    "id": "verify",
+    "title": "สาธารณะ · ตรวจเอกสารดิจิทัล",
+    "description": "ไม่ต้องเข้าสู่ระบบ ตรวจรหัส ลายเซ็น และอายุเอกสารตามลำดับ โดยไม่เปิดเผยข้อมูลเอกสารที่ลายเซ็นไม่ถูกต้อง",
+    "nodes": [
+      {
+        "id": "code",
+        "label": "เปิดรหัสตรวจสอบ / QR",
+        "sub": "[A-Z0-9]{8}",
+        "actor": "ผู้ตรวจเอกสาร",
+        "route": "/verify/:code",
+        "state": "เริ่มตรวจเอกสาร",
+        "rules": [
+          "รหัสมาจาก PDF/QR ที่ออกโดยระบบ",
+          "ไม่ต้องล็อกอิน"
+        ],
+        "tests": [
+          "TC-DOC-01",
+          "TC-DOC-02"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "exists",
+        "label": "พบเอกสารหรือไม่?",
+        "sub": "ค้นจาก verifyCode",
+        "actor": "ระบบ",
+        "route": "GET /api/verify/:code",
+        "state": "พบ / ไม่พบ",
+        "rules": [
+          "รหัสไม่พบตอบ HTTP 404",
+          "รหัสที่พบตอบ 200 ตามผลตรวจ"
+        ],
+        "tests": [
+          "TC-DOC-02"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 160
+      },
+      {
+        "id": "missing",
+        "label": "ไม่พบเอกสาร",
+        "sub": "NOT_FOUND",
+        "actor": "ระบบ",
+        "route": "/verify/:code",
+        "state": "HTTP 404",
+        "rules": [
+          "แสดง ไม่พบเอกสาร",
+          "ไม่เผยข้อมูลผู้ยื่นหรือข้อมูลเอกสาร"
+        ],
+        "tests": [
+          "TC-DOC-02"
+        ],
+        "kind": "alert",
+        "x": 690,
+        "y": 290
+      },
+      {
+        "id": "signature",
+        "label": "ลายเซ็นถูกต้องหรือไม่?",
+        "sub": "HMAC จำลองตรวจฟิลด์ลำดับคงที่",
+        "actor": "ระบบ",
+        "route": "Document verification",
+        "state": "ตรวจ signature ก่อนอายุ",
+        "rules": [
+          "ฟิลด์ตาม CONTRACT §3 / A-22",
+          "tamper เปลี่ยนข้อมูลแต่ไม่เซ็นใหม่"
+        ],
+        "tests": [
+          "TC-DOC-03"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 290
+      },
+      {
+        "id": "tampered",
+        "label": "ลายเซ็นไม่ถูกต้อง",
+        "sub": "TAMPERED · HTTP 200",
+        "actor": "ระบบ",
+        "route": "/api/verify/:code",
+        "state": "ผล JSON มีเฉพาะ result",
+        "rules": [
+          "ไม่คืนชื่อหรือรายละเอียดที่เชื่อถือไม่ได้",
+          "ทดสอบจาก tamper hook"
+        ],
+        "tests": [
+          "TC-DOC-03"
+        ],
+        "kind": "alert",
+        "x": 690,
+        "y": 420
+      },
+      {
+        "id": "expiry",
+        "label": "ยังอยู่ในอายุเอกสาร?",
+        "sub": "เทียบวันและเวลาไทย",
+        "actor": "ระบบ",
+        "route": "Document validity",
+        "state": "ตรวจ validUntil แบบรวมวันสุดท้าย",
+        "rules": [
+          "SV-01 ออก +89 วัน; SV-02/03 วันครบรอบ−1 วัน",
+          "กรณี 29 ก.พ. ใช้ clamp ก่อนลบวัน"
+        ],
+        "tests": [
+          "TC-DOC-03"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 420
+      },
+      {
+        "id": "expired",
+        "label": "เอกสารหมดอายุ",
+        "sub": "EXPIRED · HTTP 200",
+        "actor": "ระบบ",
+        "route": "/verify/:code",
+        "state": "หมดอายุตั้งแต่เที่ยงคืนวันถัดไป",
+        "rules": [
+          "ยังแสดงข้อมูลที่ผ่าน signature แบบปิดบังชื่อ",
+          "ไม่มีนามสกุลใช้ ชื่อ + \" ***\""
+        ],
+        "tests": [
+          "TC-DOC-03"
+        ],
+        "kind": "alert",
+        "x": 30,
+        "y": 580
+      },
+      {
+        "id": "valid",
+        "label": "เอกสารถูกต้อง",
+        "sub": "VALID · HTTP 200",
+        "actor": "ระบบ",
+        "route": "/verify/:code",
+        "state": "ตรวจผ่านตามตัวจำลอง",
+        "rules": [
+          "ชื่อเต็ม + ตัวแรกนามสกุล +***",
+          "ลายเซ็นจำลองไม่ใช่การรับรอง CA จริง"
+        ],
+        "tests": [
+          "TC-DOC-02",
+          "TC-DOC-03"
+        ],
+        "kind": "end",
+        "x": 360,
+        "y": 580
+      }
+    ],
+    "edges": [
+      {
+        "to": "exists",
+        "label": "",
+        "from": "code"
+      },
+      {
+        "to": "missing",
+        "label": "ไม่พบ",
+        "from": "exists"
+      },
+      {
+        "to": "signature",
+        "label": "พบ",
+        "from": "exists"
+      },
+      {
+        "to": "tampered",
+        "label": "ไม่ตรง",
+        "from": "signature"
+      },
+      {
+        "to": "expiry",
+        "label": "ตรง",
+        "from": "signature"
+      },
+      {
+        "to": "expired",
+        "label": "หมดอายุ",
+        "from": "expiry"
+      },
+      {
+        "to": "valid",
+        "label": "ยังใช้ได้",
+        "from": "expiry"
+      }
+    ],
+    "width": 1000,
+    "height": 705
+  },
+  {
+    "id": "sla",
+    "title": "ระบบ · นาฬิกา SLA และการแจ้งเตือน",
+    "description": "ทุก HTTP request ยกเว้น /api/test/* ประเมินหมดเวลาแก้ไขและระดับเตือนจากนาฬิกาเดียวกัน ไม่รอ cron และไม่แจ้งย้อนหลังทุกระดับที่ข้ามไป",
+    "nodes": [
+      {
+        "id": "clock",
+        "label": "อ่านนาฬิกากลาง",
+        "sub": "เวลาทดสอบแช่แข็งใน SQLite",
+        "actor": "ระบบ",
+        "route": "Custom Node HTTP entry",
+        "state": "now ใน Asia/Bangkok",
+        "rules": [
+          "ทุกกฎธุรกิจอ่าน Clock กลาง",
+          "PUT clock เพียงเปลี่ยนเวลา ไม่ประเมินแจ้งเตือน"
+        ],
+        "tests": [
+          "TC-NFR-03",
+          "TC-NOTI-02"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "lifecycle",
+        "label": "ยกเลิกงานแก้ที่ครบเวลา",
+        "sub": "ก่อนเข้า page / API",
+        "actor": "ระบบ",
+        "route": "ทุก HTTP ยกเว้น /api/test/*",
+        "state": "NEED_FIX ครบเวลา → CANCELLED",
+        "rules": [
+          "รวม health, verify และ asset requests",
+          "timestamp การยกเลิกคือ deadline แม้ request มาช้า"
+        ],
+        "tests": [
+          "TC-WORKFLOW-06"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 160
+      },
+      {
+        "id": "eligible",
+        "label": "งานยังนับ SLA อยู่?",
+        "sub": "ไม่ใช่ NEED_FIX หรือ terminal",
+        "actor": "ระบบ",
+        "route": "SLA service",
+        "state": "normal / near / overdue / paused / closed",
+        "rules": [
+          "normal เหลือวันทำการ ≥2",
+          "near เหลือ ≤1 และ now≤due; overdue now>due"
+        ],
+        "tests": [
+          "TC-SLA-03"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 290
+      },
+      {
+        "id": "skip",
+        "label": "ไม่สร้างแจ้งเตือนใหม่",
+        "sub": "paused / closed",
+        "actor": "ระบบ",
+        "route": "Notification evaluation",
+        "state": "ข้ามคำขอนี้",
+        "rules": [
+          "NEED_FIX หยุดเตือน",
+          "COMPLETED/REJECTED/CANCELLED ไม่แจ้งใหม่"
+        ],
+        "tests": [
+          "TC-SLA-03",
+          "TC-NOTI-02"
+        ],
+        "kind": "end",
+        "x": 30,
+        "y": 420
+      },
+      {
+        "id": "recipient",
+        "label": "เลือกผู้รับตามขั้นปัจจุบัน",
+        "sub": "ผู้ถือ / แผนก / head / issuer",
+        "actor": "ระบบ",
+        "route": "Notification recipient rules",
+        "state": "ผู้รับ near หรือ overdue",
+        "rules": [
+          "ไม่มีผู้ถือแจ้งทั้งแผนก; รออนุมัติแจ้ง head",
+          "APPROVED แจ้ง issuer; overdue เพิ่ม head โดยไม่ซ้ำคน"
+        ],
+        "tests": [
+          "TC-NOTI-01",
+          "TC-NOTI-02"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 420
+      },
+      {
+        "id": "dedupe",
+        "label": "เคยแจ้งระดับนี้แก่คนนี้?",
+        "sub": "unique(case,recipient,level)",
+        "actor": "ระบบ",
+        "route": "SQLite notification inbox",
+        "state": "สร้างเฉพาะที่ยังไม่เคยมี",
+        "rules": [
+          "ข้ามจาก normal ไป overdue ไม่สร้าง near ย้อนหลัง",
+          "เปิดหน้าซ้ำไม่เพิ่มแถวซ้ำ"
+        ],
+        "tests": [
+          "TC-NOTI-02"
+        ],
+        "kind": "decision",
+        "x": 690,
+        "y": 550
+      },
+      {
+        "id": "inbox",
+        "label": "แสดงกระดิ่งและรายการ",
+        "sub": "ผู้ใช้เห็นเฉพาะของตน",
+        "actor": "เจ้าหน้าที่ / หัวหน้า",
+        "route": "/notifications",
+        "state": "แจ้งเตือนถูกต้องครั้งเดียว",
+        "rules": [
+          "seed หลัง reset ยังว่าง จนมี request ปกติ",
+          "SLA ยังเดินใน APPROVED จนออกเอกสาร"
+        ],
+        "tests": [
+          "TC-NOTI-01",
+          "TC-NOTI-02"
+        ],
+        "kind": "end",
+        "x": 360,
+        "y": 550
+      }
+    ],
+    "edges": [
+      {
+        "to": "lifecycle",
+        "label": "",
+        "from": "clock"
+      },
+      {
+        "to": "eligible",
+        "label": "",
+        "from": "lifecycle"
+      },
+      {
+        "to": "skip",
+        "label": "paused / closed",
+        "from": "eligible"
+      },
+      {
+        "to": "recipient",
+        "label": "near / overdue",
+        "from": "eligible"
+      },
+      {
+        "to": "dedupe",
+        "label": "",
+        "from": "recipient"
+      },
+      {
+        "to": "inbox",
+        "label": "ยังไม่เคยแจ้ง",
+        "from": "dedupe"
+      }
+    ],
+    "width": 1000,
+    "height": 675
+  },
+  {
+    "id": "testing",
+    "title": "ทีมพัฒนา · ตรวจรับและพิสูจน์การจับบั๊ก",
+    "description": "แผนตรวจรับ 51 IDs ประกอบด้วย 50 browser/API cases และ 1 database/filesystem inspection ทุก TC เริ่ม reset แล้วเข้าสู่ระบบใหม่",
+    "nodes": [
+      {
+        "id": "prepare",
+        "label": "เตรียมโหมดและข้อมูล",
+        "sub": "TEST_MODE=1 · BUG_MODE ว่าง",
+        "actor": "ทีมพัฒนา",
+        "route": "Acceptance campaign",
+        "state": "พร้อมทดสอบ baseline",
+        "rules": [
+          "ใช้ DB_PATH และนาฬิกาทดสอบร่วม",
+          "workers=1; concurrency เฉพาะใน race TC"
+        ],
+        "tests": [
+          "TC-NFR-03"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 30
+      },
+      {
+        "id": "baseline",
+        "label": "รัน baseline รอบแรก",
+        "sub": "51 acceptance outcomes ต้องผ่าน",
+        "actor": "ทีมพัฒนา",
+        "route": "Playwright runner + inspector",
+        "state": "baseline-1 ผ่านทั้งหมด",
+        "rules": [
+          "NFR-04 เรียก standalone inspector ผ่าน wrapper",
+          "ไม่ใช้ browser assertions อ้างการเข้ารหัส at rest"
+        ],
+        "tests": [
+          "TC-NFR-04"
+        ],
+        "kind": "",
+        "x": 360,
+        "y": 30
+      },
+      {
+        "id": "repeat",
+        "label": "รันรอบสอง server เดิม",
+        "sub": "ไม่ restart ระหว่าง baseline",
+        "actor": "ทีมพัฒนา",
+        "route": "baseline-2",
+        "state": "ผลเดิมครบ 51 IDs",
+        "rules": [
+          "reset ล้าง session ทุกคนก่อนทุก TC",
+          "รวม fresh login เมื่อ reset กลาง TC"
+        ],
+        "tests": [
+          "TC-NFR-03"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 30
+      },
+      {
+        "id": "single",
+        "label": "เปิด B01–B12 ทีละตัว",
+        "sub": "restart server ต่อโหมด",
+        "actor": "ทีมพัฒนา",
+        "route": "Full unchanged acceptance suite",
+        "state": "12 single-mutant runs",
+        "rules": [
+          "ห้ามแก้ seed หรือ expected values เพื่อให้ผ่าน",
+          "บั๊กเปลี่ยนตรรกะฝั่งเซิร์ฟเวอร์เฉพาะจุด"
+        ],
+        "tests": [
+          "TC-FEE-01",
+          "TC-QUEUE-02",
+          "TC-RBAC-02"
+        ],
+        "kind": "",
+        "x": 690,
+        "y": 180
+      },
+      {
+        "id": "compare",
+        "label": "เปรียบเทียบชุด TC ที่ล้ม",
+        "sub": "required ⊆ observed ⊆ required∪allowed",
+        "actor": "ทีมพัฒนา",
+        "route": "BUGS.md failure matrix",
+        "state": "ทุก mandatory failure ต้องเกิด",
+        "rules": [
+          "timeout / element หาย ไม่ใช่หลักฐานค่าผิด",
+          "บันทึก assertion expected เทียบ actual"
+        ],
+        "tests": [
+          "TC-SLA-01",
+          "TC-PDPA-02",
+          "TC-AUDIT-01"
+        ],
+        "kind": "decision",
+        "x": 360,
+        "y": 180
+      },
+      {
+        "id": "combined",
+        "label": "ทดสอบโหมดรวมสองชุด",
+        "sub": "B03,B07 และ B01,B05,B09",
+        "actor": "ทีมพัฒนา",
+        "route": "Combined mutation runs",
+        "state": "ผลล้มเป็น union ตามกติกา",
+        "rules": [
+          "แยก mandatory กับ allowed additional failures",
+          "test suite และ assertions เดิม"
+        ],
+        "tests": [
+          "TC-RBAC-02",
+          "TC-PAY-01",
+          "TC-PDPA-02"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 180
+      },
+      {
+        "id": "clean",
+        "label": "ปิดบั๊กและตรวจ hooks ปิด",
+        "sub": "กลับ baseline แล้ว TEST_MODE unset",
+        "actor": "ทีมพัฒนา",
+        "route": "Final baseline / hooks-disabled",
+        "state": "51 ผ่าน + test endpoints 404",
+        "rules": [
+          "health และ verify ยังใช้ได้เมื่อปิด hooks",
+          "ไม่อ้าง 99.5% availability จาก local health"
+        ],
+        "tests": [
+          "TC-NFR-03"
+        ],
+        "kind": "",
+        "x": 30,
+        "y": 330
+      },
+      {
+        "id": "evidence",
+        "label": "ส่งรายงานและ triage",
+        "sub": "JSON / HTML / trace / inspection",
+        "actor": "ทีมพัฒนา",
+        "route": "web/evidence/ (ตามแผน)",
+        "state": "หลักฐานตรวจรับครบ",
+        "rules": [
+          "ระบุ runtime, mode และค่าที่ตรวจจริง",
+          "เอกสารปัจจุบันยังไม่ใช่ผลรันแอป"
+        ],
+        "tests": [
+          "TC-NFR-01",
+          "TC-NFR-02",
+          "TC-NFR-03",
+          "TC-NFR-04"
+        ],
+        "kind": "end",
+        "x": 360,
+        "y": 330
+      }
+    ],
+    "edges": [
+      {
+        "to": "baseline",
+        "label": "",
+        "from": "prepare"
+      },
+      {
+        "to": "repeat",
+        "label": "",
+        "from": "baseline"
+      },
+      {
+        "to": "single",
+        "label": "",
+        "from": "repeat"
+      },
+      {
+        "to": "compare",
+        "label": "",
+        "from": "single"
+      },
+      {
+        "to": "combined",
+        "label": "",
+        "from": "compare"
+      },
+      {
+        "to": "clean",
+        "label": "",
+        "from": "combined"
+      },
+      {
+        "to": "evidence",
+        "label": "",
+        "from": "clean"
+      }
+    ],
+    "width": 1000,
+    "height": 455
+  }
+]

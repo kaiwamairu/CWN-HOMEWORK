@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-16",
+  "status": "pass",
+  "selectedVariant": "C",
+  "sceneRevision": 3,
+  "scope": "Documentation bundle with selected C scene and all 15 wireframes. No canonical application acceptance tests run.",
+  "content": {
+    "full_documents": 26,
+    "inline_documents": 16,
+    "flows": 10,
+    "interactive_steps": 84,
+    "planned_tasks": 78
+  },
+  "edition_checks": [
+    {
+      "file": "index.html",
+      "documents": 26,
+      "selected": "C",
+      "css_tokens": 64,
+      "fade_tokens_present": true
+    },
+    {
+      "file": "preview.html",
+      "documents": 16,
+      "selected": "C",
+      "css_tokens": 64,
+      "fade_tokens_present": true
+    }
+  ],
+  "previous_guide_browser_assertions": {
+    "date": "2026-11-16",
+    "count": 11,
+    "scope": "Selected C guide content checks before the decorative scene revision."
+  },
+  "current_checks": {
+    "scene_path": "design-assets/civic-thai-suburban-wide.jpg",
+    "canonical_preview_matches_new_art": true,
+    "original_sources_unchanged": true,
+    "wireframe_pages": 15,
+    "wireframe_prototype_assertions": 46,
+    "wireframe_responsive_renderings": 45
+  }
+}

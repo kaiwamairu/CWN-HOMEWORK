@@ -1,0 +1,20 @@
+{
+  "duration": 5.041667,
+  "error": null,
+  "height": 1072,
+  "imageWidth": 1122,
+  "readyState": 4,
+  "sampledTimes": [
+    0.001,
+    2.5,
+    5.021667
+  ],
+  "width": 848,
+  "people_stationary": false,
+  "seamless_loop": false,
+  "summary_th": "ผลตรวจ: กรอบภาพดูคงที่ แต่คนยังเดินขึ้นบันไดและไม่กลับท่าเริ่มต้น ผืนธงท้ายคลิปก็ต่างจากเฟรมแรก จึงยังไม่ผ่านเงื่อนไขคนนิ่งและ loop สนิท",
+  "summary_en": "Camera framing appears stable in the sampled frames. The man and woman still walk up the steps toward the entrance and do not return to their initial poses or positions. The final flag shape also differs from the first frame. This is not a seamless loop and does not meet the stationary-people requirement, despite sending the user's latest prompt verbatim.",
+  "exact_prompt_verified": true,
+  "inspection_completed": true,
+  "raw_mp4_modified": false
+}

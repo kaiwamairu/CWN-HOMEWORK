@@ -1,0 +1,126 @@
+{
+  "source_board": "https://drawdy.io/?canvas=6ae4aaf93fb8ba886fccb04c",
+  "assets": {
+    "1A": {
+      "scene": "1A",
+      "title": "หน้าเทศบาล",
+      "video": "1A-municipal-office.mp4",
+      "poster": "1A-municipal-office.png",
+      "sha256": "8a082e9ac8bff1e6204190ea2ab31fa988e406feae6d01a96f74071f65922078",
+      "poster_sha256": "6447bf6401afd9d35b7232342136db317e963259cb5ccf9ca4fdffe02e438311",
+      "user_approved": true,
+      "duration_seconds": 5.041667,
+      "width": 848,
+      "height": 1072
+    },
+    "2A": {
+      "scene": "2A",
+      "title": "ประชาชนกรอกแบบฟอร์ม",
+      "video": "2A-citizen-writing.mp4",
+      "poster": "2A-citizen-writing.png",
+      "sha256": "b16fc05c6754631b4c2291e2a2a440bbf02bd02758a5eece42086632df7d6a62",
+      "poster_sha256": "8a2dcc87ad9264a07da7a55884c0309b6b033db03bc65115fb5771c7904594cf",
+      "user_approved": true,
+      "duration_seconds": 5.041667,
+      "width": 848,
+      "height": 1072
+    },
+    "3A": {
+      "scene": "3A",
+      "title": "เจ้าหน้าที่ตรวจเอกสาร",
+      "video": "3A-officer-review.mp4",
+      "poster": "3A-officer-review.png",
+      "sha256": "ccebfb2921d8957849f29d8af0d87bccfd2f89cfa5fe19798f51e28833ae8b30",
+      "poster_sha256": "c58a2604c6b5ec6a2adffcd189aac0fe20964862fd6da19d76459b03b9ca9e02",
+      "user_approved": true,
+      "duration_seconds": 5.041667,
+      "width": 848,
+      "height": 1072
+    }
+  },
+  "placements": {
+    "citizen_home": "1A",
+    "citizen_login": "LOGIN-CITIZEN",
+    "staff_login": "LOGIN-STAFF",
+    "registration": "1A",
+    "document_verification": "3A"
+  },
+  "raw_provider_bytes_preserved": true,
+  "new_generation_started": true,
+  "login_illustrations": {
+    "LOGIN-CITIZEN": {
+      "scene": "LOGIN-CITIZEN",
+      "title": "ประชาชนมองโทรศัพท์ โดยหันจอเข้าหาตัว",
+      "kind": "video",
+      "poster": "auth-citizen-v2.png",
+      "poster_sha256": "9b05b3650cba98a92df0b4c2f454867ce304f3f003c9e9ac38ba68ee96456402",
+      "width": 1122,
+      "height": 1402,
+      "generation_method": "built-in ChatGPT imagegen",
+      "prompt": "login-illustrations-prompts.md#citizen-revision-2",
+      "user_approved": true,
+      "review_status": "approved by user in chat; recorded 2026-11-18",
+      "revision": 2,
+      "video": "auth-citizen-login-v1.mp4",
+      "sha256": "408b53571c9f4b94f07c48381be29e0cd863b8792815e8a6b9cf8aed9dbf594f",
+      "video_model": "x-ai/grok-imagine-video-1.5-lite",
+      "video_prompt": "auth-citizen-login-v1-prompt.txt",
+      "video_trial": "../../design-examples/openrouter-grok-citizen-login-v1-20261117/index.html",
+      "source_user_approved_for_video": true,
+      "video_user_approved": true,
+      "requested_duration_seconds": 5,
+      "requested_resolution": "720p",
+      "video_generation_cost_usd": 0.16,
+      "video_width": 848,
+      "video_height": 1072,
+      "duration_seconds": 5.041667,
+      "approval": {
+        "recorded_on": "2026-11-18",
+        "evidence": "ตรวจแล้วครับใช้ได้ ที่นี้ทบทวนงานก่อน ว่าต่อไปต้องทำอะไร",
+        "record": "../../design-examples/openrouter-grok-citizen-login-v1-20261117/approval.json"
+      }
+    },
+    "LOGIN-STAFF": {
+      "scene": "LOGIN-STAFF",
+      "title": "เจ้าหน้าที่เข้าสู่ระบบที่คอมพิวเตอร์เทศบาล",
+      "kind": "video",
+      "poster": "auth-staff-v1.png",
+      "poster_sha256": "6dbdbe77d3334b1b5538966229e07ff86971fb6892fa0203fd4474f72cd4774f",
+      "width": 1122,
+      "height": 1402,
+      "generation_method": "built-in ChatGPT imagegen",
+      "prompt": "login-illustrations-prompts.md",
+      "user_approved": true,
+      "review_status": "approved by user in chat; recorded 2026-11-18",
+      "video": "auth-staff-login-v1.mp4",
+      "sha256": "671ee2885338c36d0fc6e012be5fa839cb6cd14b5294fbf5cc1b244be2b697eb",
+      "video_model": "x-ai/grok-imagine-video-1.5-lite",
+      "video_prompt": "auth-staff-login-v1-prompt.txt",
+      "video_trial": "../../design-examples/openrouter-grok-staff-login-v1-20261116/index.html",
+      "source_user_approved_for_video": true,
+      "video_user_approved": true,
+      "requested_duration_seconds": 5,
+      "requested_resolution": "720p",
+      "video_generation_cost_usd": 0.16,
+      "video_width": 848,
+      "video_height": 1072,
+      "duration_seconds": 5.041667,
+      "approval": {
+        "recorded_on": "2026-11-18",
+        "evidence": "ตรวจแล้วครับใช้ได้ ที่นี้ทบทวนงานก่อน ว่าต่อไปต้องทำอะไร",
+        "record": "../../design-examples/openrouter-grok-staff-login-v1-20261116/approval.json"
+      }
+    }
+  },
+  "new_video_generation_started": true,
+  "approval_recorded_on": "2026-11-18",
+  "active_scene_ids": [
+    "1A",
+    "3A",
+    "LOGIN-CITIZEN",
+    "LOGIN-STAFF"
+  ],
+  "retained_unused_scene_ids": [
+    "2A"
+  ]
+}

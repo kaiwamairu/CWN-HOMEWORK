@@ -1,0 +1,23 @@
+{
+  "duration": 5.041667,
+  "error": null,
+  "height": 1072,
+  "imageWidth": 1122,
+  "readyState": 4,
+  "sampledTimes": [
+    0.001,
+    2.5,
+    5.021667
+  ],
+  "width": 848,
+  "source_is_corrected_pickup_2A_image": true,
+  "foreground_writing_motion_observed": true,
+  "camera_framing_appears_stable": true,
+  "only_requested_regions_move": false,
+  "seamless_loop": false,
+  "summary_th": "ผลตรวจ: มือและปากกาขยับเขียนแบบฟอร์ม กรอบภาพดูคงที่ รถกระบะยังอยู่ในฉาก แต่เจ้าหน้าที่ด้านหลังขยับและยกเอกสารด้วย ตำแหน่งมือกับท่าฉากหลังท้ายคลิปไม่ตรงเฟรมแรก จึงยังมีรอยต่อเวลาเล่นวน",
+  "summary_en": "The foreground writing hand and pen move over the form, and camera framing appears stable at sampled times. The corrected pickup remains in the exterior scene. Additional motion occurs in the background: the officer moves and lifts a document, and the seated waiting person shifts. The final foreground hand position and background poses differ from the first frame, so the result is not a seamless loop.",
+  "exact_prompt_verified": true,
+  "inspection_completed": true,
+  "raw_mp4_modified": false
+}

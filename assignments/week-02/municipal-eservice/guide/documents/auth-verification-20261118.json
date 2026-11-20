@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-18",
+  "scope": "T014-T020",
+  "linear": "RYU-254",
+  "mainProject": "C:\\Users\\PhatthadonChangate\\Project_Main\\Teaching_CWN2026\\week2_student",
+  "unitIntegration": {
+    "passed": 118,
+    "failed": 0
+  },
+  "canonicalAuth": {
+    "passed": 4,
+    "skipped": 0,
+    "sourceIds": [
+      "TC-AUTH-01",
+      "TC-AUTH-02",
+      "TC-AUTH-03",
+      "TC-AUTH-04"
+    ],
+    "startedAt": "2026-11-18T07:53:58.110Z"
+  },
+  "supplementalUi": {
+    "passed": 15,
+    "failed": 0,
+    "skipped": 0,
+    "startedAt": "2026-11-18T07:54:00.111Z",
+    "screenshots": 15,
+    "layoutReports": 12,
+    "measuredTargets": 105,
+    "minimumTargetWidth": 44,
+    "minimumTargetHeight": 44,
+    "viewports": [
+      375,
+      768,
+      1280
+    ],
+    "pageOverflow": false
+  },
+  "automatedAccessibility": {
+    "views": 4,
+    "detectedViolations": 0,
+    "incompleteContrastNodes": 108,
+    "fullWcagClaim": false
+  },
+  "httpHtmlRscMatrix": {
+    "passed": 199,
+    "failed": 0,
+    "fullCanonicalRbac03": false
+  },
+  "canonicalFullSuite": {
+    "total": 51,
+    "implementedSpecs": 5,
+    "authPassed": 4,
+    "rbac03PendingFutureServices": true,
+    "missingSpecs": 46,
+    "fullSuiteExecuted": false,
+    "mutationCampaignExecuted": false
+  },
+  "assets": {
+    "tokens": 64,
+    "approvedMediaFiles": 10,
+    "greetingFadeTranslateY": "12px",
+    "sourceByteParity": true
+  },
+  "mainVerifiedCommands": [
+    "typecheck",
+    "verify:assets",
+    "test:unit",
+    "build",
+    "test:auth",
+    "test:ui-auth"
+  ],
+  "sourceDocumentsUnchanged": 10
+}

@@ -1,0 +1,46 @@
+{
+  "name": "municipal-eservice",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "tsx server.ts --dev",
+    "build": "next build && tsup server.ts --format esm --platform node --target node24 --out-dir dist --external next --external better-sqlite3 --external sharp",
+    "start": "node dist/server.js",
+    "setup:local": "tsx scripts/setup-local.ts",
+    "db:seed": "tsx scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "tsx --test --test-concurrency=1 tests/unit/*.test.ts tests/integration/*.test.ts",
+    "test:acceptance": "tsx scripts/check-acceptance.ts && playwright test",
+    "test:auth": "playwright test --grep TC-AUTH-",
+    "test:ui-auth": "playwright test --config playwright.auth-ui.config.ts",
+    "test:nfr04": "tsx scripts/inspect-at-rest.ts",
+    "accept:campaign": "tsx scripts/run-campaign.ts",
+    "verify:assets": "tsx scripts/verify-assets.ts"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "better-sqlite3": "13.2.0",
+    "pdf-lib": "1.17.1",
+    "exceljs": "4.4.0",
+    "qrcode": "1.5.4",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "tsx": "4.23.15",
+    "tsup": "8.5.1",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/better-sqlite3": "7.6.13",
+    "@types/qrcode": "1.5.6",
+    "@playwright/test": "1.65.1",
+    "@axe-core/playwright": "4.14.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "gen-vid-1794837781-RtP1weEb3eqgYBaK1G9D",
+  "generation_id": "gen-vid-1794837781-RtP1weEb3eqgYBaK1G9D",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794837781-RtP1weEb3eqgYBaK1G9D",
+  "status": "completed",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "expires_at": 1794924209
+}

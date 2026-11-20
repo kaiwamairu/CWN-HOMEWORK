@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "key": "login",
+    "path": "/login",
+    "title": "เข้าสู่ระบบ",
+    "role": "guest",
+    "family": "Entry",
+    "illustration": "building"
+  },
+  {
+    "id": 2,
+    "key": "register",
+    "path": "/register",
+    "title": "ลงทะเบียน",
+    "role": "citizen",
+    "family": "Entry",
+    "illustration": "folder"
+  },
+  {
+    "id": 3,
+    "key": "verify",
+    "path": "/verify/:code",
+    "title": "ตรวจสอบเอกสาร",
+    "role": "guest",
+    "family": "Entry",
+    "illustration": "certificate"
+  },
+  {
+    "id": 4,
+    "key": "citizen",
+    "path": "/citizen",
+    "title": "คำขอของฉัน",
+    "role": "citizen",
+    "family": "Citizen",
+    "illustration": "building"
+  },
+  {
+    "id": 5,
+    "key": "wizard",
+    "path": "/citizen/new/:service",
+    "title": "ยื่นคำขอ",
+    "role": "citizen",
+    "family": "Citizen",
+    "illustration": "certificate"
+  },
+  {
+    "id": 6,
+    "key": "citizen-case",
+    "path": "/citizen/cases/:caseNo",
+    "title": "รายละเอียดคำขอ",
+    "role": "citizen",
+    "family": "Citizen",
+    "illustration": "folder"
+  },
+  {
+    "id": 7,
+    "key": "queue",
+    "path": "/officer/queue",
+    "title": "คิวงาน",
+    "role": "officer",
+    "family": "Backoffice",
+    "illustration": "counter"
+  },
+  {
+    "id": 8,
+    "key": "officer-case",
+    "path": "/officer/cases/:caseNo",
+    "title": "ตรวจคำขอ",
+    "role": "officer",
+    "family": "Backoffice",
+    "illustration": "folder"
+  },
+  {
+    "id": 9,
+    "key": "approvals",
+    "path": "/head/approvals",
+    "title": "รออนุมัติ",
+    "role": "head",
+    "family": "Backoffice",
+    "illustration": "stamp"
+  },
+  {
+    "id": 10,
+    "key": "dashboard",
+    "path": "/dashboard",
+    "title": "ภาพรวมบริการ",
+    "role": "executive",
+    "family": "Dashboard",
+    "illustration": "building"
+  },
+  {
+    "id": 11,
+    "key": "audit",
+    "path": "/audit",
+    "title": "ประวัติการดำเนินการ",
+    "role": "auditor",
+    "family": "Backoffice",
+    "illustration": "folder"
+  },
+  {
+    "id": 12,
+    "key": "services",
+    "path": "/admin/services",
+    "title": "บริการและ SLA",
+    "role": "admin",
+    "family": "Backoffice",
+    "illustration": "coins"
+  },
+  {
+    "id": 13,
+    "key": "holidays",
+    "path": "/admin/holidays",
+    "title": "วันหยุด",
+    "role": "admin",
+    "family": "Backoffice",
+    "illustration": "building"
+  },
+  {
+    "id": 14,
+    "key": "users",
+    "path": "/admin/users",
+    "title": "ผู้ใช้และบทบาท",
+    "role": "admin",
+    "family": "Backoffice",
+    "illustration": "counter"
+  },
+  {
+    "id": 15,
+    "key": "notifications",
+    "path": "/notifications",
+    "title": "การแจ้งเตือน",
+    "role": "officer",
+    "family": "Backoffice",
+    "illustration": "folder"
+  }
+]

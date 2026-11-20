@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-16T14:25:37.580856+00:00",
+  "model": "x-ai/grok-imagine-video-1.5-lite",
+  "source_sha256": "c58a2604c6b5ec6a2adffcd189aac0fe20964862fd6da19d76459b03b9ca9e02",
+  "estimated_cost_usd": 0.16,
+  "automatic_retries": 0,
+  "id": "gen-vid-1794839137-iXcPhZxUYwQFaTa1PaPP",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794839137-iXcPhZxUYwQFaTa1PaPP",
+  "submitted_at": "2026-11-16T14:25:41.504945+00:00",
+  "submit_seconds": 3.92,
+  "generation_id": "gen-vid-1794839137-iXcPhZxUYwQFaTa1PaPP",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "expires_at": 1794925563,
+  "updated_at": "2026-11-16T14:27:23.364558+00:00",
+  "output": "officer-review-3A-grok-v1.mp4",
+  "verification": {
+    "file": "officer-review-3A-grok-v1.mp4",
+    "raw_provider_bytes_preserved": true,
+    "bytes": 3803846,
+    "sha256": "ccebfb2921d8957849f29d8af0d87bccfd2f89cfa5fe19798f51e28833ae8b30",
+    "content_type": "video/mp4",
+    "usage": {
+      "cost": 0.16,
+      "is_byok": false
+    },
+    "downloaded_at": "2026-11-16T14:27:26.100440+00:00"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-16",
+  "status": "pass",
+  "selectedVariant": "C",
+  "sceneRevision": 3,
+  "scope": "Panorama extension and localized greeting gradient; no municipal application acceptance suite run.",
+  "browser_checks": [
+    {
+      "name": "hero embeds the extended-left artwork",
+      "pass": true
+    },
+    {
+      "name": "story card uses the same full panorama",
+      "pass": true
+    },
+    {
+      "name": "hero artwork has no global text fade",
+      "pass": true
+    },
+    {
+      "name": "greeting has local linear gradient",
+      "pass": true
+    },
+    {
+      "name": "greeting fade has soft vertical mask",
+      "pass": true
+    },
+    {
+      "name": "fade cannot intercept pointer controls",
+      "pass": true
+    },
+    {
+      "name": "fade remains behind text",
+      "pass": true
+    },
+    {
+      "name": "fade height is local to text area",
+      "pass": true
+    },
+    {
+      "name": "fade width is smaller than wide hero",
+      "pass": true
+    },
+    {
+      "name": "new panorama decodes",
+      "pass": true
+    },
+    {
+      "name": "C remains selected",
+      "pass": true
+    },
+    {
+      "name": "local fade remains static on pointer movement",
+      "pass": true
+    },
+    {
+      "name": "service card remains clickable",
+      "pass": true
+    },
+    {
+      "name": "no external network images",
+      "pass": true
+    }
+  ],
+  "responsive": [
+    {
+      "artVisible": true,
+      "noPageOverflow": true,
+      "panelsFit": true,
+      "screen": "citizen",
+      "width": 375
+    },
+    {
+      "artVisible": true,
+      "noPageOverflow": true,
+      "panelsFit": true,
+      "screen": "staff",
+      "width": 375
+    },
+    {
+      "artVisible": true,
+      "noPageOverflow": true,
+      "panelsFit": true,
+      "screen": "citizen",
+      "width": 768
+    },
+    {
+      "artVisible": true,
+      "noPageOverflow": true,
+      "panelsFit": true,
+      "screen": "staff",
+      "width": 768
+    },
+    {
+      "artVisible": true,
+      "noPageOverflow": true,
+      "panelsFit": true,
+      "screen": "citizen",
+      "width": 1280
+    },
+    {
+      "artVisible": true,
+      "noPageOverflow": true,
+      "panelsFit": true,
+      "screen": "staff",
+      "width": 1280
+    }
+  ],
+  "fade": {
+    "background": "linear-gradient(90deg, rgba(247, 241, 227, 0.96) 0%, rgba(247, 241, 227, 0.9) 45%, rgba(247, 241, 227, 0.56) 72%, rgba(247, 241, 227, 0) 100%)",
+    "height": "146.445px",
+    "mask": "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 14%, rgb(0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%)",
+    "width": "359.633px"
+  },
+  "visual_review": "Extended-left artwork and desktop/mobile UI screenshots inspected. Neighborhood continues to left edge; cream fade is localized behind greeting, with full artwork visible elsewhere.",
+  "package_checks": {
+    "json_css_parity": true,
+    "previous_color_material_tokens_unchanged": true,
+    "only_two_greeting_fade_tokens_added": true,
+    "interaction_script_unchanged": true,
+    "service_illustrations_unchanged": true,
+    "embedded_image_matches_current_jpeg": true,
+    "ten_source_documents_unchanged": true
+  },
+  "previous_interaction_verification": {
+    "date": "2026-11-16",
+    "checks": 30,
+    "preview_sha256": "e8da18d08c145a179bf5bdef2687ee5737b34c64077e7ccac411715cf17cfa5b",
+    "scope": "Selection run before the decorative scene update; not rerun as a full control suite in this run."
+  },
+  "artifacts": {
+    "design-preview.html": "ebc398b487ef02571037d211b5bf9f4519cf20b63dcf3a8c38aabbe3f6c42907",
+    "design-tokens.json": "8865b6f7efef43584cebc87e047da1625a569160d908fd13e0ccfd9ee280c3ff",
+    "design-tokens.css": "b85a2ca214f2df6ee60c913a62388f9fbebb4de6d8bc7ad011a64153449e9693",
+    "design-assets.json": "b8f63bd896cce5841809252b9be90d30845d1d68b7f4d847cdc9469027dc6a54",
+    "design-assets/civic-thai-suburban-wide.jpg": "329bf2c2884f7ebf0ad87ec7d173feef73a640c66b9eabc271ead9464a86ff3e",
+    "design-assets/civic-illustrations.svg": "d217138ab09e5cb240ac0f5b8171c827ce2b4e55b976f668a8689b897344d005"
+  },
+  "limits": [
+    "Compact preview scale is not the production typography/control scale.",
+    "No application build, full accessibility audit or canonical acceptance result is claimed."
+  ]
+}

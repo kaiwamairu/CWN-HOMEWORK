@@ -1,0 +1,45 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+**/.ssh/
+**/auth.json
+**/.credentials.json
+**/.claude/settings.local.json
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Dependencies, builds and test runtime
+**/node_modules/
+**/.next/
+**/dist/
+**/var/
+**/evidence/
+**/playwright-report/
+**/test-results/
+**/__pycache__/
+**/.venv/
+**/.pytest_cache/
+*.pyc
+*.tsbuildinfo
+*.log
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db
+**/guide.zip
+
+# Per-checkout Spec Kit state
+**/.specify/feature.json
+**/.specify/extensions/*/local-config.yml
+**/.specify/integrations/packages/
+**/.specify/integrations/packages.json
+
+# OS/editor local state
+.DS_Store
+Thumbs.db
+*.swp

@@ -1,0 +1,197 @@
+{
+  "date": "2026-11-16",
+  "status": "pass",
+  "scope": "Static HTML material preview and design documents only; no application acceptance tests run.",
+  "selected": "B / Static Liquid Glass",
+  "token_count": 51,
+  "checks": [
+    {
+      "name": "JSON and generated CSS have identical keys and values",
+      "pass": true
+    },
+    {
+      "name": "preview embeds generated tokens exactly",
+      "pass": true
+    },
+    {
+      "name": "all sixteen route rows mapped to fifteen page patterns plus redirect",
+      "pass": true
+    },
+    {
+      "name": "no pointer tracking or cursor-position CSS variables",
+      "pass": true
+    },
+    {
+      "name": "B is default visible",
+      "pass": true
+    },
+    {
+      "name": "selected metadata",
+      "pass": true
+    },
+    {
+      "name": "three services",
+      "pass": true
+    },
+    {
+      "name": "three recent cases",
+      "pass": true
+    },
+    {
+      "name": "pointer movement leaves material fixed",
+      "pass": true
+    },
+    {
+      "name": "fixed highlight origin",
+      "pass": true
+    },
+    {
+      "name": "shadow present",
+      "pass": true
+    },
+    {
+      "name": "no transform",
+      "pass": true
+    },
+    {
+      "name": "service dialog opens",
+      "pass": true
+    },
+    {
+      "name": "dialog closes",
+      "pass": true
+    },
+    {
+      "name": "case dialog opens",
+      "pass": true
+    },
+    {
+      "name": "A comparison retained",
+      "pass": true
+    },
+    {
+      "name": "staff has five sample rows",
+      "pass": true
+    },
+    {
+      "name": "staff department total 17",
+      "pass": true
+    },
+    {
+      "name": "staff pointer leaves material fixed",
+      "pass": true
+    },
+    {
+      "name": "staff detail opens",
+      "pass": true
+    },
+    {
+      "name": "empty search feedback",
+      "pass": true
+    },
+    {
+      "name": "search reset restores five rows",
+      "pass": true
+    },
+    {
+      "name": "all filter restores rows",
+      "pass": true
+    },
+    {
+      "name": "no external resources",
+      "pass": true
+    },
+    {
+      "name": "search returns exact case ID",
+      "pass": true
+    },
+    {
+      "name": "mine filter selected",
+      "pass": true
+    },
+    {
+      "name": "mine filter three sample rows",
+      "pass": true
+    },
+    {
+      "name": "unclaimed filter one sample row",
+      "pass": true
+    },
+    {
+      "name": "all filter restores five",
+      "pass": true
+    },
+    {
+      "name": "hover explicitly retains static shadow",
+      "pass": true
+    },
+    {
+      "name": "no reactive pointer code",
+      "pass": true
+    },
+    {
+      "name": "fallback declared",
+      "pass": true
+    },
+    {
+      "name": "reduced motion declared",
+      "pass": true
+    }
+  ],
+  "responsive": [
+    {
+      "mockFits": true,
+      "noPageOverflow": true,
+      "screen": "citizen",
+      "visible": true,
+      "width": 375
+    },
+    {
+      "mockFits": true,
+      "noPageOverflow": true,
+      "screen": "staff",
+      "visible": true,
+      "width": 375
+    },
+    {
+      "mockFits": true,
+      "noPageOverflow": true,
+      "screen": "citizen",
+      "visible": true,
+      "width": 768
+    },
+    {
+      "mockFits": true,
+      "noPageOverflow": true,
+      "screen": "staff",
+      "visible": true,
+      "width": 768
+    },
+    {
+      "mockFits": true,
+      "noPageOverflow": true,
+      "screen": "citizen",
+      "visible": true,
+      "width": 1280
+    },
+    {
+      "mockFits": true,
+      "noPageOverflow": true,
+      "screen": "staff",
+      "visible": true,
+      "width": 1280
+    }
+  ],
+  "limits": [
+    "Reduced-motion and no-backdrop-filter fallbacks checked in CSS declarations; not emulated in the browser.",
+    "Hover shadow checked by explicit CSS rule and fixed computed values; native hover state was not retained between CLI calls.",
+    "No claim of full application accessibility or completion of T001/T017/T071."
+  ],
+  "artifacts": {
+    "design-tokens.json": "9102c836b4ea2ca973df3743d4870638c9d8cf53a181826d696b92fa31f94d85",
+    "design-tokens.css": "ab9ec9ffaaef614fb8c0ecadfeed8e6ad2250d1c8ca3b942141fd1de55511bf5",
+    "design-preview.html": "82b77b8b3fd685b092a154ab611da76188b10d447d1bb471798e12f6046340a7",
+    "design-system.md": "fbc107126b3a8bb1e810472e3513b0700bf3fa2a6e741c3bed3cde2c2951e584",
+    "contracts/ui-layouts.md": "21caeaf797625bcbbd61100925b1625c1c22a11c44e2e970266ed3d3f17a2b49"
+  }
+}

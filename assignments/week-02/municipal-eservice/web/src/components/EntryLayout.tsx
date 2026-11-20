@@ -1,0 +1,5 @@
+import {SceneVideo} from './illustrations/SceneVideo';
+import {CivicIllustration} from './illustrations/CivicIllustration';
+export function EntryLayout({scene,heading,copy,children}:{scene:'1A'|'3A'|'LOGIN-CITIZEN'|'LOGIN-STAFF';heading:string;copy:string;children:React.ReactNode}){
+ return <main className="entry-page"><a className="skip-link" href="#entry-form">ข้ามไปแบบฟอร์ม</a><div className="entry-shell"><section className={'entry-art'+(scene.startsWith('LOGIN-')?' entry-art--auth':'')} aria-label="บ้านบริการ เทศบาลนครตัวอย่าง"><SceneVideo scene={scene} context="entry"/><div className="entry-heading"><CivicIllustration symbol="art-building" size={65}/><span className="eyebrow">เทศบาลนครตัวอย่าง · e-Service</span><h1>{heading}</h1><p>{copy}</p></div><div className="entry-story"><CivicIllustration symbol="art-counter" size={62}/><p>ทุกคำขอ มีคนดูแล<br/><span>บริการใกล้บ้าน ติดตามได้ทุกขั้น</span></p></div></section><section className="entry-form" id="entry-form">{children}<footer className="entry-footer"><span>เทศบาลนครตัวอย่าง</span><span>บริการออนไลน์ใกล้บ้านคุณ</span></footer></section></div></main>;
+}

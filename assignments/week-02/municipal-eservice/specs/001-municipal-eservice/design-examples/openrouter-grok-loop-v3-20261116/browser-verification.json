@@ -1,0 +1,27 @@
+{
+  "duration": 5.041667,
+  "error": null,
+  "height": 1072,
+  "imageWidth": 1122,
+  "readyState": 4,
+  "sampledTimes": [
+    0.001,
+    2.5,
+    5.021667
+  ],
+  "width": 848,
+  "first_last_mean_absolute_rgb_difference": {
+    "full_image": 9.4094,
+    "people": 29.4573,
+    "flag_cloth": 13.221,
+    "left_foliage": 12.048
+  },
+  "people_stationary": false,
+  "people_observation": "People on the steps move toward the entrance and do not return to their initial positions",
+  "framing_observation": "Building and camera framing appear stable in the inspected frames",
+  "foliage_observation": "Left foliage returns near its initial arrangement by the final frame",
+  "seamless_loop": false,
+  "loop_observation": "First and last frames differ visibly in the people and flag; a loop boundary remains",
+  "accepted_as_requested_motion": false,
+  "raw_mp4_modified": false
+}

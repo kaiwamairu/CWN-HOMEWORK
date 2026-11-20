@@ -1,0 +1,20 @@
+{
+  "duration": 5.041667,
+  "error": null,
+  "height": 1072,
+  "imageWidth": 1122,
+  "readyState": 4,
+  "sampledTimes": [
+    0.001,
+    2.5,
+    5.021667
+  ],
+  "width": 848,
+  "people_stationary": false,
+  "seamless_loop": false,
+  "summary_th": "ผลตรวจ: กรอบภาพดูคงที่ คนอยู่ใกล้ตำแหน่งเดิมแต่ยังเปลี่ยนท่าขาและศีรษะ ผืนธงท้ายคลิปต่างจากเฟรมแรก จึงยังไม่เป็นภาพคนนิ่งสนิทหรือ loop ไร้รอยต่อ",
+  "summary_en": "Camera framing appears stable at sampled times. People remain near their initial locations but still change head and leg poses, and the ending flag shape differs from the first frame. Time-stop wording did not completely freeze people or create a seamless loop.",
+  "exact_prompt_verified": true,
+  "inspection_completed": true,
+  "raw_mp4_modified": false
+}

@@ -1,0 +1,17 @@
+{
+  "file": "2A-citizen-form-truck-fixed.png",
+  "format": "PNG",
+  "width": 1122,
+  "height": 1402,
+  "bytes": 2515406,
+  "sha256": "8a2dcc87ad9264a07da7a55884c0309b6b033db03bc65115fb5771c7904594cf",
+  "source_file": "C:\\Users\\PhatthadonChangate\\orca\\workspaces\\Teaching_CWN2026\\langouste\\week2_student\\specs\\001-municipal-eservice\\design-examples\\civic-motion-20261116\\2A-approved.png",
+  "source_sha256": "37eca38d17d402651e01ff53954e2e6941900a76ddfbc16c354acf60e5ec5663",
+  "method": "built-in image_gen, precise pickup-truck edit",
+  "prompt_file": "prompt.txt",
+  "raw_generated_bytes_preserved": true,
+  "visual_inspection": "Pickup cab, cargo bed, body and wheels appear coherent; municipal-office composition and people retained",
+  "original_asset_overwritten": false,
+  "review_status": "candidate_for_user_review",
+  "video_generation_from_this_image": "not_started"
+}

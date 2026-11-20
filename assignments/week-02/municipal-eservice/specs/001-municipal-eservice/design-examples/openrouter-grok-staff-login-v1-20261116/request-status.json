@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-16T16:53:38.575613+00:00",
+  "model": "x-ai/grok-imagine-video-1.5-lite",
+  "source_sha256": "6dbdbe77d3334b1b5538966229e07ff86971fb6892fa0203fd4474f72cd4774f",
+  "estimated_cost_usd": 0.16,
+  "automatic_retries": 0,
+  "id": "gen-vid-1794848018-mpQ3eOFdlLkehLZzwoFJ",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794848018-mpQ3eOFdlLkehLZzwoFJ",
+  "submitted_at": "2026-11-16T16:53:42.192301+00:00",
+  "submit_seconds": 3.62,
+  "generation_id": "gen-vid-1794848018-mpQ3eOFdlLkehLZzwoFJ",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "expires_at": 1794934444,
+  "updated_at": "2026-11-16T16:54:53.191019+00:00",
+  "output": "staff-login-grok-v1.mp4",
+  "verification": {
+    "file": "staff-login-grok-v1.mp4",
+    "raw_provider_bytes_preserved": true,
+    "bytes": 3618061,
+    "sha256": "671ee2885338c36d0fc6e012be5fa839cb6cd14b5294fbf5cc1b244be2b697eb",
+    "content_type": "video/mp4",
+    "usage": {
+      "cost": 0.16,
+      "is_byok": false
+    },
+    "downloaded_at": "2026-11-16T16:54:55.681843+00:00"
+  }
+}

@@ -1,0 +1,101 @@
+/* Approved fixed-camera scenes. Page layouts own frame size and copy treatment. */
+.scene-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.scene-poster,
+.scene-video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+  object-position: var(--scene-object-position, 50% 34%);
+  pointer-events: none;
+}
+
+.scene-poster {
+  z-index: 0;
+}
+
+.scene-video {
+  z-index: 1;
+  opacity: 0;
+}
+
+.scene-frame[data-has-frames="true"] .scene-video {
+  opacity: 1;
+}
+
+.scene-toggle {
+  position: absolute;
+  top: var(--scene-toggle-top, 20px);
+  right: var(--scene-toggle-right, 20px);
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid var(--ds-glass-border, #fff9e4);
+  border-radius: 50%;
+  background: var(--ds-glass-fallback, #f8f2e5);
+  color: var(--ds-color-ink, #35402b);
+  box-shadow: 0 2px 10px #33452f0b;
+  font: inherit;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background-color var(--ds-motion-state, 120ms) var(--ds-motion-easing, ease-out), border-color var(--ds-motion-state, 120ms) var(--ds-motion-easing, ease-out);
+}
+
+@supports (backdrop-filter: blur(12px)) {
+  .scene-toggle {
+    background: var(--ds-glass-fill, #f8f2e5);
+    backdrop-filter: var(--ds-glass-filter, blur(12px));
+  }
+}
+
+.scene-toggle:hover:not(:disabled) {
+  background: var(--ds-color-control, #fbf8ed);
+  border-color: var(--ds-color-border, #dcd4bb);
+}
+
+.scene-toggle:focus-visible {
+  outline: 3px solid var(--ds-color-focus, #9a6828);
+  outline-offset: 3px;
+}
+
+.scene-toggle:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-toggle {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .scene-toggle {
+    border-color: ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .scene-toggle:focus-visible {
+    outline-color: Highlight;
+  }
+}

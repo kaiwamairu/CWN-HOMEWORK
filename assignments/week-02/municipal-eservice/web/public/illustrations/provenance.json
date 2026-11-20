@@ -1,0 +1,17 @@
+{
+  "source": "specs/001-municipal-eservice/design-assets/motion/manifest.json",
+  "sha256": {
+    "1A-municipal-office.mp4": "8a082e9ac8bff1e6204190ea2ab31fa988e406feae6d01a96f74071f65922078",
+    "1A-municipal-office.png": "6447bf6401afd9d35b7232342136db317e963259cb5ccf9ca4fdffe02e438311",
+    "2A-citizen-writing.mp4": "b16fc05c6754631b4c2291e2a2a440bbf02bd02758a5eece42086632df7d6a62",
+    "2A-citizen-writing.png": "8a2dcc87ad9264a07da7a55884c0309b6b033db03bc65115fb5771c7904594cf",
+    "3A-officer-review.mp4": "ccebfb2921d8957849f29d8af0d87bccfd2f89cfa5fe19798f51e28833ae8b30",
+    "3A-officer-review.png": "c58a2604c6b5ec6a2adffcd189aac0fe20964862fd6da19d76459b03b9ca9e02",
+    "auth-citizen-login-v1.mp4": "408b53571c9f4b94f07c48381be29e0cd863b8792815e8a6b9cf8aed9dbf594f",
+    "auth-citizen-v2.png": "9b05b3650cba98a92df0b4c2f454867ce304f3f003c9e9ac38ba68ee96456402",
+    "auth-staff-login-v1.mp4": "671ee2885338c36d0fc6e012be5fa839cb6cd14b5294fbf5cc1b244be2b697eb",
+    "auth-staff-v1.png": "6dbdbe77d3334b1b5538966229e07ff86971fb6892fa0203fd4474f72cd4774f"
+  },
+  "selectedVariant": "C",
+  "greetingFadeTranslateY": "12px"
+}

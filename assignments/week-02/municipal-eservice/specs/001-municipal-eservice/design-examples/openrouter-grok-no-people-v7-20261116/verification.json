@@ -1,0 +1,12 @@
+{
+  "file": "municipal-office-1A-grok-no-people-v7.mp4",
+  "raw_provider_bytes_preserved": true,
+  "bytes": 4277981,
+  "sha256": "8a082e9ac8bff1e6204190ea2ab31fa988e406feae6d01a96f74071f65922078",
+  "content_type": "video/mp4",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "downloaded_at": "2026-11-16T14:04:36.669789+00:00"
+}

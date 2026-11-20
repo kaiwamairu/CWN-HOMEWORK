@@ -1,0 +1,132 @@
+{
+  "status": "pass",
+  "scope": "GIF encoding and continuous motion model verification; visual smoothness is assessed in the preview",
+  "animations": [
+    {
+      "selected": "1A",
+      "preview": false,
+      "decoded_frames": 125,
+      "unique_frames": 125,
+      "duration_ms": 5000,
+      "infinite_loop": true,
+      "max_sampling_step_px": 0.547683,
+      "stationary_region_changed_pixels": 0,
+      "source_approved_still_matches": true,
+      "status": "pass"
+    },
+    {
+      "selected": "2A",
+      "preview": false,
+      "decoded_frames": 125,
+      "unique_frames": 125,
+      "duration_ms": 5000,
+      "infinite_loop": true,
+      "max_sampling_step_px": 0.569767,
+      "stationary_region_changed_pixels": 0,
+      "source_approved_still_matches": true,
+      "status": "pass"
+    },
+    {
+      "selected": "3A",
+      "preview": false,
+      "decoded_frames": 125,
+      "unique_frames": 125,
+      "duration_ms": 5000,
+      "infinite_loop": true,
+      "max_sampling_step_px": 0.489337,
+      "stationary_region_changed_pixels": 0,
+      "source_approved_still_matches": true,
+      "status": "pass"
+    },
+    {
+      "selected": "1A",
+      "preview": true,
+      "decoded_frames": 100,
+      "unique_frames": 100,
+      "duration_ms": 5000,
+      "infinite_loop": true,
+      "max_sampling_step_px": 0.195511,
+      "stationary_region_changed_pixels": 0,
+      "source_approved_still_matches": true,
+      "status": "pass"
+    },
+    {
+      "selected": "2A",
+      "preview": true,
+      "decoded_frames": 100,
+      "unique_frames": 99,
+      "duration_ms": 5000,
+      "infinite_loop": true,
+      "max_sampling_step_px": 0.202776,
+      "stationary_region_changed_pixels": 0,
+      "source_approved_still_matches": true,
+      "status": "pass"
+    },
+    {
+      "selected": "3A",
+      "preview": true,
+      "decoded_frames": 100,
+      "unique_frames": 99,
+      "duration_ms": 5000,
+      "infinite_loop": true,
+      "max_sampling_step_px": 0.17467,
+      "stationary_region_changed_pixels": 0,
+      "source_approved_still_matches": true,
+      "status": "pass"
+    }
+  ],
+  "actual_inline_browser_playback": {
+    "pass": true,
+    "before": [
+      {
+        "scene": "1A",
+        "mode": "decoded-gif",
+        "frame": 1,
+        "drawn": 2,
+        "hash": 3957788786
+      },
+      {
+        "scene": "2A",
+        "mode": "decoded-gif",
+        "frame": 1,
+        "drawn": 2,
+        "hash": 2663447649
+      },
+      {
+        "scene": "3A",
+        "mode": "decoded-gif",
+        "frame": 1,
+        "drawn": 2,
+        "hash": 3109865992
+      }
+    ],
+    "after": [
+      {
+        "scene": "1A",
+        "mode": "decoded-gif",
+        "frame": 3,
+        "drawn": 4,
+        "hash": 195533865
+      },
+      {
+        "scene": "2A",
+        "mode": "decoded-gif",
+        "frame": 3,
+        "drawn": 4,
+        "hash": 4036852103
+      },
+      {
+        "scene": "3A",
+        "mode": "decoded-gif",
+        "frame": 3,
+        "drawn": 4,
+        "hash": 3626926678
+      }
+    ],
+    "pauseWorks": true,
+    "playWorks": true,
+    "tabsWork": true,
+    "overflow": false,
+    "reduced": false
+  }
+}

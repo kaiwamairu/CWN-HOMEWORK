@@ -1,0 +1,803 @@
+{
+  "date": "2026-11-16",
+  "status": "pass",
+  "scope": "Offline design wireframes and prototype interactions only; canonical application acceptance tests not run.",
+  "page_patterns": 15,
+  "root_redirect": true,
+  "responsive_renderings": [
+    {
+      "key": "login",
+      "expected": "login",
+      "width": 375,
+      "scroll": 360,
+      "title": "เรื่องของคุณเริ่มต้นได้จากที่บ้าน",
+      "appText": 321,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "register",
+      "expected": "register",
+      "width": 375,
+      "scroll": 360,
+      "title": "ยินดีต้อนรับสู่บ้านบริการ",
+      "appText": 309,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "verify",
+      "expected": "verify",
+      "width": 375,
+      "scroll": 360,
+      "title": "ตรวจเอกสารได้ด้วยรหัสเดียว",
+      "appText": 454,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen",
+      "expected": "citizen",
+      "width": 375,
+      "scroll": 360,
+      "title": "สวัสดี สมชาย ใจดี",
+      "appText": 1443,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "wizard",
+      "expected": "wizard",
+      "width": 375,
+      "scroll": 360,
+      "title": "ยื่นคำขอ",
+      "appText": 449,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen-case",
+      "expected": "citizen-case",
+      "width": 375,
+      "scroll": 360,
+      "title": "รายละเอียดคำขอ",
+      "appText": 746,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "queue",
+      "expected": "queue",
+      "width": 375,
+      "scroll": 360,
+      "title": "คิวงาน",
+      "appText": 2453,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "officer-case",
+      "expected": "officer-case",
+      "width": 375,
+      "scroll": 360,
+      "title": "ตรวจคำขอ",
+      "appText": 629,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "approvals",
+      "expected": "approvals",
+      "width": 375,
+      "scroll": 360,
+      "title": "รออนุมัติ",
+      "appText": 479,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "dashboard",
+      "expected": "dashboard",
+      "width": 375,
+      "scroll": 360,
+      "title": "ภาพรวมบริการ",
+      "appText": 780,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "audit",
+      "expected": "audit",
+      "width": 375,
+      "scroll": 360,
+      "title": "ประวัติการดำเนินการ",
+      "appText": 827,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "services",
+      "expected": "services",
+      "width": 375,
+      "scroll": 360,
+      "title": "บริการและ SLA",
+      "appText": 625,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "holidays",
+      "expected": "holidays",
+      "width": 375,
+      "scroll": 360,
+      "title": "วันหยุด",
+      "appText": 680,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "users",
+      "expected": "users",
+      "width": 375,
+      "scroll": 360,
+      "title": "ผู้ใช้และบทบาท",
+      "appText": 1199,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "notifications",
+      "expected": "notifications",
+      "width": 375,
+      "scroll": 360,
+      "title": "การแจ้งเตือน",
+      "appText": 465,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "login",
+      "expected": "login",
+      "width": 768,
+      "scroll": 753,
+      "title": "เรื่องของคุณเริ่มต้นได้จากที่บ้าน",
+      "appText": 370,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "register",
+      "expected": "register",
+      "width": 768,
+      "scroll": 753,
+      "title": "ยินดีต้อนรับสู่บ้านบริการ",
+      "appText": 358,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "verify",
+      "expected": "verify",
+      "width": 768,
+      "scroll": 753,
+      "title": "ตรวจเอกสารได้ด้วยรหัสเดียว",
+      "appText": 503,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen",
+      "expected": "citizen",
+      "width": 768,
+      "scroll": 753,
+      "title": "สวัสดี สมชาย ใจดี",
+      "appText": 1510,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "wizard",
+      "expected": "wizard",
+      "width": 768,
+      "scroll": 753,
+      "title": "ยื่นคำขอ",
+      "appText": 460,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen-case",
+      "expected": "citizen-case",
+      "width": 768,
+      "scroll": 753,
+      "title": "รายละเอียดคำขอ",
+      "appText": 757,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "queue",
+      "expected": "queue",
+      "width": 768,
+      "scroll": 753,
+      "title": "คิวงาน",
+      "appText": 2474,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "officer-case",
+      "expected": "officer-case",
+      "width": 768,
+      "scroll": 753,
+      "title": "ตรวจคำขอ",
+      "appText": 650,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "approvals",
+      "expected": "approvals",
+      "width": 768,
+      "scroll": 753,
+      "title": "รออนุมัติ",
+      "appText": 491,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "dashboard",
+      "expected": "dashboard",
+      "width": 768,
+      "scroll": 753,
+      "title": "ภาพรวมบริการ",
+      "appText": 790,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "audit",
+      "expected": "audit",
+      "width": 768,
+      "scroll": 753,
+      "title": "ประวัติการดำเนินการ",
+      "appText": 843,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "services",
+      "expected": "services",
+      "width": 768,
+      "scroll": 753,
+      "title": "บริการและ SLA",
+      "appText": 637,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "holidays",
+      "expected": "holidays",
+      "width": 768,
+      "scroll": 753,
+      "title": "วันหยุด",
+      "appText": 692,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "users",
+      "expected": "users",
+      "width": 768,
+      "scroll": 753,
+      "title": "ผู้ใช้และบทบาท",
+      "appText": 1211,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "notifications",
+      "expected": "notifications",
+      "width": 768,
+      "scroll": 753,
+      "title": "การแจ้งเตือน",
+      "appText": 486,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "login",
+      "expected": "login",
+      "width": 1280,
+      "scroll": 1280,
+      "title": "เรื่องของคุณเริ่มต้นได้จากที่บ้าน",
+      "appText": 370,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "register",
+      "expected": "register",
+      "width": 1280,
+      "scroll": 1280,
+      "title": "ยินดีต้อนรับสู่บ้านบริการ",
+      "appText": 358,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "verify",
+      "expected": "verify",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ตรวจเอกสารได้ด้วยรหัสเดียว",
+      "appText": 503,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen",
+      "expected": "citizen",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "สวัสดี สมชาย ใจดี",
+      "appText": 1606,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "wizard",
+      "expected": "wizard",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ยื่นคำขอ",
+      "appText": 556,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen-case",
+      "expected": "citizen-case",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "รายละเอียดคำขอ",
+      "appText": 853,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "queue",
+      "expected": "queue",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "คิวงาน",
+      "appText": 2568,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "officer-case",
+      "expected": "officer-case",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ตรวจคำขอ",
+      "appText": 744,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "approvals",
+      "expected": "approvals",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "รออนุมัติ",
+      "appText": 591,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "dashboard",
+      "expected": "dashboard",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ภาพรวมบริการ",
+      "appText": 888,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "audit",
+      "expected": "audit",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ประวัติการดำเนินการ",
+      "appText": 947,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "services",
+      "expected": "services",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "บริการและ SLA",
+      "appText": 737,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "holidays",
+      "expected": "holidays",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "วันหยุด",
+      "appText": 792,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "users",
+      "expected": "users",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ผู้ใช้และบทบาท",
+      "appText": 1311,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "notifications",
+      "expected": "notifications",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "การแจ้งเตือน",
+      "appText": 580,
+      "questionMarks": false,
+      "overflow": false
+    }
+  ],
+  "prototype_flow_assertions": [
+    {
+      "name": "Somchai seed cases",
+      "pass": true,
+      "actual": 10
+    },
+    {
+      "name": "SV01 fee qty2",
+      "pass": true,
+      "actual": "฿40"
+    },
+    {
+      "name": "Upload step",
+      "pass": true
+    },
+    {
+      "name": "Paid case allocated",
+      "pass": true,
+      "actual": "EG-2569-000031"
+    },
+    {
+      "name": "New case detail",
+      "pass": true
+    },
+    {
+      "name": "SV03 area101 fee",
+      "pass": true
+    },
+    {
+      "name": "SV03 area error",
+      "pass": true
+    },
+    {
+      "name": "Pending draft locked fee",
+      "pass": true
+    },
+    {
+      "name": "Pending QR expiry",
+      "pass": true
+    },
+    {
+      "name": "Expired QR regenerate",
+      "pass": true
+    },
+    {
+      "name": "Correction case",
+      "pass": true
+    },
+    {
+      "name": "Cancel no refund copy",
+      "pass": true
+    },
+    {
+      "name": "Cancel status",
+      "pass": true
+    },
+    {
+      "name": "Registry queue17",
+      "pass": true,
+      "actual": 17
+    },
+    {
+      "name": "Initial workload3",
+      "pass": true
+    },
+    {
+      "name": "Unclaimed4",
+      "pass": true,
+      "actual": 4
+    },
+    {
+      "name": "My queue3",
+      "pass": true
+    },
+    {
+      "name": "Head has no claim",
+      "pass": true
+    },
+    {
+      "name": "Works queue1",
+      "pass": true,
+      "actual": 1
+    },
+    {
+      "name": "Unmask reason required",
+      "pass": true
+    },
+    {
+      "name": "Full ID after reason",
+      "pass": true
+    },
+    {
+      "name": "Return count2 hidden",
+      "pass": true
+    },
+    {
+      "name": "Officer approve SV01",
+      "pass": true
+    },
+    {
+      "name": "Issue document",
+      "pass": true
+    },
+    {
+      "name": "New document verify",
+      "pass": true
+    },
+    {
+      "name": "Verify masks applicant",
+      "pass": true
+    },
+    {
+      "name": "December KPIs",
+      "pass": true,
+      "actual": [
+        "3",
+        "0",
+        "–",
+        "21",
+        "1"
+      ]
+    },
+    {
+      "name": "November ontime",
+      "pass": true,
+      "actual": [
+        "26",
+        "7",
+        "85.7%",
+        "21",
+        "1"
+      ]
+    },
+    {
+      "name": "Annual ontime",
+      "pass": true,
+      "actual": [
+        "30",
+        "8",
+        "87.5%",
+        "21",
+        "1"
+      ]
+    },
+    {
+      "name": "Officer notifications3",
+      "pass": true
+    },
+    {
+      "name": "Head notification1",
+      "pass": true
+    },
+    {
+      "name": "Works no notifications",
+      "pass": true
+    },
+    {
+      "name": "Invalid admin fee",
+      "pass": true
+    },
+    {
+      "name": "Duplicate holiday error",
+      "pass": true
+    },
+    {
+      "name": "Admin self role disabled",
+      "pass": true
+    },
+    {
+      "name": "Audit readonly",
+      "pass": true
+    },
+    {
+      "name": "Component loading",
+      "pass": true
+    },
+    {
+      "name": "Component empty",
+      "pass": true
+    },
+    {
+      "name": "Component error",
+      "pass": true
+    },
+    {
+      "name": "Component forbidden",
+      "pass": true
+    },
+    {
+      "name": "Component missing",
+      "pass": true
+    },
+    {
+      "name": "New citizen register route",
+      "pass": true
+    },
+    {
+      "name": "PDPA required",
+      "pass": true
+    },
+    {
+      "name": "Register citizen landing",
+      "pass": true
+    },
+    {
+      "name": "New citizen empty cases",
+      "pass": true
+    },
+    {
+      "name": "OTP example locked after3",
+      "pass": true
+    }
+  ],
+  "form_labels": [
+    {
+      "page": "login",
+      "fields": 1,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "register",
+      "fields": 4,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "verify",
+      "fields": 2,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "citizen",
+      "fields": 0,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "wizard",
+      "fields": 2,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "citizen-case",
+      "fields": 1,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "queue",
+      "fields": 2,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "officer-case",
+      "fields": 0,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "approvals",
+      "fields": 0,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "dashboard",
+      "fields": 2,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "audit",
+      "fields": 4,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "services",
+      "fields": 7,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "holidays",
+      "fields": 2,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "users",
+      "fields": 15,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    },
+    {
+      "page": "notifications",
+      "fields": 0,
+      "missingLabels": [],
+      "bodyFont": "16px"
+    }
+  ],
+  "live_preview": [
+    {
+      "mode": "design-study",
+      "checks": [
+        "build",
+        "http",
+        "token-auto-reload",
+        "invalid-json-last-good",
+        "recovery"
+      ],
+      "pass": true
+    },
+    {
+      "mode": "wireframes",
+      "checks": [
+        "build",
+        "http",
+        "token-auto-reload",
+        "invalid-json-last-good",
+        "recovery"
+      ],
+      "pass": true
+    }
+  ],
+  "browser_auto_reload": {
+    "live": {
+      "version": 2
+    },
+    "actor": "off.reg2",
+    "hash": "#/officer/queue",
+    "y": 480
+  },
+  "canonical_css_tokens": 64,
+  "token_parity": true,
+  "preserved_fade": "795736cae817056e4ef01c6bde5133de12db87bba2ec6ca35f253dc111178d84",
+  "artifact_sha256": "2f06cef75dbea873cde5de1f15f708fdbea6a76baa88724523cdabbcae22fa54",
+  "artifact_bytes": 423165,
+  "application_acceptance_tests_executed": 0,
+  "application_tasks_marked_complete": 0
+}

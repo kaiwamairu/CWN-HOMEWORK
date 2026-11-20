@@ -1,0 +1,12 @@
+{
+  "file": "municipal-office-1A-grok.mp4",
+  "raw_provider_bytes_preserved": true,
+  "bytes": 6001899,
+  "sha256": "5da9b2ccf6124bbb1c5329e9ef97ab830876da9d1b8d7f8643490332d4f7e5a4",
+  "content_type": "video/mp4",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "downloaded_at": "2026-11-16T13:13:40.031507+00:00"
+}

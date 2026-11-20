@@ -1,0 +1,26 @@
+{
+  "endpoint": "https://openrouter.ai/api/v1/videos",
+  "parameters": {
+    "model": "x-ai/grok-imagine-video-1.5-lite",
+    "prompt": "SEAMLESS ANIMATED-GIF-STYLE LOOP.\n\nKeep all people completely fix their original poses and positions. no movement.\n\nLock the camera and framing. No zoom, pan, tilt, or camera movement.\n\nAnimate ONLY the Thai flag cloth, small branches, and leaves with very subtle, slow, gentle movement. Everything else remains still.\n\nPreserve the original illustration. Return the flag, branches, and leaves to their starting positions for a smooth, seamless loop.",
+    "duration": 5,
+    "resolution": "720p",
+    "aspect_ratio": "3:4"
+  },
+  "frame_images": [
+    {
+      "type": "image_url",
+      "frame_type": "first_frame",
+      "source_file": "1A-approved.png",
+      "sha256": "a12fd1e43768c0cdf8cac0a3ffa069d32dd9eb2c146d157c93b09a23fc0beb58",
+      "transport": "original PNG as inline base64 data URL"
+    }
+  ],
+  "estimated_cost_usd": 0.16,
+  "paid_submissions_allowed": 1,
+  "automatic_retries": 0,
+  "documentation": [
+    "https://openrouter.ai/docs/cookbook/video-generation/image-to-video",
+    "https://github.com/OpenRouterTeam/skills/blob/main/skills/openrouter-video/SKILL.md"
+  ]
+}

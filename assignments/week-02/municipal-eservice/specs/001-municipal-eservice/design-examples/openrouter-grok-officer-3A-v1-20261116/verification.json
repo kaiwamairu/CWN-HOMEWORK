@@ -1,0 +1,12 @@
+{
+  "file": "officer-review-3A-grok-v1.mp4",
+  "raw_provider_bytes_preserved": true,
+  "bytes": 3803846,
+  "sha256": "ccebfb2921d8957849f29d8af0d87bccfd2f89cfa5fe19798f51e28833ae8b30",
+  "content_type": "video/mp4",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "downloaded_at": "2026-11-16T14:27:26.100440+00:00"
+}

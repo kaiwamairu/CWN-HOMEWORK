@@ -1,0 +1,9 @@
+{
+  "user_approved": true,
+  "user_statement": "วิดีโอชุดนี้ผ่าน ต่อไป เอา ภาพถัดไปเลยครับ",
+  "approved_file": "municipal-office-1A-grok-no-people-v7.mp4",
+  "approved_sha256": "8a082e9ac8bff1e6204190ea2ab31fa988e406feae6d01a96f74071f65922078",
+  "scene": "1A municipal office, no people",
+  "known_observations_retained": true,
+  "next_scene": "2A citizen writing an application form"
+}

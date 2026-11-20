@@ -1,0 +1,10 @@
+* text=auto eol=lf
+# Preserve exact source-oracle, token and media bytes, including original line endings.
+assignments/week-02/municipal-eservice/** -text
+docs/planning/egov-eservice/** -text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.mp4 binary
+*.pdf binary

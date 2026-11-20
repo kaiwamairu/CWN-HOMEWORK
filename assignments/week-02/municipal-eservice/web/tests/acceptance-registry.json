@@ -1,0 +1,308 @@
+[
+  {
+    "id": "TC-AUTH-01",
+    "title": "เลขบัตร 13 หลัก + checksum",
+    "kind": "browser-api",
+    "sourceLine": 82
+  },
+  {
+    "id": "TC-AUTH-02",
+    "title": "OTP ผิด 3 ครั้งล็อก 15 นาที",
+    "kind": "browser-api",
+    "sourceLine": 101
+  },
+  {
+    "id": "TC-AUTH-03",
+    "title": "ลงทะเบียนครั้งแรก",
+    "kind": "browser-api",
+    "sourceLine": 121
+  },
+  {
+    "id": "TC-AUTH-04",
+    "title": "เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น",
+    "kind": "browser-api",
+    "sourceLine": 140
+  },
+  {
+    "id": "TC-FEE-01",
+    "title": "ค่าธรรมเนียม SV-01 / SV-02 / SV-03",
+    "kind": "browser-api",
+    "sourceLine": 164
+  },
+  {
+    "id": "TC-SUBMIT-01",
+    "title": "ยื่นคำขอ SV-01 ครบวงจร",
+    "kind": "browser-api",
+    "sourceLine": 194
+  },
+  {
+    "id": "TC-SUBMIT-02",
+    "title": "เอกสารบังคับครบก่อนชำระ",
+    "kind": "browser-api",
+    "sourceLine": 211
+  },
+  {
+    "id": "TC-SUBMIT-03",
+    "title": "ร่าง และการยกเลิก",
+    "kind": "browser-api",
+    "sourceLine": 231
+  },
+  {
+    "id": "TC-UPLOAD-01",
+    "title": "ขนาดและจำนวนไฟล์",
+    "kind": "browser-api",
+    "sourceLine": 251
+  },
+  {
+    "id": "TC-UPLOAD-02",
+    "title": "ชนิดไฟล์จากเนื้อไฟล์",
+    "kind": "browser-api",
+    "sourceLine": 273
+  },
+  {
+    "id": "TC-PAY-01",
+    "title": "อายุ QR 15:00",
+    "kind": "browser-api",
+    "sourceLine": 295
+  },
+  {
+    "id": "TC-PAY-02",
+    "title": "ยอดเงินและ callback ซ้ำ",
+    "kind": "browser-api",
+    "sourceLine": 312
+  },
+  {
+    "id": "TC-PAY-03",
+    "title": "ชำระพร้อมกัน เลขไม่ซ้ำ",
+    "kind": "browser-api",
+    "sourceLine": 328
+  },
+  {
+    "id": "TC-PAY-04",
+    "title": "เลขคำขอข้ามปี",
+    "kind": "browser-api",
+    "sourceLine": 337
+  },
+  {
+    "id": "TC-QUEUE-01",
+    "title": "ลำดับคิวและขอบเขตแผนก",
+    "kind": "browser-api",
+    "sourceLine": 357
+  },
+  {
+    "id": "TC-QUEUE-02",
+    "title": "รับเรื่องซ้อน (พร้อมกันและต่อกัน)",
+    "kind": "browser-api",
+    "sourceLine": 373
+  },
+  {
+    "id": "TC-QUEUE-03",
+    "title": "งานในมือสูงสุด 10",
+    "kind": "browser-api",
+    "sourceLine": 386
+  },
+  {
+    "id": "TC-SLA-01",
+    "title": "กำหนดเสร็จตามตารางวันที่",
+    "kind": "browser-api",
+    "sourceLine": 411
+  },
+  {
+    "id": "TC-SLA-02",
+    "title": "หยุดนับ SLA ระหว่างรอแก้ไข",
+    "kind": "browser-api",
+    "sourceLine": 433
+  },
+  {
+    "id": "TC-SLA-03",
+    "title": "ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด",
+    "kind": "browser-api",
+    "sourceLine": 448
+  },
+  {
+    "id": "TC-NOTI-01",
+    "title": "ผู้รับแจ้งเตือนตามระดับ",
+    "kind": "browser-api",
+    "sourceLine": 492
+  },
+  {
+    "id": "TC-NOTI-02",
+    "title": "ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร",
+    "kind": "browser-api",
+    "sourceLine": 510
+  },
+  {
+    "id": "TC-WORKFLOW-01",
+    "title": "SV-01 อนุมัติ + ออกเอกสาร",
+    "kind": "browser-api",
+    "sourceLine": 529
+  },
+  {
+    "id": "TC-WORKFLOW-02",
+    "title": "SV-02 ผ่านหัวหน้า",
+    "kind": "browser-api",
+    "sourceLine": 546
+  },
+  {
+    "id": "TC-WORKFLOW-03",
+    "title": "SV-03 สามขั้นตอน",
+    "kind": "browser-api",
+    "sourceLine": 565
+  },
+  {
+    "id": "TC-WORKFLOW-04",
+    "title": "ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ",
+    "kind": "browser-api",
+    "sourceLine": 584
+  },
+  {
+    "id": "TC-WORKFLOW-05",
+    "title": "เหตุผล ≥ 10 ตัวอักษร (ตีกลับ / ไม่อนุมัติ)",
+    "kind": "browser-api",
+    "sourceLine": 598
+  },
+  {
+    "id": "TC-WORKFLOW-06",
+    "title": "เวลาแก้ไข 168 ชั่วโมง",
+    "kind": "browser-api",
+    "sourceLine": 615
+  },
+  {
+    "id": "TC-DOC-01",
+    "title": "ออกเอกสารและข้อมูลในเอกสาร",
+    "kind": "browser-api",
+    "sourceLine": 633
+  },
+  {
+    "id": "TC-DOC-02",
+    "title": "ตรวจเอกสาร /verify",
+    "kind": "browser-api",
+    "sourceLine": 648
+  },
+  {
+    "id": "TC-DOC-03",
+    "title": "เอกสารหมดอายุและลายเซ็นไม่ตรง",
+    "kind": "browser-api",
+    "sourceLine": 663
+  },
+  {
+    "id": "TC-PDPA-01",
+    "title": "ปิดบังเลขบัตรบนจอ",
+    "kind": "browser-api",
+    "sourceLine": 696
+  },
+  {
+    "id": "TC-PDPA-02",
+    "title": "API (JSON) ไม่ส่งเลขบัตรเต็ม",
+    "kind": "browser-api",
+    "sourceLine": 712
+  },
+  {
+    "id": "TC-PDPA-03",
+    "title": "แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit",
+    "kind": "browser-api",
+    "sourceLine": 726
+  },
+  {
+    "id": "TC-DASH-01",
+    "title": "Dashboard ตัวเลขเริ่มต้น",
+    "kind": "browser-api",
+    "sourceLine": 747
+  },
+  {
+    "id": "TC-DASH-02",
+    "title": "Dashboard ย้อนหลัง",
+    "kind": "browser-api",
+    "sourceLine": 773
+  },
+  {
+    "id": "TC-DASH-03",
+    "title": "ส่งออก Excel/PDF เท่าหน้าจอ",
+    "kind": "browser-api",
+    "sourceLine": 796
+  },
+  {
+    "id": "TC-DASH-04",
+    "title": "ค่าขอบ \"ทันกำหนด\" 16:29:59 / 16:30:00 / 16:30:01",
+    "kind": "browser-api",
+    "sourceLine": 814
+  },
+  {
+    "id": "TC-AUDIT-01",
+    "title": "เหตุการณ์และฟิลด์ใน Audit",
+    "kind": "browser-api",
+    "sourceLine": 840
+  },
+  {
+    "id": "TC-AUDIT-02",
+    "title": "Audit แก้/ลบไม่ได้ (405)",
+    "kind": "browser-api",
+    "sourceLine": 874
+  },
+  {
+    "id": "TC-AUDIT-03",
+    "title": "กรองช่วงวันที่ตามเวลาไทย",
+    "kind": "browser-api",
+    "sourceLine": 892
+  },
+  {
+    "id": "TC-RBAC-01",
+    "title": "ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR)",
+    "kind": "browser-api",
+    "sourceLine": 925
+  },
+  {
+    "id": "TC-RBAC-02",
+    "title": "เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API)",
+    "kind": "browser-api",
+    "sourceLine": 944
+  },
+  {
+    "id": "TC-RBAC-03",
+    "title": "ตารางสิทธิ์หน้า/API ตามบทบาท",
+    "kind": "browser-api",
+    "sourceLine": 962
+  },
+  {
+    "id": "TC-RBAC-04",
+    "title": "ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก",
+    "kind": "browser-api",
+    "sourceLine": 999
+  },
+  {
+    "id": "TC-RBAC-05",
+    "title": "สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ",
+    "kind": "browser-api",
+    "sourceLine": 1021
+  },
+  {
+    "id": "TC-RBAC-06",
+    "title": "ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ",
+    "kind": "browser-api",
+    "sourceLine": 1045
+  },
+  {
+    "id": "TC-NFR-01",
+    "title": "Responsive 375 / 768 / 1280",
+    "kind": "browser-api",
+    "sourceLine": 1073
+  },
+  {
+    "id": "TC-NFR-02",
+    "title": "WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+    "kind": "browser-api",
+    "sourceLine": 1083
+  },
+  {
+    "id": "TC-NFR-03",
+    "title": "Health เวลาโหลด และผลซ้ำได้",
+    "kind": "browser-api",
+    "sourceLine": 1094
+  },
+  {
+    "id": "TC-NFR-04",
+    "title": "เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection)",
+    "kind": "inspection",
+    "sourceLine": 1107
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "user_approved": true,
+  "video_user_approved": true,
+  "recorded_on": "2026-11-18",
+  "evidence": "User confirmed the latest video set in this chat",
+  "user_statement": "ตรวจแล้วครับใช้ได้ ที่นี้ทบทวนงานก่อน ว่าต่อไปต้องทำอะไร",
+  "video": "auth-staff-login-v1.mp4",
+  "video_sha256": "671ee2885338c36d0fc6e012be5fa839cb6cd14b5294fbf5cc1b244be2b697eb",
+  "source_image": "auth-staff-v1.png",
+  "source_sha256": "6dbdbe77d3334b1b5538966229e07ff86971fb6892fa0203fd4474f72cd4774f",
+  "scope": "Approved visual asset; no application acceptance claim"
+}

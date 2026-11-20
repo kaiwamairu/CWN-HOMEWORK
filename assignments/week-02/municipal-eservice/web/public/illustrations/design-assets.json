@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "selectedVariant": "C",
+  "coordinateBase": "feature directory",
+  "scene": {
+    "path": "design-assets/civic-thai-suburban-wide.jpg",
+    "source": "design-examples/c-civic-story/assets/civic-thai-suburban-wide-original.png",
+    "usage": "entry/citizen-home panorama and service-house vignette",
+    "decorative": true,
+    "webSource": "design-examples/c-civic-story/assets/civic-thai-suburban-wide.jpg",
+    "revision": 3,
+    "setting": "Thai suburban municipal office, paved public forecourt, local road, parking and low-rise neighborhood; sparse roadside planting",
+    "prompt": "design-examples/c-civic-story/assets/civic-thai-suburban-wide-generation.md",
+    "composition": "Continuous painted neighborhood extends to the left edge; greeting readability uses a local CSS cream gradient, not a baked-in image fade"
+  },
+  "motion": {
+    "manifest": "design-assets/motion/manifest.json",
+    "placements": {"citizenHome": "1A", "citizenLogin": "LOGIN-CITIZEN", "staffLogin": "LOGIN-STAFF", "registration": "1A", "documentVerification": "3A"},
+    "playback": "MP4 loops with pause, reduced-motion posters and error fallback; both citizen and staff login use their user-approved Grok video clips",
+    "approvalIndex": "design-examples/approved-civic-motion-20261116/index.html"
+  },
+  "sprite": "design-assets/civic-illustrations.svg",
+  "symbols": [
+    {
+      "id": "art-building",
+      "subject": "municipal office",
+      "usage": "shared identity; sidebar branding; service-house vignette"
+    },
+    {
+      "id": "art-counter",
+      "subject": "staff member and citizen at a service counter",
+      "usage": "help; review stage; case-detail context"
+    },
+    {
+      "id": "art-certificate",
+      "subject": "certificate with generic seal",
+      "usage": "SV-01; official output; public verification"
+    },
+    {
+      "id": "art-shop",
+      "subject": "shop with permit document",
+      "usage": "SV-02"
+    },
+    {
+      "id": "art-house",
+      "subject": "house with blueprint",
+      "usage": "SV-03"
+    },
+    {
+      "id": "art-folder",
+      "subject": "document folder",
+      "usage": "drafts; uploads; case history; audit context"
+    },
+    {
+      "id": "art-stamp",
+      "subject": "official review stamp",
+      "usage": "head approval and document issuance"
+    },
+    {
+      "id": "art-coins",
+      "subject": "fee papers and coins",
+      "usage": "payment; service fee configuration"
+    }
+  ],
+  "accessibility": "Every interactive object has a text label. Decorative repeated art is aria-hidden; meaningful standalone art has a concise Thai alternative. Status and permissions are conveyed with text.",
+  "provenance": "Original panorama generated with built-in image_gen; SVG objects authored for this project. No official crest or reference game characters used."
+}

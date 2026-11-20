@@ -1,0 +1,67 @@
+/* Motion and Drawdy follow-up, using the selected C tokens and existing fade. */
+.wf .hero,.civic .hero{isolation:isolate}
+.scene-media{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.scene-media .scene-poster,.scene-media .scene-video{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 34%;border:0}
+.scene-media .scene-video{opacity:0;transition:opacity calc(var(--ds-motion-state,120ms)*2) var(--ds-motion-easing,ease-out)}
+.scene-media.has-frames .scene-video{opacity:1}
+.scene-media--entry .scene-poster,.scene-media--entry .scene-video{object-position:50% 55%}
+.entry-art--auth .scene-poster,.entry-art--auth .scene-video{object-position:50% 25%}
+.scene-media--entry[data-motion-scene="3A"] .scene-poster,.scene-media--entry[data-motion-scene="3A"] .scene-video{object-position:50% 25%}
+.scene-media--entry:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,241,227,.95),rgba(247,241,227,.65) 24%,rgba(247,241,227,0) 48%);pointer-events:none}
+.scene-motion-toggle{position:absolute;right:177px;top:24px;z-index:4;width:44px;min-height:44px;padding:0;border:1px solid var(--ds-glass-border,#fff8e1);border-radius:50%;background:var(--ds-glass-fill,#f8f2e3ed);color:var(--ds-color-ink,#405234);display:grid;place-items:center;box-shadow:0 2px 10px #33452f0b;font-size:15px;line-height:1;cursor:pointer;backdrop-filter:var(--ds-glass-filter,blur(12px))}
+.scene-motion-toggle:hover{background:var(--ds-color-control,#fffaf0)}
+.scene-motion-toggle:focus-visible{outline:3px solid var(--ds-color-focus,#b77e35);outline-offset:3px}
+.scene-motion-toggle:disabled{cursor:default;opacity:.65}
+.entry-art.has-motion .scene-motion-toggle{right:20px;top:20px}
+.entry-art.has-motion .entry-copy>.art,.entry-art.has-motion .entry-note{display:none}
+.entry-art.has-motion .entry-copy h2{max-width:390px}
+.wf .hero-copy,.civic .hero-copy,.entry-art.has-motion .entry-copy{animation:civic-copy-reveal calc(var(--ds-motion-state,120ms)*5) var(--ds-motion-easing,ease-out) both}
+@keyframes civic-copy-reveal{from{opacity:0}to{opacity:1}}
+
+/* Calendar-shaped date; the content keeps its existing demo date and time. */
+.wf .hero-date,.civic .date-card{position:absolute;right:24px;top:23px;width:136px;padding:0;border:1px solid #d7d7b6;border-radius:12px;background:var(--ds-color-paper,#f7f1e3);color:var(--ds-color-ink,#405234);box-shadow:0 4px 14px #34462f0d;text-align:center;line-height:1.6;white-space:normal;overflow:visible}
+.calendar-binding{position:absolute;top:-7px;left:28px;right:28px;height:14px;display:flex;justify-content:space-between;pointer-events:none}
+.calendar-binding:before,.calendar-binding:after{content:'';width:5px;height:14px;border:1px solid #a5ad87;border-radius:4px;background:#d1d5b7;box-shadow:0 1px 0 #fff9e0 inset}
+.calendar-month{display:block;background:var(--ds-color-sidebar,#3d5136);color:#f7efd8;border-radius:11px 11px 0 0;font-size:10px;letter-spacing:.3px;padding:10px 8px 7px}
+.wf .hero-date .calendar-day,.civic .date-card .calendar-day{display:block;font-size:33px;line-height:1.25;font-weight:500;color:var(--ds-color-ink,#405234);padding-top:5px}
+.calendar-weekday{display:block;font-size:10px;color:var(--ds-color-muted,#718064)}
+.calendar-caption{display:block;font-size:9px;color:var(--ds-color-muted,#718064);padding:1px 7px 8px}
+.civic .hero-meta{position:static}
+.civic .hero-meta>.profile{position:absolute;right:178px;top:80px;z-index:2}
+
+/* The profile menu replaces the application header on authenticated pages. */
+.wf .side{position:relative}
+.wf .side-meta{display:block;position:relative;overflow:visible;z-index:10}
+.wf .profile-trigger{width:100%;display:flex;align-items:center;gap:9px;min-height:50px;padding:4px;border:1px solid transparent;border-radius:10px;background:transparent;color:inherit;text-align:left;cursor:pointer}
+.wf .profile-trigger:hover,.wf .profile-trigger[aria-expanded="true"]{background:#ffffff12;border-color:#ffffff1c}
+.profile-labels{min-width:0;flex:1}
+.profile-chevron{font-size:15px;line-height:1;opacity:.75;flex-shrink:0}
+.profile-menu{position:absolute;bottom:calc(100% + 8px);left:0;min-width:230px;width:max-content;max-width:280px;padding:8px;background:#faf6e9;border:1px solid #ccd4ba;border-radius:13px;color:var(--ds-color-ink,#405234);box-shadow:0 10px 28px #263a2624;z-index:30}
+.profile-menu[hidden]{display:none!important}
+.profile-menu-heading{padding:9px 10px 11px;border-bottom:1px solid #e0e2cd;margin-bottom:5px;display:grid;gap:3px;font-size:13px}
+.profile-menu-heading strong{font-weight:600}.profile-menu-heading small{font-size:11px;color:var(--ds-color-muted,#718064)}
+.wf .profile-menu button{display:flex;align-items:center;gap:9px;width:100%;border:0;border-radius:8px;padding:9px 10px;min-height:44px;background:transparent;color:inherit;text-align:left;font-size:12px;cursor:pointer}
+.wf .profile-menu button:hover{background:#e9eedc}.profile-menu .ico{width:17px;height:17px;color:#7b8c62}
+.wf .profile-menu .profile-logout{color:#8e5a3d}.profile-menu .profile-logout:hover{background:#f2e5d8}
+@media(max-width:850px){
+ .wf .side{z-index:5}.wf .side .brand{padding-right:65px}
+ .wf .side-meta{position:absolute;right:13px;top:10px;margin:0;padding:0;border:0}
+ .wf .profile-trigger{width:49px;padding:4px;gap:3px}.wf .profile-trigger .avatar{width:31px;height:31px}
+ .wf .profile-labels{display:none}.wf .profile-chevron{font-size:11px}
+ .wf .profile-menu{top:calc(100% + 8px);bottom:auto;left:auto;right:0}
+ .entry-art.has-motion{min-height:400px}
+ .entry-art.has-motion.entry-art--auth{min-height:clamp(480px,90vw,700px)}
+}
+@media(max-width:520px){
+ .wf .hero-date,.civic .date-card{display:block;right:15px;top:24px;width:77px}
+ .calendar-binding{left:15px;right:15px;height:12px;top:-6px}.calendar-binding:before,.calendar-binding:after{height:12px;width:4px}
+ .calendar-month{font-size:8px;padding:8px 3px 5px}.wf .hero-date .calendar-day,.civic .date-card .calendar-day{font-size:27px;padding-top:4px}
+ .calendar-weekday{font-size:8px}.calendar-caption{font-size:8px;padding-bottom:6px}.calendar-context{display:none}
+ .wf .hero .scene-motion-toggle,.civic .hero .scene-motion-toggle{top:129px;right:30px}
+ .wf .hero-copy{max-width:calc(100% - 90px)}
+ .civic .hero-meta>.profile{display:none}
+ .entry-art.has-motion{min-height:400px}.entry-art.has-motion .entry-copy h2{font-size:25px;max-width:260px}.entry-art.has-motion .entry-copy p{font-size:12px;max-width:265px;line-height:1.8}
+ .entry-art.has-motion .scene-motion-toggle{top:15px;right:15px}
+}
+@media(prefers-reduced-motion:reduce){.wf .hero-copy,.civic .hero-copy,.entry-art.has-motion .entry-copy{animation:none;opacity:1}.scene-media .scene-video{transition:none}}
+@media(forced-colors:active){.scene-media{display:none}.scene-motion-toggle,.profile-menu,.wf .profile-trigger,.wf .hero-date,.civic .date-card{background:Canvas;color:CanvasText;border:1px solid CanvasText;box-shadow:none}.calendar-month{background:Canvas;color:CanvasText;border-bottom:1px solid CanvasText}}

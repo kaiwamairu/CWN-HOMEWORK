@@ -1,0 +1,22 @@
+{
+  "duration": 5.041667,
+  "error": null,
+  "height": 1072,
+  "imageWidth": 1122,
+  "readyState": 4,
+  "sampledTimes": [
+    0.001,
+    2.5,
+    5.021667
+  ],
+  "width": 848,
+  "source_is_edited_no_people_image": true,
+  "no_people_observed": true,
+  "seamless_loop": false,
+  "only_requested_regions_move": false,
+  "summary_th": "ผลตรวจ: ฉากไม่มีคน กรอบภาพดูคงที่ ธงกับใบไม้เคลื่อนไหว แต่บริเวณบานประตูมีการเปลี่ยนรูปเล็กน้อย และตำแหน่งธงกับใบไม้ท้ายคลิปไม่ตรงเฟรมแรก จึงยังมีรอยต่อเมื่อเล่นวน",
+  "summary_en": "The inspected frames contain no people and camera framing appears stable. The flag and foliage move, but the entrance-door geometry also changes slightly. The ending flag shape and foliage arrangement do not exactly match the first frame, so the result is not a seamless loop. The source is the newly edited no-people PNG; the former time-stop paragraph was removed from the prompt.",
+  "exact_prompt_verified": true,
+  "inspection_completed": true,
+  "raw_mp4_modified": false
+}

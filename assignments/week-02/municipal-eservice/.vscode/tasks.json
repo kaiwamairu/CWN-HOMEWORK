@@ -1,0 +1,64 @@
+﻿{
+    "version":  "2.0.0",
+    "tasks":  [
+                  {
+                      "label":  "Civic UI: Live Preview",
+                      "type":  "process",
+                      "command":  "python",
+                      "args":  [
+                                   "-u",
+                                   "${workspaceFolder}/specs/001-municipal-eservice/design-examples/c-civic-story/dev.py",
+                                   "--port",
+                                   "4173"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  },
+                      "isBackground":  true,
+                      "problemMatcher":  [
+
+                                         ],
+                      "group":  {
+                                    "kind":  "build",
+                                    "isDefault":  true
+                                },
+                      "presentation":  {
+                                           "reveal":  "always",
+                                           "panel":  "dedicated",
+                                           "clear":  true,
+                                           "focus":  false
+                                       },
+                      "runOptions":  {
+                                         "instanceLimit":  1
+                                     }
+                  },
+                  {
+                      "label":  "Civic UI: Wireframes",
+                      "type":  "process",
+                      "command":  "python",
+                      "args":  [
+                                   "-u",
+                                   "${workspaceFolder}/specs/001-municipal-eservice/design-examples/c-civic-story/dev.py",
+                                   "--wireframes",
+                                   "--port",
+                                   "4174"
+                               ],
+                      "options":  {
+                                      "cwd":  "${workspaceFolder}"
+                                  },
+                      "isBackground":  true,
+                      "problemMatcher":  [
+
+                                         ],
+                      "presentation":  {
+                                           "reveal":  "always",
+                                           "panel":  "dedicated",
+                                           "clear":  true,
+                                           "focus":  false
+                                       },
+                      "runOptions":  {
+                                         "instanceLimit":  1
+                                     }
+                  }
+              ]
+}

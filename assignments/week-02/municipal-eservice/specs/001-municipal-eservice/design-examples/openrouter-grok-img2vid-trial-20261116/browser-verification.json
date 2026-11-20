@@ -1,0 +1,20 @@
+{
+  "browser": "Orca embedded browser",
+  "viewport": {"width": 1440, "height": 1100},
+  "width": 848,
+  "height": 1072,
+  "duration_seconds": 5.041667,
+  "readyState": 4,
+  "video_error": null,
+  "playing_observed": true,
+  "original_image_natural_width": 1122,
+  "horizontal_overflow": false,
+  "seeked_times_seconds": [2.5, 4.8],
+  "decoded_frame_visually_inspected_seconds": 4.817869,
+  "visual_observations": [
+    "Watercolor style and municipal office scene retained",
+    "People move and change poses despite prompt asking them to remain still",
+    "Seamless looping is not established"
+  ],
+  "raw_mp4_modified": false
+}

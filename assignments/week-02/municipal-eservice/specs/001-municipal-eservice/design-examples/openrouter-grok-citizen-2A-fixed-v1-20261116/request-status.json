@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-16T14:18:00.645293+00:00",
+  "model": "x-ai/grok-imagine-video-1.5-lite",
+  "source_sha256": "8a2dcc87ad9264a07da7a55884c0309b6b033db03bc65115fb5771c7904594cf",
+  "estimated_cost_usd": 0.16,
+  "automatic_retries": 0,
+  "id": "gen-vid-1794838681-dHbfuteh5dXXpQ5RQHpJ",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794838681-dHbfuteh5dXXpQ5RQHpJ",
+  "submitted_at": "2026-11-16T14:18:05.147659+00:00",
+  "submit_seconds": 4.5,
+  "generation_id": "gen-vid-1794838681-dHbfuteh5dXXpQ5RQHpJ",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "expires_at": 1794925107,
+  "updated_at": "2026-11-16T14:19:21.262393+00:00",
+  "output": "citizen-writing-2A-truck-fixed-grok-v1.mp4",
+  "verification": {
+    "file": "citizen-writing-2A-truck-fixed-grok-v1.mp4",
+    "raw_provider_bytes_preserved": true,
+    "bytes": 3170987,
+    "sha256": "b16fc05c6754631b4c2291e2a2a440bbf02bd02758a5eece42086632df7d6a62",
+    "content_type": "video/mp4",
+    "usage": {
+      "cost": 0.16,
+      "is_byok": false
+    },
+    "downloaded_at": "2026-11-16T14:19:23.768168+00:00"
+  }
+}

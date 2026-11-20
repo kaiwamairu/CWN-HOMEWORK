@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-16T13:29:21.524823+00:00",
+  "model": "x-ai/grok-imagine-video-1.5-lite",
+  "source_sha256": "a12fd1e43768c0cdf8cac0a3ffa069d32dd9eb2c146d157c93b09a23fc0beb58",
+  "estimated_cost_usd": 0.16,
+  "automatic_retries": 0,
+  "id": "gen-vid-1794835761-M2sAa3m84AmdLvjaWoJk",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794835761-M2sAa3m84AmdLvjaWoJk",
+  "submitted_at": "2026-11-16T13:29:25.829005+00:00",
+  "submit_seconds": 4.3,
+  "generation_id": "gen-vid-1794835761-M2sAa3m84AmdLvjaWoJk",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "expires_at": 1794922187,
+  "updated_at": "2026-11-16T13:30:19.690248+00:00",
+  "output": "municipal-office-1A-grok-loop-v3.mp4",
+  "verification": {
+    "file": "municipal-office-1A-grok-loop-v3.mp4",
+    "raw_provider_bytes_preserved": true,
+    "bytes": 5577388,
+    "sha256": "1c926452aadac7e0cd03f43f5cb40670d6f91a19b835adf310292185eecca5b3",
+    "content_type": "video/mp4",
+    "usage": {
+      "cost": 0.16,
+      "is_byok": false
+    },
+    "downloaded_at": "2026-11-16T13:30:22.466773+00:00"
+  }
+}

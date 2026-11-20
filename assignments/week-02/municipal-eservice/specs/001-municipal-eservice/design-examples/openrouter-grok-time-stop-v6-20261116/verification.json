@@ -1,0 +1,12 @@
+{
+  "file": "municipal-office-1A-grok-time-stop-v6.mp4",
+  "raw_provider_bytes_preserved": true,
+  "bytes": 5080637,
+  "sha256": "414be9c8862979bcb0379d57febb2eeb9ac53173d68856e694b48290511eae2b",
+  "content_type": "video/mp4",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "downloaded_at": "2026-11-16T13:53:34.148602+00:00"
+}

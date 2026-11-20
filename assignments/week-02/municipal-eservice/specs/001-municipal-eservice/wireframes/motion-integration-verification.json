@@ -1,0 +1,1388 @@
+{
+  "scope": "wireframe motion integration; not canonical application acceptance",
+  "board": "https://drawdy.io/?canvas=6ae4aaf93fb8ba886fccb04c",
+  "placements": {
+    "/citizen": "approved 1A, no people",
+    "/login citizen tab": "LOGIN-CITIZEN — new Grok phone video using the selected inward-facing-phone v2 still",
+    "/login staff tab": "LOGIN-STAFF — new Grok video preview of keyboard and mouse sign-in",
+    "/register": "approved 1A, no people",
+    "/verify/:code": "approved 3A female officer reviewing documents"
+  },
+  "changes": [
+    "approved MP4 loops and still posters",
+    "pause/play control",
+    "off-screen and hidden-tab pause",
+    "reduced-motion still by default",
+    "static fallback on media error",
+    "greeting opacity reveal",
+    "calendar-shaped date",
+    "app-header removed",
+    "sidebar profile menu and logout"
+  ],
+  "canonical_tokens_unchanged": true,
+  "canonical_token_count": 64,
+  "canonical_token_sha256": "ba9780181adf24c29c2aa7defe0af91502db7ee3a726a0f8532fe230c4ba6f62",
+  "user_fade_transform": "translateY(12px), preserved from canonical C template",
+  "checks": {
+    "browser": [
+      {
+        "detail": "http://127.0.0.1:4175/design-assets/motion/1A-municipal-office.mp4",
+        "name": "Home uses approved 1A",
+        "pass": true
+      },
+      {
+        "name": "Video is silent loop",
+        "pass": true
+      },
+      {
+        "name": "Application header removed",
+        "pass": true
+      },
+      {
+        "name": "Calendar date frame present",
+        "pass": true
+      },
+      {
+        "name": "User fade retained",
+        "pass": true
+      },
+      {
+        "name": "Pause button stops video",
+        "pass": true
+      },
+      {
+        "name": "Play button resumes video",
+        "pass": true
+      },
+      {
+        "name": "Profile opens upwards",
+        "pass": true
+      },
+      {
+        "name": "Profile focuses first item",
+        "pass": true
+      },
+      {
+        "name": "Profile arrow key focuses logout",
+        "pass": true
+      },
+      {
+        "name": "Escape closes and restores focus",
+        "pass": true
+      },
+      {
+        "name": "Outside click closes profile",
+        "pass": true
+      },
+      {
+        "name": "Account details open",
+        "pass": true
+      },
+      {
+        "name": "Logout reaches login",
+        "pass": true
+      },
+      {
+        "detail": "http://127.0.0.1:4175/design-assets/motion/2A-citizen-writing.mp4",
+        "name": "Citizen login uses corrected 2A",
+        "pass": true
+      },
+      {
+        "name": "Login form remains available",
+        "pass": true
+      },
+      {
+        "detail": "http://127.0.0.1:4175/design-assets/motion/3A-officer-review.mp4",
+        "name": "Staff login uses approved 3A",
+        "pass": true
+      },
+      {
+        "name": "Previous scene paused after tab switch",
+        "pass": true
+      },
+      {
+        "name": "Staff form remains available",
+        "pass": true
+      },
+      {
+        "name": "One active media element",
+        "pass": true
+      },
+      {
+        "name": "Missing video keeps static poster",
+        "pass": true
+      },
+      {
+        "name": "Missing video disables motion control",
+        "pass": true
+      },
+      {
+        "name": "Fresh render restores valid video",
+        "pass": true
+      }
+    ],
+    "flow_regression": [
+      {
+        "name": "Somchai seed cases",
+        "pass": true,
+        "actual": 10
+      },
+      {
+        "name": "SV01 fee qty2",
+        "pass": true,
+        "actual": "฿40"
+      },
+      {
+        "name": "Upload step",
+        "pass": true
+      },
+      {
+        "name": "Paid case allocated",
+        "pass": true,
+        "actual": "EG-2569-000031"
+      },
+      {
+        "name": "New case detail",
+        "pass": true
+      },
+      {
+        "name": "SV03 area101 fee",
+        "pass": true
+      },
+      {
+        "name": "SV03 area error",
+        "pass": true
+      },
+      {
+        "name": "Pending draft locked fee",
+        "pass": true
+      },
+      {
+        "name": "Pending QR expiry",
+        "pass": true
+      },
+      {
+        "name": "Expired QR regenerate",
+        "pass": true
+      },
+      {
+        "name": "Correction case",
+        "pass": true
+      },
+      {
+        "name": "Cancel no refund copy",
+        "pass": true
+      },
+      {
+        "name": "Cancel status",
+        "pass": true
+      },
+      {
+        "name": "Registry queue17",
+        "pass": true,
+        "actual": 17
+      },
+      {
+        "name": "Initial workload3",
+        "pass": true
+      },
+      {
+        "name": "Unclaimed4",
+        "pass": true,
+        "actual": 4
+      },
+      {
+        "name": "My queue3",
+        "pass": true
+      },
+      {
+        "name": "Head has no claim",
+        "pass": true
+      },
+      {
+        "name": "Works queue1",
+        "pass": true,
+        "actual": 1
+      },
+      {
+        "name": "Unmask reason required",
+        "pass": true
+      },
+      {
+        "name": "Full ID after reason",
+        "pass": true
+      },
+      {
+        "name": "Return count2 hidden",
+        "pass": true
+      },
+      {
+        "name": "Officer approve SV01",
+        "pass": true
+      },
+      {
+        "name": "Issue document",
+        "pass": true
+      },
+      {
+        "name": "New document verify",
+        "pass": true
+      },
+      {
+        "name": "Verify masks applicant",
+        "pass": true
+      },
+      {
+        "name": "December KPIs",
+        "pass": true,
+        "actual": [
+          "3",
+          "0",
+          "–",
+          "21",
+          "1"
+        ]
+      },
+      {
+        "name": "November ontime",
+        "pass": true,
+        "actual": [
+          "26",
+          "7",
+          "85.7%",
+          "21",
+          "1"
+        ]
+      },
+      {
+        "name": "Annual ontime",
+        "pass": true,
+        "actual": [
+          "30",
+          "8",
+          "87.5%",
+          "21",
+          "1"
+        ]
+      },
+      {
+        "name": "Officer notifications3",
+        "pass": true
+      },
+      {
+        "name": "Head notification1",
+        "pass": true
+      },
+      {
+        "name": "Works no notifications",
+        "pass": true
+      },
+      {
+        "name": "Invalid admin fee",
+        "pass": true
+      },
+      {
+        "name": "Duplicate holiday error",
+        "pass": true
+      },
+      {
+        "name": "Admin self role disabled",
+        "pass": true
+      },
+      {
+        "name": "Audit readonly",
+        "pass": true
+      },
+      {
+        "name": "Component loading",
+        "pass": true
+      },
+      {
+        "name": "Component empty",
+        "pass": true
+      },
+      {
+        "name": "Component error",
+        "pass": true
+      },
+      {
+        "name": "Component forbidden",
+        "pass": true
+      },
+      {
+        "name": "Component missing",
+        "pass": true
+      },
+      {
+        "name": "New citizen register route",
+        "pass": true
+      },
+      {
+        "name": "PDPA required",
+        "pass": true
+      },
+      {
+        "name": "Register citizen landing",
+        "pass": true
+      },
+      {
+        "name": "New citizen empty cases",
+        "pass": true
+      },
+      {
+        "name": "OTP example locked after3",
+        "pass": true
+      }
+    ],
+    "reduced_motion": [
+      {
+        "name": "Reduced-motion test mounts actual controller",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference avoids assigning video source",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference shows explicit play control",
+        "pass": true
+      }
+    ],
+    "media_server": [
+      {
+        "name": "1A video HEAD",
+        "pass": true,
+        "detail": "video/mp4"
+      },
+      {
+        "name": "1A poster HEAD",
+        "pass": true,
+        "detail": "image/png"
+      },
+      {
+        "name": "1A first range",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "1A suffix range",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "2A video HEAD",
+        "pass": true,
+        "detail": "video/mp4"
+      },
+      {
+        "name": "2A poster HEAD",
+        "pass": true,
+        "detail": "image/png"
+      },
+      {
+        "name": "2A first range",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "2A suffix range",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "3A video HEAD",
+        "pass": true,
+        "detail": "video/mp4"
+      },
+      {
+        "name": "3A poster HEAD",
+        "pass": true,
+        "detail": "image/png"
+      },
+      {
+        "name": "3A first range",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "3A suffix range",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "unsatisfiable range",
+        "pass": true,
+        "detail": ""
+      },
+      {
+        "name": "reject /design-assets/motion/%2e%2e/%2e%2e/design-tokens.json",
+        "pass": true,
+        "detail": 404
+      },
+      {
+        "name": "reject /design-assets/motion/../../../README.md",
+        "pass": true,
+        "detail": 404
+      },
+      {
+        "name": "reject /design-assets/motion/unknown.mp4",
+        "pass": true,
+        "detail": 404
+      },
+      {
+        "name": "reject /wireframes/core.js",
+        "pass": true,
+        "detail": 404
+      }
+    ]
+  },
+  "responsive_cases": [
+    {
+      "key": "login",
+      "expected": "login",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "เรื่องของคุณเริ่มต้นได้จากที่บ้าน",
+      "appText": 323,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "register",
+      "expected": "register",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ยินดีต้อนรับสู่บ้านบริการ",
+      "appText": 358,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "verify",
+      "expected": "verify",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ตรวจเอกสารได้ด้วยรหัสเดียว",
+      "appText": 503,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen",
+      "expected": "citizen",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "สวัสดี สมชาย ใจดี",
+      "appText": 1561,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "wizard",
+      "expected": "wizard",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ยื่นคำขอ",
+      "appText": 511,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen-case",
+      "expected": "citizen-case",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "รายละเอียดคำขอ",
+      "appText": 802,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "queue",
+      "expected": "queue",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "คิวงาน",
+      "appText": 2515,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "officer-case",
+      "expected": "officer-case",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ตรวจคำขอ",
+      "appText": 689,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "approvals",
+      "expected": "approvals",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "รออนุมัติ",
+      "appText": 544,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "dashboard",
+      "expected": "dashboard",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ภาพรวมบริการ",
+      "appText": 840,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "audit",
+      "expected": "audit",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ประวัติการดำเนินการ",
+      "appText": 886,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "services",
+      "expected": "services",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "บริการและ SLA",
+      "appText": 686,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "holidays",
+      "expected": "holidays",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "วันหยุด",
+      "appText": 747,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "users",
+      "expected": "users",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "ผู้ใช้และบทบาท",
+      "appText": 1259,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "notifications",
+      "expected": "notifications",
+      "width": 1280,
+      "scroll": 1265,
+      "title": "การแจ้งเตือน",
+      "appText": 521,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "login",
+      "expected": "login",
+      "width": 768,
+      "scroll": 753,
+      "title": "เรื่องของคุณเริ่มต้นได้จากที่บ้าน",
+      "appText": 323,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "register",
+      "expected": "register",
+      "width": 768,
+      "scroll": 753,
+      "title": "ยินดีต้อนรับสู่บ้านบริการ",
+      "appText": 358,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "verify",
+      "expected": "verify",
+      "width": 768,
+      "scroll": 753,
+      "title": "ตรวจเอกสารได้ด้วยรหัสเดียว",
+      "appText": 503,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen",
+      "expected": "citizen",
+      "width": 768,
+      "scroll": 753,
+      "title": "สวัสดี สมชาย ใจดี",
+      "appText": 1468,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "wizard",
+      "expected": "wizard",
+      "width": 768,
+      "scroll": 753,
+      "title": "ยื่นคำขอ",
+      "appText": 418,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen-case",
+      "expected": "citizen-case",
+      "width": 768,
+      "scroll": 753,
+      "title": "รายละเอียดคำขอ",
+      "appText": 709,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "queue",
+      "expected": "queue",
+      "width": 768,
+      "scroll": 753,
+      "title": "คิวงาน",
+      "appText": 2424,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "officer-case",
+      "expected": "officer-case",
+      "width": 768,
+      "scroll": 753,
+      "title": "ตรวจคำขอ",
+      "appText": 598,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "approvals",
+      "expected": "approvals",
+      "width": 768,
+      "scroll": 753,
+      "title": "รออนุมัติ",
+      "appText": 447,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "dashboard",
+      "expected": "dashboard",
+      "width": 768,
+      "scroll": 753,
+      "title": "ภาพรวมบริการ",
+      "appText": 745,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "audit",
+      "expected": "audit",
+      "width": 768,
+      "scroll": 753,
+      "title": "ประวัติการดำเนินการ",
+      "appText": 785,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "services",
+      "expected": "services",
+      "width": 768,
+      "scroll": 753,
+      "title": "บริการและ SLA",
+      "appText": 589,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "holidays",
+      "expected": "holidays",
+      "width": 768,
+      "scroll": 753,
+      "title": "วันหยุด",
+      "appText": 650,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "users",
+      "expected": "users",
+      "width": 768,
+      "scroll": 753,
+      "title": "ผู้ใช้และบทบาท",
+      "appText": 1162,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "notifications",
+      "expected": "notifications",
+      "width": 768,
+      "scroll": 753,
+      "title": "การแจ้งเตือน",
+      "appText": 430,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "login",
+      "expected": "login",
+      "width": 375,
+      "scroll": 360,
+      "title": "เรื่องของคุณเริ่มต้นได้จากที่บ้าน",
+      "appText": 323,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "register",
+      "expected": "register",
+      "width": 375,
+      "scroll": 360,
+      "title": "ยินดีต้อนรับสู่บ้านบริการ",
+      "appText": 309,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "verify",
+      "expected": "verify",
+      "width": 375,
+      "scroll": 360,
+      "title": "ตรวจเอกสารได้ด้วยรหัสเดียว",
+      "appText": 454,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen",
+      "expected": "citizen",
+      "width": 375,
+      "scroll": 360,
+      "title": "สวัสดี สมชาย ใจดี",
+      "appText": 1448,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "wizard",
+      "expected": "wizard",
+      "width": 375,
+      "scroll": 360,
+      "title": "ยื่นคำขอ",
+      "appText": 418,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "citizen-case",
+      "expected": "citizen-case",
+      "width": 375,
+      "scroll": 360,
+      "title": "รายละเอียดคำขอ",
+      "appText": 709,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "queue",
+      "expected": "queue",
+      "width": 375,
+      "scroll": 360,
+      "title": "คิวงาน",
+      "appText": 2424,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "officer-case",
+      "expected": "officer-case",
+      "width": 375,
+      "scroll": 360,
+      "title": "ตรวจคำขอ",
+      "appText": 598,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "approvals",
+      "expected": "approvals",
+      "width": 375,
+      "scroll": 360,
+      "title": "รออนุมัติ",
+      "appText": 447,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "dashboard",
+      "expected": "dashboard",
+      "width": 375,
+      "scroll": 360,
+      "title": "ภาพรวมบริการ",
+      "appText": 745,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "audit",
+      "expected": "audit",
+      "width": 375,
+      "scroll": 360,
+      "title": "ประวัติการดำเนินการ",
+      "appText": 785,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "services",
+      "expected": "services",
+      "width": 375,
+      "scroll": 360,
+      "title": "บริการและ SLA",
+      "appText": 589,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "holidays",
+      "expected": "holidays",
+      "width": 375,
+      "scroll": 360,
+      "title": "วันหยุด",
+      "appText": 650,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "users",
+      "expected": "users",
+      "width": 375,
+      "scroll": 360,
+      "title": "ผู้ใช้และบทบาท",
+      "appText": 1162,
+      "questionMarks": false,
+      "overflow": false
+    },
+    {
+      "key": "notifications",
+      "expected": "notifications",
+      "width": 375,
+      "scroll": 360,
+      "title": "การแจ้งเตือน",
+      "appText": 430,
+      "questionMarks": false,
+      "overflow": false
+    }
+  ],
+  "mobile_profile": {
+    "calendarVisible": true,
+    "menuInViewport": true,
+    "menuVisible": true,
+    "overflow": false,
+    "profileVisible": true
+  },
+  "summary": {
+    "browser": 23,
+    "flow_regression": 46,
+    "reduced_motion": 3,
+    "media_server": 17,
+    "responsive": 45
+  },
+  "reduced_motion_test_method": "Real controller in isolated browser frame with matchMedia preference stub; CSS media rule retained",
+  "visually_inspected": [
+    "desktop citizen home",
+    "desktop citizen login",
+    "desktop staff login",
+    "mobile home and profile popup"
+  ],
+  "new_media_generation": true,
+  "canonical_application_tests_run": 0,
+  "implementation_tasks_marked_complete": 0,
+  "registration_followup": {
+    "user_request": "gif ภาพ A1 เอามาใช้กับ หน้า ลงทะเบียน ด้วยครับ",
+    "checks": [
+      {
+        "name": "Registration uses approved 1A",
+        "pass": true
+      },
+      {
+        "name": "Registration clip decodes",
+        "pass": true
+      },
+      {
+        "name": "Registration name stays read-only",
+        "pass": true
+      },
+      {
+        "name": "Pause works",
+        "pass": true
+      },
+      {
+        "name": "Play works",
+        "pass": true
+      },
+      {
+        "name": "PDPA consent still required",
+        "pass": true
+      },
+      {
+        "name": "Valid registration reaches citizen home",
+        "pass": true
+      }
+    ],
+    "mobile": {
+      "formPresent": true,
+      "overflow": false,
+      "page": "register",
+      "scene": "1A"
+    },
+    "new_generation": false,
+    "raw_video_unchanged": true
+  },
+  "checks_scope_note": "Original checks and registration follow-up record earlier integrations. Current login/verification placement evidence is in auth_illustration_followup.",
+  "new_video_generation": false,
+  "auth_illustration_followup": {
+    "request": "Move approved female officer 3A to document verification and redo both login illustrations to match authentication",
+    "browser_checks": {
+      "failed": 0,
+      "passed": 18,
+      "results": [
+        {
+          "name": "Citizen login shows new phone identity illustration",
+          "pass": true
+        },
+        {
+          "name": "New login still has no video or playback button",
+          "pass": true
+        },
+        {
+          "name": "Citizen heading matches identity sign-in",
+          "pass": true
+        },
+        {
+          "name": "Invalid citizen identity still rejected",
+          "pass": true
+        },
+        {
+          "name": "Valid identity opens OTP and retains citizen art",
+          "pass": true
+        },
+        {
+          "name": "Valid citizen OTP reaches home",
+          "pass": true
+        },
+        {
+          "name": "Citizen home retains 1A",
+          "pass": true
+        },
+        {
+          "name": "Staff login shows new office sign-in illustration",
+          "pass": true
+        },
+        {
+          "name": "Staff login retains credentials form and has no video",
+          "pass": true
+        },
+        {
+          "name": "Invalid staff password still rejected",
+          "pass": true
+        },
+        {
+          "name": "Valid staff sign-in reaches queue",
+          "pass": true
+        },
+        {
+          "name": "Document verification uses approved female officer 3A",
+          "pass": true
+        },
+        {
+          "name": "3A clip decodes on document verification",
+          "pass": true
+        },
+        {
+          "name": "Document verification results render",
+          "pass": true
+        },
+        {
+          "name": "Verify clip can pause",
+          "pass": true
+        },
+        {
+          "name": "Verify clip can resume",
+          "pass": true
+        },
+        {
+          "name": "Leaving verify stops the old clip",
+          "pass": true
+        },
+        {
+          "name": "Registration retains 1A and form",
+          "pass": true
+        }
+      ]
+    },
+    "responsive_cases": [
+      {
+        "auth_copy_space": true,
+        "auth_still": true,
+        "expected_scene": "LOGIN-CITIZEN",
+        "form_or_result": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "page": "login citizen",
+        "panel_height": 480,
+        "readable_thai": true,
+        "scene": "LOGIN-CITIZEN",
+        "width": 375
+      },
+      {
+        "auth_copy_space": true,
+        "auth_still": true,
+        "expected_scene": "LOGIN-STAFF",
+        "form_or_result": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "page": "login staff",
+        "panel_height": 480,
+        "readable_thai": true,
+        "scene": "LOGIN-STAFF",
+        "width": 375
+      },
+      {
+        "auth_copy_space": true,
+        "auth_still": true,
+        "expected_scene": "3A",
+        "form_or_result": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "page": "verify ",
+        "panel_height": 400,
+        "readable_thai": true,
+        "scene": "3A",
+        "width": 375
+      },
+      {
+        "auth_copy_space": true,
+        "auth_still": true,
+        "expected_scene": "LOGIN-CITIZEN",
+        "form_or_result": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "page": "login citizen",
+        "panel_height": 691,
+        "readable_thai": true,
+        "scene": "LOGIN-CITIZEN",
+        "width": 768
+      },
+      {
+        "auth_copy_space": true,
+        "auth_still": true,
+        "expected_scene": "LOGIN-STAFF",
+        "form_or_result": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "page": "login staff",
+        "panel_height": 691,
+        "readable_thai": true,
+        "scene": "LOGIN-STAFF",
+        "width": 768
+      },
+      {
+        "auth_copy_space": true,
+        "auth_still": true,
+        "expected_scene": "3A",
+        "form_or_result": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "page": "verify ",
+        "panel_height": 400,
+        "readable_thai": true,
+        "scene": "3A",
+        "width": 768
+      },
+      {
+        "auth_copy_space": true,
+        "auth_still": true,
+        "expected_scene": "LOGIN-CITIZEN",
+        "form_or_result": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "page": "login citizen",
+        "panel_height": 700,
+        "readable_thai": true,
+        "scene": "LOGIN-CITIZEN",
+        "width": 1440
+      },
+      {
+        "auth_copy_space": true,
+        "auth_still": true,
+        "expected_scene": "LOGIN-STAFF",
+        "form_or_result": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "page": "login staff",
+        "panel_height": 700,
+        "readable_thai": true,
+        "scene": "LOGIN-STAFF",
+        "width": 1440
+      },
+      {
+        "auth_copy_space": true,
+        "auth_still": true,
+        "expected_scene": "3A",
+        "form_or_result": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "page": "verify ",
+        "panel_height": 882,
+        "readable_thai": true,
+        "scene": "3A",
+        "width": 1440
+      }
+    ],
+    "visually_inspected": [
+      "citizen sign-in desktop and 375px",
+      "staff sign-in 1440px, 768px and 375px",
+      "document verification with approved 3A desktop"
+    ],
+    "new_still_images": 2,
+    "generation_method": "built-in ChatGPT imagegen",
+    "new_images_user_approved": false,
+    "new_video_jobs": 0,
+    "approved_video_and_poster_bytes_preserved": true,
+    "canonical_design_tokens_unchanged": true,
+    "user_hero_fade_unchanged": true,
+    "form_logic_unchanged": true,
+    "canonical_application_tests_run": 0
+  },
+  "login_media_followup": {
+    "request": "Citizen looks directly at inward-facing phone; create staff-login video with Grok and the previous loop prompt template",
+    "browser_checks": [
+      {
+        "name": "Citizen displays edited inward-facing phone still v2",
+        "pass": true
+      },
+      {
+        "name": "Citizen remains a still with no playback control",
+        "pass": true
+      },
+      {
+        "name": "Citizen identity form remains available",
+        "pass": true
+      },
+      {
+        "name": "Staff uses the new Grok login video",
+        "pass": true
+      },
+      {
+        "name": "Staff video decodes",
+        "pass": true
+      },
+      {
+        "name": "Staff video is muted looping and inline",
+        "pass": true
+      },
+      {
+        "name": "Staff poster remains the selected female officer still",
+        "pass": true
+      },
+      {
+        "name": "Poster and video share the same crop",
+        "pass": true
+      },
+      {
+        "name": "Staff credentials form remains available",
+        "pass": true
+      },
+      {
+        "name": "Staff pause control stops playback",
+        "pass": true
+      },
+      {
+        "name": "Staff resume control starts playback",
+        "pass": true
+      },
+      {
+        "name": "Old login clip stops when leaving page",
+        "pass": true
+      },
+      {
+        "name": "Public verification retains approved 3A",
+        "pass": true
+      },
+      {
+        "name": "Registration retains approved 1A",
+        "pass": true
+      }
+    ],
+    "passed": 14,
+    "failed": 0,
+    "mobile_cases_375px": [
+      {
+        "control_in_bounds": true,
+        "correct_media": true,
+        "correct_poster": true,
+        "form": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "tab": "citizen"
+      },
+      {
+        "control_in_bounds": true,
+        "correct_media": true,
+        "correct_poster": true,
+        "form": true,
+        "image_loaded": true,
+        "no_overflow": true,
+        "tab": "staff"
+      }
+    ],
+    "video_inspection": {
+      "bytesSource": "original provider MP4",
+      "duration": 5.041667,
+      "first_last_pixel_mae": 3.723,
+      "first_middle_pixel_mae": 5.286,
+      "height": 1072,
+      "width": 848,
+      "sample_times_seconds": [
+        0.1,
+        1.7,
+        3.3,
+        4.9
+      ],
+      "visually_inspected": true,
+      "observation": "Hands move between keyboard and mouse while camera and office background remain visually steady. The first and last sampled frames are similar, not pixel-identical.",
+      "new_video_user_approved": false,
+      "raw_provider_bytes_preserved": true
+    },
+    "generation": {
+      "new_still_edits": 1,
+      "still_method": "built-in ChatGPT imagegen",
+      "new_video_jobs": 1,
+      "model": "x-ai/grok-imagine-video-1.5-lite",
+      "actual_cost_usd": 0.16,
+      "automatic_paid_retries": 0
+    },
+    "canonical_tokens_unchanged": true,
+    "hero_fade_unchanged": true,
+    "previous_approved_video_bytes_unchanged": true,
+    "canonical_application_tests_run": 0
+  },
+  "citizen_video_followup": {
+    "request": "Create a video from the latest male phone illustration",
+    "browser_checks": [
+      {
+        "name": "Citizen retains the selected inward-facing phone poster v2",
+        "pass": true
+      },
+      {
+        "name": "Citizen now offers a video with playback control",
+        "pass": true
+      },
+      {
+        "name": "Citizen identity form remains available",
+        "pass": true
+      },
+      {
+        "name": "Citizen uses the new Grok login video",
+        "pass": true
+      },
+      {
+        "name": "Citizen video decodes",
+        "pass": true
+      },
+      {
+        "name": "Citizen video is muted looping and inline",
+        "pass": true
+      },
+      {
+        "name": "Citizen poster remains the selected male phone still",
+        "pass": true
+      },
+      {
+        "name": "Poster and video share the same crop",
+        "pass": true
+      },
+      {
+        "name": "Citizen video is attached to the correct login scene",
+        "pass": true
+      },
+      {
+        "name": "Citizen pause control stops playback",
+        "pass": true
+      },
+      {
+        "name": "Citizen resume control starts playback",
+        "pass": true
+      },
+      {
+        "name": "Old login clip stops when leaving page",
+        "pass": true
+      },
+      {
+        "name": "Public verification retains approved 3A",
+        "pass": true
+      },
+      {
+        "name": "Registration retains approved 1A",
+        "pass": true
+      },
+      {
+        "name": "Staff login retains its previous Grok video",
+        "pass": true
+      }
+    ],
+    "passed": 15,
+    "failed": 0,
+    "mobile_case_375px": {
+      "control_44px": true,
+      "control_in_bounds": true,
+      "form": true,
+      "no_overflow": true,
+      "scene": "LOGIN-CITIZEN",
+      "video_decoded": true,
+      "width": 375
+    },
+    "video_inspection": {
+      "bytesSource": "original provider MP4",
+      "duration": 5.041667,
+      "first_last_pixel_mae": 4.73,
+      "first_middle_pixel_mae": 3.681,
+      "height": 1072,
+      "width": 848,
+      "sample_times_seconds": [
+        0.1,
+        1.7,
+        3.3,
+        4.9
+      ],
+      "visually_inspected": true,
+      "observation": "Subtle finger-tapping gesture; back of phone remains visible in all sampled frames and eyes are directed toward the phone, with a natural blink. Camera and home background remain visually steady. Loop endpoints are not pixel-identical.",
+      "new_video_user_approved": false,
+      "raw_provider_bytes_preserved": true
+    },
+    "generation": {
+      "video_jobs": 1,
+      "model": "x-ai/grok-imagine-video-1.5-lite",
+      "actual_cost_usd": 0.16,
+      "automatic_paid_retries": 0
+    },
+    "previous_approved_media_unchanged": true,
+    "canonical_tokens_and_hero_fade_unchanged": true,
+    "canonical_application_tests_run": 0
+  }
+}

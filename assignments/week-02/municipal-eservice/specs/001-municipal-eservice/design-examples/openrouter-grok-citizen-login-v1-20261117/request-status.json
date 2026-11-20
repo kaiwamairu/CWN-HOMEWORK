@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "started_at": "2026-11-16T17:19:01.697428+00:00",
+  "model": "x-ai/grok-imagine-video-1.5-lite",
+  "source_sha256": "9b05b3650cba98a92df0b4c2f454867ce304f3f003c9e9ac38ba68ee96456402",
+  "estimated_cost_usd": 0.16,
+  "automatic_retries": 0,
+  "id": "gen-vid-1794849541-sAgbUHpI1Jz5q2202aIT",
+  "polling_url": "https://openrouter.ai/api/v1/videos/gen-vid-1794849541-sAgbUHpI1Jz5q2202aIT",
+  "submitted_at": "2026-11-16T17:19:06.125282+00:00",
+  "submit_seconds": 4.42,
+  "generation_id": "gen-vid-1794849541-sAgbUHpI1Jz5q2202aIT",
+  "usage": {
+    "cost": 0.16,
+    "is_byok": false
+  },
+  "expires_at": 1794935968,
+  "updated_at": "2026-11-16T17:20:05.207986+00:00",
+  "output": "citizen-login-grok-v1.mp4",
+  "verification": {
+    "file": "citizen-login-grok-v1.mp4",
+    "raw_provider_bytes_preserved": true,
+    "bytes": 2799193,
+    "sha256": "408b53571c9f4b94f07c48381be29e0cd863b8792815e8a6b9cf8aed9dbf594f",
+    "content_type": "video/mp4",
+    "usage": {
+      "cost": 0.16,
+      "is_byok": false
+    },
+    "downloaded_at": "2026-11-16T17:20:07.428502+00:00"
+  }
+}

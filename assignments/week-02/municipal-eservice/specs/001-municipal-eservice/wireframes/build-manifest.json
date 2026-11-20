@@ -1,0 +1,41 @@
+{
+  "page_patterns": 15,
+  "root_redirect": true,
+  "wireframe_only": true,
+  "canonical_application_tests_run": 0,
+  "sources": {
+    "design-tokens.json": "ba9780181adf24c29c2aa7defe0af91502db7ee3a726a0f8532fe230c4ba6f62",
+    "design-assets.json": "8f676ee4efb2d040212f0eaf2f579cb55ec7e33478a58f71e3522f54e58e4789",
+    "design-examples/c-civic-story/template.html": "f2c1027192a5d776728e8cb1bdb4421804eb9d23c3df1765caf4cdcb2e92310e",
+    "design-examples/c-civic-story/assets/civic-thai-suburban-wide.jpg": "329bf2c2884f7ebf0ad87ec7d173feef73a640c66b9eabc271ead9464a86ff3e",
+    "design-assets/motion/1A-municipal-office.mp4": "8a082e9ac8bff1e6204190ea2ab31fa988e406feae6d01a96f74071f65922078",
+    "design-assets/motion/1A-municipal-office.png": "6447bf6401afd9d35b7232342136db317e963259cb5ccf9ca4fdffe02e438311",
+    "design-assets/motion/2A-citizen-writing.mp4": "b16fc05c6754631b4c2291e2a2a440bbf02bd02758a5eece42086632df7d6a62",
+    "design-assets/motion/2A-citizen-writing.png": "8a2dcc87ad9264a07da7a55884c0309b6b033db03bc65115fb5771c7904594cf",
+    "design-assets/motion/3A-officer-review.mp4": "ccebfb2921d8957849f29d8af0d87bccfd2f89cfa5fe19798f51e28833ae8b30",
+    "design-assets/motion/3A-officer-review.png": "c58a2604c6b5ec6a2adffcd189aac0fe20964862fd6da19d76459b03b9ca9e02",
+    "design-assets/motion/auth-citizen-login-v1-prompt.txt": "5bfa586ecf8694d8e37b4fd35f8fac1eb2cc0ec584482f96212ff96b2e2b4042",
+    "design-assets/motion/auth-citizen-login-v1.mp4": "408b53571c9f4b94f07c48381be29e0cd863b8792815e8a6b9cf8aed9dbf594f",
+    "design-assets/motion/auth-citizen-v1.png": "5f62d629118181956ff006d10dfcdbdb88ff60ba1a9c36f2723519b6e4d20c4c",
+    "design-assets/motion/auth-citizen-v2.png": "9b05b3650cba98a92df0b4c2f454867ce304f3f003c9e9ac38ba68ee96456402",
+    "design-assets/motion/auth-staff-login-v1-prompt.txt": "58dbbb4b46755fa39dc48f00a98a000558ed9f8f7bffb9aab71087f867079873",
+    "design-assets/motion/auth-staff-login-v1.mp4": "671ee2885338c36d0fc6e012be5fa839cb6cd14b5294fbf5cc1b244be2b697eb",
+    "design-assets/motion/auth-staff-v1.png": "6dbdbe77d3334b1b5538966229e07ff86971fb6892fa0203fd4474f72cd4774f",
+    "design-assets/motion/civic-motion.css": "898b718abfb39eea0d5ff6753e55e36dcb9c51df330cb8d2bf3a336b3a5529d1",
+    "design-assets/motion/civic-motion.js": "2e07658f77d848bbc1f5d89acccc1fa0bced30a4a657aa0f751891a944305d11",
+    "design-assets/motion/login-illustrations-prompts.md": "72ae4cce1a9e6c270b06e6e16d580fd21af6f775af00ec509654294e57c9be88",
+    "design-assets/motion/manifest.json": "000189f569c3248fa61fbbd6d49f79ec9c1bbcddbf4ed2f8e57e608895708e05",
+    "design-assets/motion/README.md": "1fe3119257844dd16f0385bc3da86a10c40061fbbe5c792ac1d1321b716541ea"
+  },
+  "wireframe_sources": {
+    "template.html": "ee49221af27d66b395d0eeedd653b4e3f633d33bf88093aa31ba6f48b9434422",
+    "core.js": "ef444952964bea17325a6659e9dc7e9ad5914e5c0bc39b3e477826c5779825da",
+    "pages-public.js": "ba8cb3a98ba13084829dbc7afdab533a424e08d3a1015c63d51e1b7c632f40fd",
+    "pages-staff.js": "5f82479ef73a2459e201f86e0a1cb7ee0a1f1ec2581e45acfe4c11a7bfb51bf2",
+    "pages-admin.js": "47922ebaf1cb6e18afd0873f31a53a0357eee1132527a82a3187085bf12c1189",
+    "actions.js": "55ed4759f5f6eaf4aa87bfa69c27d68f82fe017ae94d9adeed8877d7767938a2",
+    "routes.json": "873fa4181c647552eb35e56ecf2a15493076047ea75944e04ce7c78952fe5fe3",
+    "seed.json": "4b69bc7560f7a45b4ebadf17de322f1c2b2d19ae8d547c93ba01e2585c69e1d1"
+  },
+  "bytes": 439876
+}

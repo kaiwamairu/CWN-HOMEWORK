@@ -1,0 +1,17 @@
+{
+  "captured": "2026-11-16",
+  "algorithm": "SHA-256",
+  "paths_relative_to": "week2_student root",
+  "files": {
+    "README.md": "b89bd1e866c955ae07371f75d3f4da2f99232519d27e7a710f75c47ca82eef28",
+    "brief/BRIEF.md": "eb232e2b489d72d85ff77e0d8e50cfefc98b5447f224db5841c4c55ee8444307",
+    "USER-STORIES.md": "98b18524806b8ba1130035476a2486185415289fc43c33667bb22c4b82a9b979",
+    "REQUIREMENTS.md": "9261ec050c33ff2d583354b77f8dc9c93bd0315de33db81fc4f133bfced5a421",
+    "CONTRACT.md": "1412902b8e25bedfeea82a69e97adad0c71700cc3b698aa4bfba2dff47bf4436",
+    "TEST-DATA.md": "f00966a796d5a58157facaac375e9ea016e02e8b475bb7fdc498e7df1d3923f8",
+    "TEST-PLAN.md": "8d145bd4ca28fd1188fe7b22fee4aca68c07a23793e00ac2ae4a4d6fc7f32cdd",
+    "BUGS.md": "06ddc5bd2838377c9c1da428ebe8b30a1207295024f8b71f62e42d90d4a9513a",
+    "DECISIONS.md": "077a4c173ff8f0d1645cc46f296996f08dc9c36846fe7b79ee490d2a9d3f40f2",
+    "PROMPTS.md": "86a13d6fd397d2e3d4895103b9c42b2b287eeda2d991b2d64ef505ec2286ca8f"
+  }
+}

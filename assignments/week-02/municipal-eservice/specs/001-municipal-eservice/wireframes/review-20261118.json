@@ -1,0 +1,1824 @@
+{
+  "date": "2026-11-18",
+  "status": "pass",
+  "scope": "Documentation and interactive wireframe review only; no application acceptance or backend implementation",
+  "task_1_spec_sync": "complete",
+  "task_2_prototype_flow_review": "complete",
+  "summary": {
+    "prototype_flow_checks": 85,
+    "responsive_page_renderings": 45,
+    "component_states": 75,
+    "media_checks": 29,
+    "mobile_profile_checks": 2,
+    "visual_samples": 6,
+    "failures": 0
+  },
+  "flow_checks": {
+    "baseline": [
+      {
+        "name": "Somchai seed cases",
+        "pass": true,
+        "actual": 10
+      },
+      {
+        "name": "SV01 fee qty2",
+        "pass": true,
+        "actual": "฿40"
+      },
+      {
+        "name": "Upload step",
+        "pass": true
+      },
+      {
+        "name": "Paid case allocated",
+        "pass": true,
+        "actual": "EG-2569-000031"
+      },
+      {
+        "name": "New case detail",
+        "pass": true
+      },
+      {
+        "name": "SV03 area101 fee",
+        "pass": true
+      },
+      {
+        "name": "SV03 area error",
+        "pass": true
+      },
+      {
+        "name": "Pending draft locked fee",
+        "pass": true
+      },
+      {
+        "name": "Pending QR expiry",
+        "pass": true
+      },
+      {
+        "name": "Expired QR regenerate",
+        "pass": true
+      },
+      {
+        "name": "Correction case",
+        "pass": true
+      },
+      {
+        "name": "Cancel no refund copy",
+        "pass": true
+      },
+      {
+        "name": "Cancel status",
+        "pass": true
+      },
+      {
+        "name": "Registry queue17",
+        "pass": true,
+        "actual": 17
+      },
+      {
+        "name": "Initial workload3",
+        "pass": true
+      },
+      {
+        "name": "Unclaimed4",
+        "pass": true,
+        "actual": 4
+      },
+      {
+        "name": "My queue3",
+        "pass": true
+      },
+      {
+        "name": "Head has no claim",
+        "pass": true
+      },
+      {
+        "name": "Works queue1",
+        "pass": true,
+        "actual": 1
+      },
+      {
+        "name": "Unmask reason required",
+        "pass": true
+      },
+      {
+        "name": "Full ID after reason",
+        "pass": true
+      },
+      {
+        "name": "Return count2 hidden",
+        "pass": true
+      },
+      {
+        "name": "Officer approve SV01",
+        "pass": true
+      },
+      {
+        "name": "Issue document",
+        "pass": true
+      },
+      {
+        "name": "New document verify",
+        "pass": true
+      },
+      {
+        "name": "Verify masks applicant",
+        "pass": true
+      },
+      {
+        "name": "December KPIs",
+        "pass": true,
+        "actual": [
+          "3",
+          "0",
+          "–",
+          "21",
+          "1"
+        ]
+      },
+      {
+        "name": "November ontime",
+        "pass": true,
+        "actual": [
+          "26",
+          "7",
+          "85.7%",
+          "21",
+          "1"
+        ]
+      },
+      {
+        "name": "Annual ontime",
+        "pass": true,
+        "actual": [
+          "30",
+          "8",
+          "87.5%",
+          "21",
+          "1"
+        ]
+      },
+      {
+        "name": "Officer notifications3",
+        "pass": true
+      },
+      {
+        "name": "Head notification1",
+        "pass": true
+      },
+      {
+        "name": "Works no notifications",
+        "pass": true
+      },
+      {
+        "name": "Invalid admin fee",
+        "pass": true
+      },
+      {
+        "name": "Duplicate holiday error",
+        "pass": true
+      },
+      {
+        "name": "Admin self role disabled",
+        "pass": true
+      },
+      {
+        "name": "Audit readonly",
+        "pass": true
+      },
+      {
+        "name": "Component loading",
+        "pass": true
+      },
+      {
+        "name": "Component empty",
+        "pass": true
+      },
+      {
+        "name": "Component error",
+        "pass": true
+      },
+      {
+        "name": "Component forbidden",
+        "pass": true
+      },
+      {
+        "name": "Component missing",
+        "pass": true
+      },
+      {
+        "name": "New citizen register route",
+        "pass": true
+      },
+      {
+        "name": "PDPA required",
+        "pass": true
+      },
+      {
+        "name": "Register citizen landing",
+        "pass": true
+      },
+      {
+        "name": "New citizen empty cases",
+        "pass": true
+      },
+      {
+        "name": "OTP example locked after3",
+        "pass": true
+      }
+    ],
+    "extended": [
+      {
+        "name": "SV03 registry forwards to works",
+        "pass": true
+      },
+      {
+        "name": "Works officer can claim routed case",
+        "pass": true
+      },
+      {
+        "name": "Works forwards to head",
+        "pass": true
+      },
+      {
+        "name": "Head sees routed case",
+        "pass": true
+      },
+      {
+        "name": "Head approves routed SV03",
+        "pass": true
+      },
+      {
+        "name": "Original issuer issues approved SV03",
+        "pass": true
+      },
+      {
+        "name": "Issued SV03 verifies with masked identity",
+        "pass": true
+      },
+      {
+        "name": "Public verification expired state is readable",
+        "pass": true
+      },
+      {
+        "name": "Public verification signature failure is readable",
+        "pass": true
+      },
+      {
+        "name": "Unknown verify code shows not found",
+        "pass": true
+      },
+      {
+        "name": "Head rejection requires a full reason",
+        "pass": true
+      },
+      {
+        "name": "Head rejection ends in rejected status",
+        "pass": true
+      },
+      {
+        "name": "Rejected request offers no issue action",
+        "pass": true
+      },
+      {
+        "name": "Officer returns case for correction",
+        "pass": true
+      },
+      {
+        "name": "Citizen sees correction action and reason",
+        "pass": true
+      },
+      {
+        "name": "Correction dialog offers a working confirmation",
+        "pass": true
+      },
+      {
+        "name": "Confirmed correction returns to review",
+        "pass": true
+      },
+      {
+        "name": "Correction keeps the previous officer",
+        "pass": true
+      },
+      {
+        "name": "Officer can continue the returned case",
+        "pass": true
+      },
+      {
+        "name": "Admin can save fee example",
+        "pass": true
+      },
+      {
+        "name": "Updated fee is shown on a new draft",
+        "pass": true
+      },
+      {
+        "name": "Admin can add a holiday",
+        "pass": true
+      },
+      {
+        "name": "Holiday removal requires confirmation",
+        "pass": true
+      },
+      {
+        "name": "Confirmed holiday removal updates list",
+        "pass": true
+      },
+      {
+        "name": "Admin role edit is stored in prototype",
+        "pass": true
+      },
+      {
+        "name": "Role edit takes effect on next login",
+        "pass": true
+      },
+      {
+        "name": "PDF preview follows chosen reporting period",
+        "pass": true
+      },
+      {
+        "name": "Excel preview follows chosen reporting period",
+        "pass": true
+      },
+      {
+        "name": "Audit CSV example contains the expected columns",
+        "pass": true
+      },
+      {
+        "name": "Audit view has no edit or delete control",
+        "pass": true
+      },
+      {
+        "name": "Notification opens the related request",
+        "pass": true
+      },
+      {
+        "name": "Opened notification is marked read",
+        "pass": true
+      },
+      {
+        "actual": "2",
+        "name": "Unread sidebar count decreases after reading",
+        "pass": true
+      },
+      {
+        "name": "Another actor keeps their unread count",
+        "pass": true
+      },
+      {
+        "name": "Profile menu opens and receives first item focus",
+        "pass": true
+      },
+      {
+        "name": "Profile keyboard reaches logout",
+        "pass": true
+      },
+      {
+        "name": "Escape returns focus to profile trigger",
+        "pass": true
+      },
+      {
+        "name": "Account details are read-only",
+        "pass": true
+      },
+      {
+        "name": "Citizen logout returns to citizen login tab",
+        "pass": true
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "content": true,
+      "expected": "login",
+      "key": "login",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "เข้าสู่ระบบ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "register",
+      "key": "register",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ลงทะเบียน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "verify",
+      "key": "verify",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ตรวจสอบเอกสาร · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "citizen",
+      "key": "citizen",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "คำขอของฉัน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "wizard",
+      "key": "wizard",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ยื่นคำขอ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "citizen-case",
+      "key": "citizen-case",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "รายละเอียดคำขอ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "queue",
+      "key": "queue",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "คิวงาน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "officer-case",
+      "key": "officer-case",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ตรวจคำขอ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "approvals",
+      "key": "approvals",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "รออนุมัติ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "dashboard",
+      "key": "dashboard",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ภาพรวมบริการ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "audit",
+      "key": "audit",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ประวัติการดำเนินการ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "services",
+      "key": "services",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "บริการและ SLA · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "holidays",
+      "key": "holidays",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "วันหยุด · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "users",
+      "key": "users",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ผู้ใช้และบทบาท · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "notifications",
+      "key": "notifications",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "การแจ้งเตือน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 375
+    },
+    {
+      "content": true,
+      "expected": "login",
+      "key": "login",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "เข้าสู่ระบบ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "register",
+      "key": "register",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ลงทะเบียน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "verify",
+      "key": "verify",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ตรวจสอบเอกสาร · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "citizen",
+      "key": "citizen",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "คำขอของฉัน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "wizard",
+      "key": "wizard",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ยื่นคำขอ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "citizen-case",
+      "key": "citizen-case",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "รายละเอียดคำขอ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "queue",
+      "key": "queue",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "คิวงาน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "officer-case",
+      "key": "officer-case",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ตรวจคำขอ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "approvals",
+      "key": "approvals",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "รออนุมัติ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "dashboard",
+      "key": "dashboard",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ภาพรวมบริการ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "audit",
+      "key": "audit",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ประวัติการดำเนินการ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "services",
+      "key": "services",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "บริการและ SLA · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "holidays",
+      "key": "holidays",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "วันหยุด · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "users",
+      "key": "users",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ผู้ใช้และบทบาท · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "notifications",
+      "key": "notifications",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "การแจ้งเตือน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 768
+    },
+    {
+      "content": true,
+      "expected": "login",
+      "key": "login",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "เข้าสู่ระบบ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "register",
+      "key": "register",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ลงทะเบียน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "verify",
+      "key": "verify",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ตรวจสอบเอกสาร · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "citizen",
+      "key": "citizen",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "คำขอของฉัน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "wizard",
+      "key": "wizard",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ยื่นคำขอ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "citizen-case",
+      "key": "citizen-case",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "รายละเอียดคำขอ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "queue",
+      "key": "queue",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "คิวงาน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "officer-case",
+      "key": "officer-case",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ตรวจคำขอ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "approvals",
+      "key": "approvals",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "รออนุมัติ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "dashboard",
+      "key": "dashboard",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ภาพรวมบริการ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "audit",
+      "key": "audit",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ประวัติการดำเนินการ · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "services",
+      "key": "services",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "บริการและ SLA · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "holidays",
+      "key": "holidays",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "วันหยุด · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "users",
+      "key": "users",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "ผู้ใช้และบทบาท · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    },
+    {
+      "content": true,
+      "expected": "notifications",
+      "key": "notifications",
+      "no_app_header": true,
+      "no_overflow": true,
+      "readable_thai": true,
+      "title": "การแจ้งเตือน · Wireframe เมืองแห่งบริการ",
+      "unlabeled_fields": [],
+      "unnamed_buttons": [],
+      "width": 1280
+    }
+  ],
+  "component_states": [
+    {
+      "no_overflow": true,
+      "page": "login",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "login",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "login",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "login",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "login",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "register",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "register",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "register",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "register",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "register",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "verify",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "verify",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "verify",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "verify",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "verify",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "wizard",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "wizard",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "wizard",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "wizard",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "wizard",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen-case",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen-case",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen-case",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen-case",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "citizen-case",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "queue",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "queue",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "queue",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "queue",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "queue",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "officer-case",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "officer-case",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "officer-case",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "officer-case",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "officer-case",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "approvals",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "approvals",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "approvals",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "approvals",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "approvals",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "dashboard",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "dashboard",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "dashboard",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "dashboard",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "dashboard",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "audit",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "audit",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "audit",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "audit",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "audit",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "services",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "services",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "services",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "services",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "services",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "holidays",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "holidays",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "holidays",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "holidays",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "holidays",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "users",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "users",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "users",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "users",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "users",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "notifications",
+      "readable_thai": true,
+      "state": "loading",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "notifications",
+      "readable_thai": true,
+      "state": "empty",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "notifications",
+      "readable_thai": true,
+      "state": "error",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "notifications",
+      "readable_thai": true,
+      "state": "forbidden",
+      "visible": true
+    },
+    {
+      "no_overflow": true,
+      "page": "notifications",
+      "readable_thai": true,
+      "state": "missing",
+      "visible": true
+    }
+  ],
+  "media": {
+    "failed": 0,
+    "passed": 29,
+    "reduced_motion_method": "Actual controller in isolated iframe with matchMedia preference stub; not an OS-level emulation",
+    "results": [
+      {
+        "name": "Approved placement /citizen ",
+        "pass": true
+      },
+      {
+        "name": "Decoded muted loop /citizen ",
+        "pass": true
+      },
+      {
+        "name": "Approved placement /register ",
+        "pass": true
+      },
+      {
+        "name": "Decoded muted loop /register ",
+        "pass": true
+      },
+      {
+        "name": "Approved placement /login citizen",
+        "pass": true
+      },
+      {
+        "name": "Decoded muted loop /login citizen",
+        "pass": true
+      },
+      {
+        "name": "Approved placement /login staff",
+        "pass": true
+      },
+      {
+        "name": "Decoded muted loop /login staff",
+        "pass": true
+      },
+      {
+        "name": "Approved placement /verify/K7M2Q9XA ",
+        "pass": true
+      },
+      {
+        "name": "Decoded muted loop /verify/K7M2Q9XA ",
+        "pass": true
+      },
+      {
+        "name": "Scene pause works",
+        "pass": true
+      },
+      {
+        "name": "Scene resume works",
+        "pass": true
+      },
+      {
+        "name": "Leaving a scene pauses its detached video",
+        "pass": true
+      },
+      {
+        "name": "Pointer movement leaves shadow and fade transform fixed",
+        "pass": true
+      },
+      {
+        "name": "User greeting fade remains at 12px",
+        "pass": true
+      },
+      {
+        "name": "Calendar date frame remains present",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference defers source 1A",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference retains poster and explicit play 1A",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference allows explicit opt-in 1A",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference defers source 3A",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference retains poster and explicit play 3A",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference allows explicit opt-in 3A",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference defers source LOGIN-CITIZEN",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference retains poster and explicit play LOGIN-CITIZEN",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference allows explicit opt-in LOGIN-CITIZEN",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference defers source LOGIN-STAFF",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference retains poster and explicit play LOGIN-STAFF",
+        "pass": true
+      },
+      {
+        "name": "Reduced preference allows explicit opt-in LOGIN-STAFF",
+        "pass": true
+      },
+      {
+        "name": "Media error retains a poster and disables playback",
+        "pass": true
+      }
+    ]
+  },
+  "mobile_profile": [
+    {
+      "name": "mobile profile menu stays within viewport",
+      "pass": true
+    },
+    {
+      "name": "mobile profile trigger meets 44px",
+      "pass": true
+    }
+  ],
+  "visual_review": [
+    {
+      "name": "mobile-uploads",
+      "width": 375,
+      "visually_inspected": true
+    },
+    {
+      "name": "mobile-profile-notifications",
+      "width": 375,
+      "visually_inspected": true
+    },
+    {
+      "name": "desktop-correction-confirm",
+      "width": 1280,
+      "visually_inspected": true
+    },
+    {
+      "name": "desktop-dashboard",
+      "width": 1280,
+      "visually_inspected": true
+    },
+    {
+      "name": "desktop-head-approvals",
+      "width": 1280,
+      "visually_inspected": true
+    },
+    {
+      "name": "desktop-admin-services",
+      "width": 1280,
+      "visually_inspected": true
+    }
+  ],
+  "fixes": [
+    {
+      "id": "WF-01",
+      "problem": "Correction dialog had no confirm action, blocking the return-to-officer journey",
+      "before": "reproduced by failing regression",
+      "after": "confirm changes prototype case back to IN_REVIEW, retains previous owner and allows review to continue",
+      "files": [
+        "wireframes/actions.js"
+      ]
+    },
+    {
+      "id": "WF-02",
+      "problem": "Sidebar unread count stayed constant after opening a notification",
+      "before": "expected 2, observed 3",
+      "after": "shared notification list and per-actor read keys drive both list and sidebar; another actor retains their own count",
+      "files": [
+        "wireframes/core.js",
+        "wireframes/pages-staff.js",
+        "wireframes/actions.js"
+      ]
+    }
+  ],
+  "regression_evidence": {
+    "before_fixes": [
+      {
+        "name": "SV03 registry forwards to works",
+        "pass": true
+      },
+      {
+        "name": "Works officer can claim routed case",
+        "pass": true
+      },
+      {
+        "name": "Works forwards to head",
+        "pass": true
+      },
+      {
+        "name": "Head sees routed case",
+        "pass": true
+      },
+      {
+        "name": "Head approves routed SV03",
+        "pass": true
+      },
+      {
+        "name": "Original issuer issues approved SV03",
+        "pass": true
+      },
+      {
+        "name": "Issued SV03 verifies with masked identity",
+        "pass": true
+      },
+      {
+        "name": "Public verification expired state is readable",
+        "pass": true
+      },
+      {
+        "name": "Public verification signature failure is readable",
+        "pass": true
+      },
+      {
+        "name": "Unknown verify code shows not found",
+        "pass": true
+      },
+      {
+        "name": "Head rejection requires a full reason",
+        "pass": true
+      },
+      {
+        "name": "Head rejection ends in rejected status",
+        "pass": true
+      },
+      {
+        "name": "Rejected request offers no issue action",
+        "pass": true
+      },
+      {
+        "name": "Officer returns case for correction",
+        "pass": true
+      },
+      {
+        "name": "Citizen sees correction action and reason",
+        "pass": true
+      },
+      {
+        "name": "Correction dialog offers a working confirmation",
+        "pass": false
+      },
+      {
+        "name": "Admin can save fee example",
+        "pass": true
+      },
+      {
+        "name": "Updated fee is shown on a new draft",
+        "pass": true
+      },
+      {
+        "name": "Admin can add a holiday",
+        "pass": true
+      },
+      {
+        "name": "Holiday removal requires confirmation",
+        "pass": true
+      },
+      {
+        "name": "Confirmed holiday removal updates list",
+        "pass": true
+      },
+      {
+        "name": "Admin role edit is stored in prototype",
+        "pass": true
+      },
+      {
+        "name": "Role edit takes effect on next login",
+        "pass": true
+      },
+      {
+        "name": "PDF preview follows chosen reporting period",
+        "pass": true
+      },
+      {
+        "name": "Excel preview follows chosen reporting period",
+        "pass": true
+      },
+      {
+        "name": "Audit CSV example contains the expected columns",
+        "pass": true
+      },
+      {
+        "name": "Audit view has no edit or delete control",
+        "pass": true
+      },
+      {
+        "name": "Notification opens the related request",
+        "pass": true
+      },
+      {
+        "name": "Opened notification is marked read",
+        "pass": true
+      },
+      {
+        "actual": "3",
+        "name": "Unread sidebar count decreases after reading",
+        "pass": false
+      },
+      {
+        "name": "Another actor keeps their unread count",
+        "pass": true
+      },
+      {
+        "name": "Profile menu opens and receives first item focus",
+        "pass": true
+      },
+      {
+        "name": "Profile keyboard reaches logout",
+        "pass": true
+      },
+      {
+        "name": "Escape returns focus to profile trigger",
+        "pass": true
+      },
+      {
+        "name": "Account details are read-only",
+        "pass": true
+      },
+      {
+        "name": "Citizen logout returns to citizen login tab",
+        "pass": true
+      }
+    ],
+    "after_fixes_passed": 39
+  },
+  "integrity": {
+    "original_source_documents_unchanged": 10,
+    "tokens_and_user_fade_unchanged": true,
+    "token_sha256": "ba9780181adf24c29c2aa7defe0af91502db7ee3a726a0f8532fe230c4ba6f62",
+    "approved_media_hashes_unchanged": true,
+    "all_78_application_tasks_pending": true
+  },
+  "reproduction": {
+    "browser": "Orca embedded browser",
+    "flow_probes": [
+      "review-flows.js",
+      "review-extended-flows.js"
+    ],
+    "page_probe": "review-pages.js; run at 375, 768, 1280 CSS px",
+    "media_probe": "review-media.js",
+    "reduced_motion_method": "Actual controller in isolated iframe with matchMedia preference stub; not an OS-level emulation"
+  },
+  "limits": [
+    "All data and state transitions are in-memory prototype examples",
+    "Real auth, server authorization, encrypted persistence and atomic transactions are pending application tasks",
+    "Correction confirmation demonstrates navigation/status; upload persistence, deadline enforcement and SLA extension remain implementation work",
+    "PDF/XLSX exports are layout previews; CSV is prototype example data",
+    "This is not a complete WCAG audit or application performance/security acceptance",
+    "Historical generation-time inspection records retain their original approval-at-inspection state; current approval is in motion manifest and trial approval.json"
+  ],
+  "new_media_generation": false,
+  "canonical_application_tests_run": 0,
+  "implementation_tasks_marked_complete": 0
+}

@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-18",
+  "scope": "T001-T013",
+  "linear": "RYU-253",
+  "runtime": {
+    "node": "v24.22.3",
+    "nodeArchiveSha256": "e612af99f626ab415ea225af6bce5c971feb448cb5cae250bb1c3fa50c5f7d9f",
+    "next": "16.4.6",
+    "sqlite": "13.2.0"
+  },
+  "unitIntegration": {
+    "tests": 101,
+    "pass": 101,
+    "fail": 0,
+    "skipped": 0
+  },
+  "compiledHttpSmoke": [
+    {
+      "check": "fresh owned launcher readiness and seed count",
+      "passed": true
+    },
+    {
+      "check": "exact production health JSON",
+      "passed": true
+    },
+    {
+      "check": "API no-store",
+      "passed": true
+    },
+    {
+      "check": "foundation HTML shared token shell",
+      "passed": true
+    },
+    {
+      "check": "reset clears alerts before ordinary request",
+      "passed": true
+    },
+    {
+      "check": "clock hook avoids lifecycle",
+      "passed": true
+    },
+    {
+      "check": "compiled transport accepts body above 6 MiB",
+      "passed": true
+    },
+    {
+      "check": "static asset triggers current SLA alerts",
+      "passed": true
+    },
+    {
+      "check": "six simultaneous callbacks allocate once",
+      "passed": true
+    },
+    {
+      "check": "callbacks share the original case",
+      "passed": true
+    },
+    {
+      "check": "single persisted case and receipt",
+      "passed": true
+    },
+    {
+      "check": "public HTML request runs exact deadline cancellation",
+      "passed": true
+    },
+    {
+      "check": "real signature detects test tampering",
+      "passed": true
+    },
+    {
+      "check": "hooks disabled POST /api/test/reset",
+      "passed": true
+    },
+    {
+      "check": "hooks disabled GET /api/test/clock",
+      "passed": true
+    },
+    {
+      "check": "hooks disabled PUT /api/test/clock",
+      "passed": true
+    },
+    {
+      "check": "hooks disabled POST /api/test/payments/PP-0001/pay",
+      "passed": true
+    },
+    {
+      "check": "hooks disabled POST /api/test/documents/DOC-2569-000001/tamper",
+      "passed": true
+    },
+    {
+      "check": "hooks disabled DELETE /api/test/unknown",
+      "passed": true
+    },
+    {
+      "check": "public verification API remains available with hooks disabled",
+      "passed": true
+    }
+  ],
+  "canonicalAcceptance": {
+    "registry": 51,
+    "executed": 0,
+    "status": "pending story implementations and T073"
+  },
+  "assets": {
+    "tokens": 64,
+    "approvedMediaFiles": 10,
+    "svgByteParity": true,
+    "sourceFadeTranslateY": "12px"
+  },
+  "publication": {
+    "status": "verified in actual main project",
+    "path": "C:\\Users\\PhatthadonChangate\\Project_Main\\Teaching_CWN2026\\week2_student",
+    "cleanInstall": true,
+    "sourcePreimageGuards": true,
+    "sourceBackups": true
+  },
+  "mainVerification": {
+    "commands": {
+      "npm ci": 0,
+      "typecheck": 0,
+      "verify:assets": 0,
+      "test:unit": 0,
+      "build": 0,
+      "setup:local": 0,
+      "db:seed": 0
+    },
+    "unitIntegration": {
+      "tests": 101,
+      "passed": 101,
+      "failed": 0,
+      "skipped": 0
+    },
+    "compiledHttpSmoke": {
+      "passed": 20,
+      "failed": 0,
+      "ownedProcessesStopped": true
+    },
+    "installMode": "Pinned packaged prebuilds; project ignore-scripts=true; explicit run scripts verified"
+  }
+}

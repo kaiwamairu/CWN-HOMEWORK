@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-16",
+  "scope": "Document verification only. No application build or acceptance suite was run.",
+  "status": "pass",
+  "check_count": 22,
+  "checks": {
+    "source_manifest_has_ten_documents": {
+      "pass": true,
+      "detail": null
+    },
+    "staged_source_documents_unchanged": {
+      "pass": true,
+      "detail": []
+    },
+    "original_source_documents_unchanged": {
+      "pass": true,
+      "detail": []
+    },
+    "staged_original_setup_files_preserved": {
+      "pass": true,
+      "detail": {
+        "count": 38,
+        "mismatches": []
+      }
+    },
+    "feature_context": {
+      "pass": true,
+      "detail": null
+    },
+    "task_checklist_format": {
+      "pass": true,
+      "detail": null
+    },
+    "task_sequence_and_unchecked": {
+      "pass": true,
+      "detail": null
+    },
+    "every_task_has_implementation_path": {
+      "pass": true,
+      "detail": null
+    },
+    "all_fourteen_stories_have_tasks": {
+      "pass": true,
+      "detail": {
+        "1": 4,
+        "2": 3,
+        "3": 4,
+        "4": 4,
+        "5": 4,
+        "6": 4,
+        "7": 4,
+        "8": 5,
+        "9": 5,
+        "10": 4,
+        "11": 5,
+        "12": 4,
+        "13": 3,
+        "14": 4
+      }
+    },
+    "all_sixty_nine_requirements_explicitly_mapped": {
+      "pass": true,
+      "detail": []
+    },
+    "all_ten_success_criteria_mapped": {
+      "pass": true,
+      "detail": null
+    },
+    "all_fifty_one_tc_ids_exact": {
+      "pass": true,
+      "detail": null
+    },
+    "canonical_primary_case_ownership": {
+      "pass": true,
+      "detail": null
+    },
+    "inventory_counts": {
+      "pass": true,
+      "detail": null
+    },
+    "contract_projection_matches_original_rows": {
+      "pass": true,
+      "detail": []
+    },
+    "twelve_mutation_sets_match_source": {
+      "pass": true,
+      "detail": null
+    },
+    "spec_has_fourteen_unique_stories": {
+      "pass": true,
+      "detail": null
+    },
+    "dependency_graph_acyclic": {
+      "pass": true,
+      "detail": null
+    },
+    "no_extension_hooks_registered": {
+      "pass": true,
+      "detail": null
+    },
+    "no_application_implementation_created": {
+      "pass": true,
+      "detail": null
+    },
+    "all_generated_local_markdown_links_resolve": {
+      "pass": true,
+      "detail": []
+    },
+    "no_unfilled_template_placeholders": {
+      "pass": true,
+      "detail": []
+    }
+  },
+  "metrics": {
+    "tasks": 78,
+    "stories": 14,
+    "functional_requirements": 29,
+    "business_rules": 29,
+    "nonfunctional_requirements": 11,
+    "success_criteria": 10,
+    "canonical_tc_ids": 51,
+    "mutation_modes": 12,
+    "runtime_tests_executed": 0
+  }
+}
