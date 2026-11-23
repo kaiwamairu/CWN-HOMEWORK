@@ -1,0 +1,84 @@
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: 16px;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  font-weight: 600;
+}
+
+.filter select {
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--ds-color-border);
+  border-radius: var(--ds-radius-control);
+  background: var(--ds-color-control);
+}
+
+.filter select:focus-visible {
+  outline: 3px solid var(--ds-color-focus);
+  outline-offset: 3px;
+}
+
+.workload {
+  color: var(--ds-color-primary);
+}
+
+.workload strong {
+  margin-inline-start: 4px;
+  font-size: 1.25rem;
+}
+
+.tableRegion {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--ds-color-border);
+  border-radius: var(--ds-radius-control);
+  background: var(--ds-data-fill);
+}
+
+.table th[scope='col'] {
+  color: var(--ds-color-primary);
+}
+
+.table th[scope='row'] {
+  padding: 4px 12px;
+  border-bottom: 1px solid var(--ds-color-border);
+  background: transparent;
+}
+
+.table tr:last-child th[scope='row'] {
+  border-bottom: 0;
+}
+
+.table .service {
+  min-width: 10em;
+  max-width: 14em;
+  white-space: normal;
+}
+
+.error,
+.success {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: var(--ds-radius-control);
+}
+
+.error {
+  color: var(--ds-color-danger);
+  background: var(--ds-color-danger-surface);
+}
+
+.success {
+  color: var(--ds-color-success);
+  background: var(--ds-color-success-surface);
+}

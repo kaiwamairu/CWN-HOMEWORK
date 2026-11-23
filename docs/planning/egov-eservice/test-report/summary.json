@@ -1,0 +1,524 @@
+{
+  "summary": {
+    "ranAt": "2026-11-23T00:27:50.006Z",
+    "expected": 51,
+    "unexpected": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "total": 51,
+    "missingFromPlan": [],
+    "extraNotInPlan": []
+  },
+  "tests": [
+    {
+      "tc": "TC-AUDIT-01",
+      "title": "TC-AUDIT-01 เหตุการณ์และฟิลด์ใน Audit",
+      "file": "audit.spec.ts",
+      "status": "passed",
+      "ms": 3603,
+      "priority": "P1",
+      "gif": "gifs/TC-AUDIT-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-AUDIT-02",
+      "title": "TC-AUDIT-02 Audit แก้/ลบไม่ได้ (405)",
+      "file": "audit.spec.ts",
+      "status": "passed",
+      "ms": 1019,
+      "priority": "P1",
+      "gif": "gifs/TC-AUDIT-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-AUDIT-03",
+      "title": "TC-AUDIT-03 กรองช่วงวันที่ตามเวลาไทย",
+      "file": "audit.spec.ts",
+      "status": "passed",
+      "ms": 3728,
+      "priority": "P1",
+      "gif": "gifs/TC-AUDIT-03.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-AUTH-01",
+      "title": "TC-AUTH-01 เลขบัตร 13 หลัก + checksum",
+      "file": "auth.spec.ts",
+      "status": "passed",
+      "ms": 9102,
+      "priority": "P1",
+      "gif": "gifs/TC-AUTH-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-AUTH-02",
+      "title": "TC-AUTH-02 OTP ผิด 3 ครั้งล็อก 15 นาที",
+      "file": "auth.spec.ts",
+      "status": "passed",
+      "ms": 7074,
+      "priority": "P1",
+      "gif": "gifs/TC-AUTH-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-AUTH-03",
+      "title": "TC-AUTH-03 ลงทะเบียนครั้งแรก",
+      "file": "register.spec.ts",
+      "status": "passed",
+      "ms": 4037,
+      "priority": "P1",
+      "gif": "gifs/TC-AUTH-03.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-AUTH-04",
+      "title": "TC-AUTH-04 เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น",
+      "file": "auth.spec.ts",
+      "status": "passed",
+      "ms": 20194,
+      "priority": "P2",
+      "gif": null,
+      "gifNote": null
+    },
+    {
+      "tc": "TC-DASH-01",
+      "title": "TC-DASH-01 Dashboard ตัวเลขเริ่มต้น",
+      "file": "dashboard.spec.ts",
+      "status": "passed",
+      "ms": 1049,
+      "priority": "P1",
+      "gif": "gifs/TC-DASH-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-DASH-02",
+      "title": "TC-DASH-02 Dashboard ย้อนหลัง",
+      "file": "dashboard.spec.ts",
+      "status": "passed",
+      "ms": 2015,
+      "priority": "P1",
+      "gif": "gifs/TC-DASH-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-DASH-03",
+      "title": "TC-DASH-03 ส่งออก Excel/PDF เท่าหน้าจอ",
+      "file": "dashboard.spec.ts",
+      "status": "passed",
+      "ms": 2323,
+      "priority": "P2",
+      "gif": null,
+      "gifNote": null
+    },
+    {
+      "tc": "TC-DASH-04",
+      "title": "TC-DASH-04 ค่าขอบ \"ทันกำหนด\" 16:29:59 / 16:30:00 / 16:30:01",
+      "file": "dashboard.spec.ts",
+      "status": "passed",
+      "ms": 2594,
+      "priority": "P1",
+      "gif": "gifs/TC-DASH-04.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-DOC-01",
+      "title": "TC-DOC-01 ออกเอกสารและข้อมูลในเอกสาร",
+      "file": "documents.spec.ts",
+      "status": "passed",
+      "ms": 2247,
+      "priority": "P1",
+      "gif": "gifs/TC-DOC-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-DOC-02",
+      "title": "TC-DOC-02 ตรวจเอกสาร /verify",
+      "file": "documents.spec.ts",
+      "status": "passed",
+      "ms": 867,
+      "priority": "P1",
+      "gif": "gifs/TC-DOC-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-DOC-03",
+      "title": "TC-DOC-03 เอกสารหมดอายุและลายเซ็นไม่ตรง",
+      "file": "documents.spec.ts",
+      "status": "passed",
+      "ms": 5160,
+      "priority": "P1",
+      "gif": "gifs/TC-DOC-03.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-FEE-01",
+      "title": "TC-FEE-01 ค่าธรรมเนียม SV-01 / SV-02 / SV-03",
+      "file": "drafts.spec.ts",
+      "status": "passed",
+      "ms": 2538,
+      "priority": "P1",
+      "gif": "gifs/TC-FEE-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-NFR-01",
+      "title": "TC-NFR-01 Responsive 375 / 768 / 1280",
+      "file": "nfr.spec.ts",
+      "status": "passed",
+      "ms": 27055,
+      "priority": "P1",
+      "gif": "gifs/TC-NFR-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-NFR-02",
+      "title": "TC-NFR-02 WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+      "file": "nfr.spec.ts",
+      "status": "passed",
+      "ms": 35998,
+      "priority": "P1",
+      "gif": "gifs/TC-NFR-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-NFR-03",
+      "title": "TC-NFR-03 Health เวลาโหลด และผลซ้ำได้",
+      "file": "nfr.spec.ts",
+      "status": "passed",
+      "ms": 4139,
+      "priority": "P2",
+      "gif": null,
+      "gifNote": null
+    },
+    {
+      "tc": "TC-NFR-04",
+      "title": "TC-NFR-04 เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection)",
+      "file": "nfr04-inspection.spec.ts",
+      "status": "passed",
+      "ms": 611,
+      "priority": "P2",
+      "gif": null,
+      "gifNote": null
+    },
+    {
+      "tc": "TC-NOTI-01",
+      "title": "TC-NOTI-01 ผู้รับแจ้งเตือนตามระดับ",
+      "file": "sla.spec.ts",
+      "status": "passed",
+      "ms": 3007,
+      "priority": "P1",
+      "gif": "gifs/TC-NOTI-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-NOTI-02",
+      "title": "TC-NOTI-02 ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร",
+      "file": "sla.spec.ts",
+      "status": "passed",
+      "ms": 11767,
+      "priority": "P1",
+      "gif": "gifs/TC-NOTI-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-PAY-01",
+      "title": "TC-PAY-01 อายุ QR 15:00",
+      "file": "payments.spec.ts",
+      "status": "passed",
+      "ms": 1483,
+      "priority": "P1",
+      "gif": "gifs/TC-PAY-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-PAY-02",
+      "title": "TC-PAY-02 ยอดเงินและ callback ซ้ำ",
+      "file": "payments.spec.ts",
+      "status": "passed",
+      "ms": 499,
+      "priority": "P1",
+      "gif": null,
+      "gifNote": "API-only test: no browser page was rendered"
+    },
+    {
+      "tc": "TC-PAY-03",
+      "title": "TC-PAY-03 ชำระพร้อมกัน เลขไม่ซ้ำ",
+      "file": "payments.spec.ts",
+      "status": "passed",
+      "ms": 1057,
+      "priority": "P1",
+      "gif": null,
+      "gifNote": "API-only test: no browser page was rendered"
+    },
+    {
+      "tc": "TC-PAY-04",
+      "title": "TC-PAY-04 เลขคำขอข้ามปี",
+      "file": "payments.spec.ts",
+      "status": "passed",
+      "ms": 1384,
+      "priority": "P2",
+      "gif": null,
+      "gifNote": null
+    },
+    {
+      "tc": "TC-PDPA-01",
+      "title": "TC-PDPA-01 ปิดบังเลขบัตรบนจอ",
+      "file": "citizen.spec.ts",
+      "status": "passed",
+      "ms": 2630,
+      "priority": "P1",
+      "gif": "gifs/TC-PDPA-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-PDPA-02",
+      "title": "TC-PDPA-02 API (JSON) ไม่ส่งเลขบัตรเต็ม",
+      "file": "review.spec.ts",
+      "status": "passed",
+      "ms": 454,
+      "priority": "P1",
+      "gif": null,
+      "gifNote": "API-only test: no browser page was rendered"
+    },
+    {
+      "tc": "TC-PDPA-03",
+      "title": "TC-PDPA-03 แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit",
+      "file": "review.spec.ts",
+      "status": "passed",
+      "ms": 2358,
+      "priority": "P1",
+      "gif": "gifs/TC-PDPA-03.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-QUEUE-01",
+      "title": "TC-QUEUE-01 ลำดับคิวและขอบเขตแผนก",
+      "file": "queue.spec.ts",
+      "status": "passed",
+      "ms": 3221,
+      "priority": "P1",
+      "gif": "gifs/TC-QUEUE-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-QUEUE-02",
+      "title": "TC-QUEUE-02 รับเรื่องซ้อน (พร้อมกันและต่อกัน)",
+      "file": "queue.spec.ts",
+      "status": "passed",
+      "ms": 3937,
+      "priority": "P1",
+      "gif": "gifs/TC-QUEUE-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-QUEUE-03",
+      "title": "TC-QUEUE-03 งานในมือสูงสุด 10",
+      "file": "queue.spec.ts",
+      "status": "passed",
+      "ms": 5885,
+      "priority": "P1",
+      "gif": "gifs/TC-QUEUE-03.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-RBAC-01",
+      "title": "TC-RBAC-01 ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR)",
+      "file": "citizen.spec.ts",
+      "status": "passed",
+      "ms": 990,
+      "priority": "P1",
+      "gif": "gifs/TC-RBAC-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-RBAC-02",
+      "title": "TC-RBAC-02 เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API)",
+      "file": "approvals.spec.ts",
+      "status": "passed",
+      "ms": 1923,
+      "priority": "P1",
+      "gif": "gifs/TC-RBAC-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-RBAC-03",
+      "title": "TC-RBAC-03 ตารางสิทธิ์หน้า/API ตามบทบาท",
+      "file": "rbac.spec.ts",
+      "status": "passed",
+      "ms": 15915,
+      "priority": "P1",
+      "gif": "gifs/TC-RBAC-03.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-RBAC-04",
+      "title": "TC-RBAC-04 ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก",
+      "file": "admin.spec.ts",
+      "status": "passed",
+      "ms": 6735,
+      "priority": "P2",
+      "gif": null,
+      "gifNote": null
+    },
+    {
+      "tc": "TC-RBAC-05",
+      "title": "TC-RBAC-05 สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ",
+      "file": "documents.spec.ts",
+      "status": "passed",
+      "ms": 3152,
+      "priority": "P1",
+      "gif": "gifs/TC-RBAC-05.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-RBAC-06",
+      "title": "TC-RBAC-06 ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ",
+      "file": "admin.spec.ts",
+      "status": "passed",
+      "ms": 5114,
+      "priority": "P2",
+      "gif": null,
+      "gifNote": null
+    },
+    {
+      "tc": "TC-SLA-01",
+      "title": "TC-SLA-01 กำหนดเสร็จตามตารางวันที่",
+      "file": "sla.spec.ts",
+      "status": "passed",
+      "ms": 7127,
+      "priority": "P1",
+      "gif": "gifs/TC-SLA-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-SLA-02",
+      "title": "TC-SLA-02 หยุดนับ SLA ระหว่างรอแก้ไข",
+      "file": "sla.spec.ts",
+      "status": "passed",
+      "ms": 7094,
+      "priority": "P1",
+      "gif": "gifs/TC-SLA-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-SLA-03",
+      "title": "TC-SLA-03 ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด",
+      "file": "sla.spec.ts",
+      "status": "passed",
+      "ms": 6299,
+      "priority": "P1",
+      "gif": "gifs/TC-SLA-03.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-SUBMIT-01",
+      "title": "TC-SUBMIT-01 ยื่นคำขอ SV-01 ครบวงจร",
+      "file": "citizen.spec.ts",
+      "status": "passed",
+      "ms": 2730,
+      "priority": "P1",
+      "gif": "gifs/TC-SUBMIT-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-SUBMIT-02",
+      "title": "TC-SUBMIT-02 เอกสารบังคับครบก่อนชำระ",
+      "file": "drafts.spec.ts",
+      "status": "passed",
+      "ms": 2175,
+      "priority": "P1",
+      "gif": "gifs/TC-SUBMIT-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-SUBMIT-03",
+      "title": "TC-SUBMIT-03 ร่าง และการยกเลิก",
+      "file": "drafts.spec.ts",
+      "status": "passed",
+      "ms": 6735,
+      "priority": "P2",
+      "gif": null,
+      "gifNote": null
+    },
+    {
+      "tc": "TC-UPLOAD-01",
+      "title": "TC-UPLOAD-01 ขนาดและจำนวนไฟล์",
+      "file": "uploads.spec.ts",
+      "status": "passed",
+      "ms": 7126,
+      "priority": "P1",
+      "gif": "gifs/TC-UPLOAD-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-UPLOAD-02",
+      "title": "TC-UPLOAD-02 ชนิดไฟล์จากเนื้อไฟล์",
+      "file": "uploads.spec.ts",
+      "status": "passed",
+      "ms": 4632,
+      "priority": "P1",
+      "gif": "gifs/TC-UPLOAD-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-WORKFLOW-01",
+      "title": "TC-WORKFLOW-01 SV-01 อนุมัติ + ออกเอกสาร",
+      "file": "approvals.spec.ts",
+      "status": "passed",
+      "ms": 2096,
+      "priority": "P1",
+      "gif": "gifs/TC-WORKFLOW-01.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-WORKFLOW-02",
+      "title": "TC-WORKFLOW-02 SV-02 ผ่านหัวหน้า",
+      "file": "approvals.spec.ts",
+      "status": "passed",
+      "ms": 5223,
+      "priority": "P1",
+      "gif": "gifs/TC-WORKFLOW-02.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-WORKFLOW-03",
+      "title": "TC-WORKFLOW-03 SV-03 สามขั้นตอน",
+      "file": "approvals.spec.ts",
+      "status": "passed",
+      "ms": 4462,
+      "priority": "P1",
+      "gif": "gifs/TC-WORKFLOW-03.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-WORKFLOW-04",
+      "title": "TC-WORKFLOW-04 ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ",
+      "file": "review.spec.ts",
+      "status": "passed",
+      "ms": 5940,
+      "priority": "P1",
+      "gif": "gifs/TC-WORKFLOW-04.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-WORKFLOW-05",
+      "title": "TC-WORKFLOW-05 เหตุผล ≥ 10 ตัวอักษร (ตีกลับ / ไม่อนุมัติ)",
+      "file": "review.spec.ts",
+      "status": "passed",
+      "ms": 4982,
+      "priority": "P1",
+      "gif": "gifs/TC-WORKFLOW-05.gif",
+      "gifNote": null
+    },
+    {
+      "tc": "TC-WORKFLOW-06",
+      "title": "TC-WORKFLOW-06 เวลาแก้ไข 168 ชั่วโมง",
+      "file": "review.spec.ts",
+      "status": "passed",
+      "ms": 2297,
+      "priority": "P1",
+      "gif": "gifs/TC-WORKFLOW-06.gif",
+      "gifNote": null
+    }
+  ]
+}

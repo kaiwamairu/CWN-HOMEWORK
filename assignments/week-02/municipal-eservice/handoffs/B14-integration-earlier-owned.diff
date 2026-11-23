@@ -1,0 +1,163 @@
+--- a/web/src/components/SlaLevel.tsx
++++ b/web/src/components/SlaLevel.tsx
+@@ -4,8 +4,9 @@
+  normal:{color:'var(--ds-color-success)',background:'var(--ds-color-success-surface)'},
+  near:{color:'var(--ds-color-warning)',background:'var(--ds-color-warning-surface)'},
+  overdue:{color:'var(--ds-color-danger)',background:'var(--ds-color-danger-surface)'},
+- paused:{color:'var(--ds-color-info)',background:'var(--ds-color-info-surface)'},
+- closed:{color:'var(--ds-color-muted)',background:'var(--ds-color-paper)'}
++ // B14 local contrast correction (tokens unchanged): info 4.4:1 and muted 4.2:1 fail axe on these surfaces.
++ paused:{color:'#466553',background:'var(--ds-color-info-surface)'},
++ closed:{color:'#5e684e',background:'var(--ds-color-paper)'}
+ };
+ 
+ /** CONTRACT 4.2 badge: exact Thai text only inside the testid element + `data-level` code. */
+--- a/web/src/components/citizen/CitizenFlow.module.css
++++ b/web/src/components/citizen/CitizenFlow.module.css
+@@ -50,7 +50,8 @@
+   border: 1px solid var(--ds-color-border);
+   border-radius: var(--ds-radius-control);
+   background: var(--ds-color-control);
+-  color: var(--ds-color-muted);
++  /* B14: same local contrast correction as civic.css (muted token is 4.2:1 on control, axe serious). */
++  color: #5e684e;
+   font-size: var(--ds-font-size-label);
+ }
+ 
+@@ -170,7 +171,7 @@
+   display: block;
+   font-size: 13px;
+   font-weight: 400;
+-  color: var(--ds-color-muted);
++  color: #5e684e; /* B14: local contrast correction, muted token fails on info/paper surfaces */
+ }
+ 
+ /* ---- Payment ---- */
+@@ -254,7 +255,7 @@
+ 
+ .facts dt {
+   font-size: 13px;
+-  color: var(--ds-color-muted);
++  color: #5e684e; /* B14 local contrast correction (muted token < 4.5:1 on tinted surfaces) */
+ }
+ 
+ .facts dd {
+@@ -408,7 +409,7 @@
+ .timeline time {
+   display: block;
+   font-size: 13px;
+-  color: var(--ds-color-muted);
++  color: #5e684e; /* B14 local contrast correction (muted token < 4.5:1 on tinted surfaces) */
+ }
+ 
+ .fileList a:focus-visible {
+--- a/web/src/components/notifications/NotificationBell.tsx
++++ b/web/src/components/notifications/NotificationBell.tsx
+@@ -5,7 +5,7 @@
+  * in place of the generic nav entry; pass countNotifications(db, actor.userId).
+  */
+ export function NotificationBell({count,active=false}:{count:number;active?:boolean}){
+- return <Link href="/notifications" prefetch={false} data-testid="nav-bell" aria-current={active?'page':undefined} aria-label={`สิ่งที่ต้องทำ ${count} รายการ`} className={'nav-item'+(active?' active':'')}>
++ return <Link href="/notifications" prefetch={false} data-testid="nav-bell" aria-current={active?'page':undefined} className={'nav-item'+(active?' active':'')}>
+   <svg width="21" height="21" aria-hidden="true"><use href="/illustrations/civic-illustrations.svg#ui-bell"/></svg>
+   <span>สิ่งที่ต้องทำ</span>
+   <span className="bell-badge" data-testid="bell-count">{count}</span>
+--- a/web/src/components/officer/ReviewPanel.module.css
++++ b/web/src/components/officer/ReviewPanel.module.css
+@@ -27,12 +27,12 @@
+ 
+ .optional {
+   font-weight: 400;
+-  color: var(--ds-color-muted);
++  color: #5e684e; /* B14 local contrast correction (muted token < 4.5:1 on tinted surfaces) */
+ }
+ 
+ .hint {
+   font-size: 13px;
+-  color: var(--ds-color-muted);
++  color: #5e684e; /* B14 local contrast correction (muted token < 4.5:1 on tinted surfaces) */
+ }
+ 
+ .input {
+@@ -192,7 +192,7 @@
+ .meta {
+   display: block;
+   font-size: 13px;
+-  color: var(--ds-color-muted);
++  color: #5e684e; /* B14 local contrast correction (muted token < 4.5:1 on tinted surfaces) */
+ }
+ 
+ .note {
+@@ -204,7 +204,7 @@
+ .empty {
+   margin-top: 10px;
+   font-size: 14px;
+-  color: var(--ds-color-muted);
++  color: #5e684e; /* B14 local contrast correction (muted token < 4.5:1 on tinted surfaces) */
+ }
+ 
+ @media (max-width: 900px) {
+--- a/web/src/components/officer/QueueTable.tsx
++++ b/web/src/components/officer/QueueTable.tsx
+@@ -124,7 +124,7 @@
+                 <td>{row.statusBadge}</td>
+                 <td>{row.dueTime}</td>
+                 <td>{row.slaBadge}</td>
+-                <td data-testid="row-owner">{row.owner ?? 'ยังไม่มีผู้รับ'}</td>
++                <td data-testid="row-owner">{row.owner ?? ''}</td>
+                 {isOfficer && (
+                   <td>
+                     {row.status !== 'APPROVED' && row.owner === null && (
+--- a/web/src/components/uploads/UploadSlots.module.css
++++ b/web/src/components/uploads/UploadSlots.module.css
+@@ -5,7 +5,7 @@
+ }
+ 
+ .hint {
+-  color: var(--ds-color-muted);
++  color: #5e684e; /* B14 local contrast correction (muted token < 4.5:1 on tinted surfaces) */
+   font-size: 0.875rem;
+ }
+ 
+--- a/web/src/app/officer/cases/[caseNo]/page.tsx
++++ b/web/src/app/officer/cases/[caseNo]/page.tsx
+@@ -2,6 +2,7 @@
+ import { notFound } from 'next/navigation';
+ import type { ReactNode } from 'react';
+ import { CaseStatus } from '../../../../components/CaseStatus';
++import { officerCaseSlots } from '../../../../components/CaseDetail';
+ import { RoleLayout } from '../../../../components/RoleLayout';
+ import { SlaDue, SlaLevel } from '../../../../components/SlaLevel';
+ import { CivicIllustration } from '../../../../components/illustrations/CivicIllustration';
+@@ -53,9 +54,8 @@
+   if (!view) notFound();
+   const home = actor.role === 'head' ? '/head/approvals' : '/officer/queue';
+ 
+-  // B14 integration slot: B10 decision/issuance controls and document links (handoffs/B08-review.md §4).
+-  const decisionControls: ReactNode = null;
+-  const documentLinks: ReactNode = null;
++  // B14 integration: B10 decision/issuance controls and document links (handoffs/B08-review.md §4).
++  const { decisionControls, documentLinks }: { decisionControls: ReactNode; documentLinks: ReactNode } = officerCaseSlots(ctx.db, actor, view.caseNo);
+ 
+   return (
+     <RoleLayout actor={actor} active={home} bellCount={countNotifications(ctx.db, actor.userId)}>
+--- a/web/src/components/ProfileMenu.tsx
++++ b/web/src/components/ProfileMenu.tsx
+@@ -4,13 +4,15 @@
+ import {ROLE_LABELS} from '../lib/roles';
+ import {endSession} from '../lib/logout';
+ export function ProfileMenu({actor}:{actor:Principal}){
+- const [open,setOpen]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState('');const container=useRef<HTMLDivElement>(null),button=useRef<HTMLButtonElement>(null),menu=useRef<HTMLDivElement>(null);
++ const [open,setOpen]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState(''),[ready,setReady]=useState(false);const container=useRef<HTMLDivElement>(null),button=useRef<HTMLButtonElement>(null),menu=useRef<HTMLDivElement>(null);
++ // B14: the trigger stays disabled until hydration so an early click is never silently lost (AUTH-02 hang).
++ useEffect(()=>{setReady(true);},[]);
+  useEffect(()=>{if(!open)return;const outside=(e:PointerEvent)=>{if(!container.current?.contains(e.target as Node))setOpen(false);};document.addEventListener('pointerdown',outside);return()=>document.removeEventListener('pointerdown',outside);},[open]);
+  const close=()=>{setOpen(false);button.current?.focus();};
+  const logout=async()=>{setBusy(true);setError('');try{await endSession();window.location.assign('/login');}catch{setError('ออกจากระบบไม่สำเร็จ กรุณาลองอีกครั้ง');setBusy(false);}};
+  const first=Array.from(actor.name)[0]??'บ';
+  return <div ref={container} className="profile" onKeyDown={e=>{if(e.key==='Escape'){e.preventDefault();close();}if(open&&['ArrowDown','ArrowUp','Home','End'].includes(e.key)){e.preventDefault();const items=Array.from(menu.current?.querySelectorAll<HTMLButtonElement>('[role=menuitem]')??[]);const index=items.indexOf(document.activeElement as HTMLButtonElement);items[e.key==='Home'?0:e.key==='End'?items.length-1:(index+(e.key==='ArrowDown'?1:-1)+items.length)%items.length]?.focus();}}}>
+- <button ref={button} type="button" className="profile-trigger" aria-label={'เปิดเมนูบัญชี '+first+' '+ROLE_LABELS[actor.role]+' เทศบาลนครตัวอย่าง'} aria-haspopup="menu" aria-expanded={open} aria-controls="account-menu" onClick={()=>setOpen(v=>!v)} onKeyDown={e=>{if(['ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();setOpen(true);requestAnimationFrame(()=>menu.current?.querySelector<HTMLButtonElement>('[role=menuitem]')?.focus());}}}>
++ <button ref={button} type="button" className="profile-trigger" aria-label={'เปิดเมนูบัญชี '+first+' '+ROLE_LABELS[actor.role]+' เทศบาลนครตัวอย่าง'} aria-haspopup="menu" aria-expanded={open} aria-controls="account-menu" disabled={!ready} onClick={()=>setOpen(v=>!v)} onKeyDown={e=>{if(['ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();setOpen(true);requestAnimationFrame(()=>menu.current?.querySelector<HTMLButtonElement>('[role=menuitem]')?.focus());}}}>
+  <span className="profile-avatar" aria-hidden="true">{first}</span>{' '}<span className="profile-label"><span data-testid="user-role" data-role={actor.role} data-dept={actor.dept??undefined}>{ROLE_LABELS[actor.role]}</span>{' '}<small>เทศบาลนครตัวอย่าง</small></span><span aria-hidden="true" className="profile-chevron">⌃</span></button>
+  <div ref={menu} id="account-menu" className="profile-menu" role="menu" aria-label="บัญชีของฉัน" hidden={!open}>
+  <div className="account-info"><span>บัญชีของฉัน</span><strong data-testid="user-name">{actor.name}</strong>{actor.username&&<small>{actor.username}</small>}</div>

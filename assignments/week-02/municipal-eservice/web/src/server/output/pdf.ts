@@ -1,4 +1,7 @@
-// Small uncompressed, parseable PDF used for seed fixtures. Document layout is US11.
+// B14 PDF facade. Every PDF the app emits is uncompressed and carries exactly one ASCII machine line
+// (CONTRACT §3/§7): seed fixtures and the dashboard use simplePdf; issued documents use B10's renderer.
+export { renderDocumentPdf, documentMachineLine, type DocumentPdfInput } from './document-pdf.ts';
+// Small uncompressed, parseable PDF used for seed fixtures and the dashboard KPI line.
 export function simplePdf(text:string):Buffer{
  const escaped=text.replace(/[^\x20-\x7e]/g,'?').replace(/[\\()]/g,'\\$&');
  const stream=`BT /F1 12 Tf 40 780 Td (${escaped}) Tj ET`;

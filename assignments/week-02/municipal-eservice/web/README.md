@@ -1,60 +1,64 @@
-# Municipal e-Service — authentication increment
+# Municipal e-Service (design C "เมืองแห่งบริการ")
 
-T001–T020 implemented and verified on Node24.22.3 / Next16.4.6. This increment provides
-ThaiD/SSO simulation, OTP lock boundaries, HttpOnly sessions, role/page guards and first registration.
-The approved C layout and original clips are used on login/register/home/seed verification.
-Workflow commands for T021 onward remain pending; their pages show preparation states.
+T001–T078 are integrated: ThaiD/SSO simulation, drafts and fees, uploads, QR payment, citizen
+tracking/corrections, department queues, review/return/forward, business-day SLA and notifications,
+approvals with signed PDF and public verify, dashboard exports, audit trail and admin settings.
+The custom server owns the HTTP lifecycle, page guards and the API router; Next renders pages.
 
-## Start
+## One-command run (Docker Compose)
 
-Use a Node24 terminal. From week2_student:
+From `app/` (the folder that holds `compose.yaml`):
 
-```powershell
-npm --prefix web ci
-npm --prefix web run setup:local
-npm --prefix web run db:seed
-npm --prefix web run dev
+```sh
+TEST_MODE=1 BUG_MODE= docker compose up --build --wait     # classroom hooks on, no mutants
+docker compose down                                        # data lives in tmpfs, gone on down
 ```
 
-Open http://127.0.0.1:3000/login. setup:local preserves an existing private .env.local.
-db:seed deliberately resets the selected database and revokes sessions; use it for a fresh demo.
-Existing databases can start directly. Save component/page/CSS files for frontend development updates.
-For production run build then start. Both start/dev use the custom every-request lifecycle server.
+The service publishes `127.0.0.1:3000`. `GET /api/health` returns `{"status":"ok"}`.
+Each container start creates three fresh keys and seeds a fresh DB in tmpfs (never the user DB).
+`TEST_MODE` other than `1` disables every `/api/test/*` hook (404) and ignores `BUG_MODE`.
+`BUG_MODE` takes comma-separated codes from `BUGS.md`, for example `BUG_MODE=B03,B07`.
 
-Only four supplied ThaiD identities are supported; OTP is123456. Staff source accounts use
-the classroom SSO password Test@1234. Seed identities/role names remain in TEST-DATA.md.
-The public demonstration uses simulated services; it does not contact a ThaiD/SSO provider.
+## Local development (Node 24)
+
+```sh
+npm ci                       # .npmrc keeps ignore-scripts=true
+npm run setup:local          # creates a private .env.local once; never overwritten
+npm run db:seed              # resets the selected DB_PATH (local DB only)
+npm run dev
+```
+
+ThaiD OTP is `123456`; staff password is `Test@1234`. Identities are in `TEST-DATA.md`.
 
 ## Verify
 
-```powershell
-npm --prefix web run typecheck
-npm --prefix web run verify:assets
-npm --prefix web run test:unit
-npm --prefix web run build
-npm --prefix web exec -- playwright install chromium
-npm --prefix web run test:auth
-npm --prefix web run test:ui-auth
+```sh
+npm run typecheck
+npm run test:unit                       # unit + integration on in-memory/temporary DBs
+npm run build
+npx playwright install chromium
+npm run test:acceptance                 # preflight (exactly 51 canonical IDs) + full suite on an owned server
+npm run accept:campaign                 # exclusive: baseline ×2, B01–B12, 2 combos, final baseline
 ```
 
-Results:118 unit/integration, four source AUTH cases,15 supplemental UI tests and199 HTML/RSC checks.
-[Evidence and limits](../specs/001-municipal-eservice/auth/verification-20261118.md).
-Screenshots/layouts cover375/768/1280px; Axe detected zero violations in four states and records
-unresolved gradient/pseudo-background checks separately. This does not establish full WCAG compliance.
+`accept:campaign` (`scripts/run-campaign.ts`) starts its own servers on fresh isolated TEST_MODE DBs
+under `evidence/campaign-<stamp>/`, runs the same unchanged suite each time and judges results with
+`scripts/compare-results.ts` against `BUGS.md` §2 (required ⊆ failed ⊆ required ∪ allowed; any skip,
+timeout or infrastructure failure fails the run). It also probes a hooks-disabled server first.
+Options: `--out <dir>`, `--port <n>`, `--only hooks,baseline,B01,…,final`.
 
-test:acceptance refuses missing/duplicate/unknown canonical IDs. It currently discovers five
-canonical specs, including full RBAC03 whose allowed future-service assertions remain pending.
-The full51 TC suite, standalone NFR-04 inspector and mutation campaign have not run.
-test:nfr04 / accept:campaign still exit nonzero until T073 is implemented.
+`test:nfr04` / `scripts/inspect-at-rest.ts` is the TC-NFR-04 inspector:
+`DB_PATH=<abs> node --import tsx scripts/inspect-at-rest.ts --json -- <value> …`. It byte-scans the DB,
+its `-wal/-shm/-journal` siblings, a logical dump of every table (from an in-memory copy) and any
+`*.log` beside the DB, counting UTF-8 and UTF-16LE occurrences. The last stdout line is JSON; exit 0
+only when every count is 0.
 
-## Local configuration and constraints
+## Constraints
 
-.npmrc disables dependency install hooks for pinned packaged prebuilds; explicit npm run commands
-still execute and native dependencies are verified. Private keys remain outside public files/reports.
-Retain the same three distinct keys for the database; DB_PATH is absolute. setup:local enables
-local classroom hooks; TEST_MODE empty/0 disables them. Existing .env.local is never overwritten.
-
-All business time comes from domain/clock.ts. immediate callbacks must be synchronous with I/O
-prepared first. Session privileges are snapshots; source role changes apply on the next login.
-Preserve the ten assignment documents, canonical tokens and approved media hashes. The greeting
-fade remains translateY(12px); local text contrast corrections leave token values intact.
+- Keys come from private configuration; DB_PATH is absolute. All business time comes from `domain/clock.ts`.
+- `immediate()` callbacks are synchronous with I/O prepared first.
+- Preserve the ten source documents, the 64 canonical tokens and approved media hashes, the greeting
+  fade `translateY(12px)` and `#staff-login .field + .button{margin-top:20px}`. Local text contrast
+  corrections (`#5e684e`, `#466553`) leave token values intact.
+- Shared integration files (router, test hooks, policy, serializers, page access, CaseDetail,
+  RoleLayout, civic.css, PDF facade) are described in `../handoffs/B14-integration.md`.

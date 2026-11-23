@@ -1,0 +1,16 @@
+**
+!web/
+!web/**
+**/.git
+**/.env*
+**/node_modules
+**/.next
+**/dist
+**/var
+**/evidence
+**/test-results
+**/playwright-report
+**/*.tsbuildinfo
+**/*.sqlite*
+**/*.db
+**/*.db-*

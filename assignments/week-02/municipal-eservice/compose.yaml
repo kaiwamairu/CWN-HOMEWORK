@@ -1,0 +1,28 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    init: true
+    environment:
+      TEST_MODE: "${TEST_MODE:-0}"
+      BUG_MODE: "${BUG_MODE:-}"
+      TZ: Asia/Bangkok
+      DB_PATH: /app/web/var/compose.sqlite
+      PORT: "3000"
+    tmpfs:
+      - /app/web/var:mode=0700,uid=1000,gid=1000
+    ports:
+      - "127.0.0.1:3000:8080"
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - >-
+          const socket = require('node:net').connect(3000, '127.0.0.1');
+          socket.once('connect', () => socket.end());
+          socket.once('error', () => process.exit(1));
+      interval: 5s
+      timeout: 3s
+      retries: 24

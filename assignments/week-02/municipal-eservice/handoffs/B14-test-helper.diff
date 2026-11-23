@@ -1,0 +1,13 @@
+--- a/web/tests/e2e/source-helpers.ts
++++ b/web/tests/e2e/source-helpers.ts
+@@ -572,7 +572,9 @@
+       // A PDF comment line (`% docNo=…`) carries the same machine-readable text without the marker.
+       lines.add(/^%(?!PDF-|%EOF)/.test(trimmed) ? trimmed.replace(/^%+\s*/, '') : trimmed);
+     }
+-    for (const block of source.match(/BT[\s\S]*?ET/g) ?? []) {
++    // BT/ET are operators, so match them as whole tokens: an 8-char verify code such as `AB3ETQ7X`
++    // inside a string operand must not end the text object (B14 triage, campaign-1 B02 run).
++    for (const block of source.match(/\bBT\b[\s\S]*?\bET\b/g) ?? []) {
+       const parts: string[] = [];
+       for (const operand of block.match(/\((?:\\.|[^\\)])*\)|<[0-9A-Fa-f\s]+>/g) ?? []) {
+         if (operand.startsWith('(')) parts.push(operand.slice(1, -1).replace(/\\([()\\])/g, '$1'));

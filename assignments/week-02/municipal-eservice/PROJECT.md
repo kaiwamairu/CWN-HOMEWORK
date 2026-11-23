@@ -10,6 +10,8 @@
 | [guide/README.md](guide/README.md) | คู่มือ offline และ 10 user flows |
 | [specs/001-municipal-eservice/wireframes/index.html](specs/001-municipal-eservice/wireframes/index.html) | Wireframe แบบ C ครบ15หน้า |
 | `.specify/` และ `.claude/skills/` | Spec Kit integration สำหรับพัฒนาต่อ |
+| `compose.yaml` · `web/Dockerfile` | รันด้วย Docker Compose คำสั่งเดียว (Node 24) |
+| [handoffs/](handoffs/B14-final-evidence.md) | เอกสารส่งต่อของแต่ละบล็อก B01–B14 และหลักฐานการรวมระบบ |
 
 ## ใช้งาน
 
@@ -30,4 +32,4 @@ Copy-Item .specify/feature.json.example .specify/feature.json
 
 แบบ C: ครีม glass และเขียวป่า ภาพเทศบาลชานเมืองไทย ใช้สื่อที่อนุมัติแล้วและ design tokens64ตัว
 คง greeting fade translateY12px, ปุ่มหยุด/เล่นภาพ และระยะห่าง password→ปุ่ม staff login20px
-สถานะปัจจุบัน20/78งาน ดู [tasks.md](specs/001-municipal-eservice/tasks.md)
+สถานะปัจจุบัน 78/78 งาน ดู [tasks.md](specs/001-municipal-eservice/tasks.md) และ [ผลตรวจรับ](../../../docs/project-status.md)

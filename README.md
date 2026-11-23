@@ -10,12 +10,23 @@
 | ตัวแอป Next.js | [web/](assignments/week-02/municipal-eservice/web/) |
 | ข้อกำหนดและงาน Spec Kit | [specs/001-municipal-eservice/](assignments/week-02/municipal-eservice/specs/001-municipal-eservice/) |
 | คู่มือเว็บและ User flow | [guide/README.md](assignments/week-02/municipal-eservice/guide/README.md) |
-| แผน DAG / Gantt | [docs/planning/egov-eservice/](docs/planning/egov-eservice/) |
+| แผน DAG / Gantt, ผลรันจริง, ผลทดสอบ (PROMPTS ขั้น 1–5) | [docs/planning/egov-eservice/](docs/planning/egov-eservice/README.md) |
+| รายงานแผนเทียบกับของจริง | [REPORT.md](docs/planning/egov-eservice/REPORT.md) |
+| ผล Playwright 51 TC + GIF | [test-report/](docs/planning/egov-eservice/test-report/index.html) |
+| ผล BUG_MODE 12 ตัว | [BUG-HUNT.md](docs/planning/egov-eservice/BUG-HUNT.md) |
 | โครงสร้างและวิธีเพิ่มงาน | [docs/repository-structure.md](docs/repository-structure.md) |
 
 ## เปิดแอปในเครื่อง
 
-ต้องใช้ **Node.js 24.x** และ npm ที่มาพร้อมกัน
+**วิธีที่ 1 · Docker Compose คำสั่งเดียว** (ไม่ต้องติดตั้ง Node บนเครื่อง ทุกครั้งที่ start จะใช้ DB ตัวอย่างชุดใหม่)
+
+```powershell
+cd CWN-HOMEWORK/assignments/week-02/municipal-eservice
+$env:TEST_MODE = "1"          # bash: TEST_MODE=1 docker compose up --build --wait
+docker compose up --build --wait
+```
+
+**วิธีที่ 2 · รันด้วย Node บนเครื่อง** ต้องใช้ **Node.js 24.x** และ npm ที่มาพร้อมกัน
 
 ```powershell
 git clone -c core.longpaths=true https://github.com/kaiwamairu/CWN-HOMEWORK.git
@@ -35,9 +46,8 @@ npm --prefix web run dev
 
 ## สถานะ
 
-ทำ T001–T020 แล้ว รวม **20/78 งาน**: foundation, เข้าสู่ระบบสองประเภท, OTP, session, สิทธิ์, ลงทะเบียนและ consent
-T021–T078 และชุดตรวจรับเต็ม 51 TC / mutation campaign ยังรอดำเนินการ ดู [สถานะและหลักฐาน](docs/project-status.md)
-แผน DAG เป็นแผนเตรียมงาน ไม่ใช่หลักฐานว่า pipeline รันเสร็จแล้ว
+ทำครบ **78/78 งาน** · T021–T078 ทำด้วย dag-planner/agent-team (Claude + Codex, 14 บล็อก)
+Playwright **51/51 ผ่าน** · BUG_MODE **จับได้ 12/12** · mutant ผสมทั้ง 2 ชุดล้มเท่ากับ union ของบั๊กที่ผสม · ดู [สถานะและหลักฐาน](docs/project-status.md)
 
 ## ตรวจงาน
 

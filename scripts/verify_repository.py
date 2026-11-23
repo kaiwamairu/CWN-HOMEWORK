@@ -36,7 +36,7 @@ check('Preserved greeting fade and staff-login gap','transform:translateY(12px)'
 tasks=(FEATURE/'tasks.md').read_text(encoding='utf-8')
 all_tasks=re.findall(r'^- \[[ x]\] (T\d{3})\b',tasks,re.M)
 completed=re.findall(r'^- \[x\] (T\d{3})\b',tasks,re.M)
-check('Source progress is exactly 20 of 78 tasks',len(all_tasks)==78 and len(set(all_tasks))==78 and completed==[f'T{x:03}' for x in range(1,21)])
+check('All 78 tasks are complete',len(all_tasks)==78 and len(set(all_tasks))==78 and completed==[f'T{x:03}' for x in range(1,79)])
 inventory=read(FEATURE/'contracts/inventory.json')['cases']
 check('51 canonical acceptance IDs remain unchanged',len(inventory)==51 and len({c['id'] for c in inventory})==51)
 blocks=read(PLAN/'blocks.json')['blocks']; by={b['id']:b for b in blocks}
@@ -62,6 +62,10 @@ trace=read(PLAN/'traceability.json')
 expected={f'{kind}-{i:02}' for kind,count in [('FR',29),('BR',29),('NFR',11)] for i in range(1,count+1)}
 check('All 69 requirements have mapped tasks',len(trace['requirements'])==69 and {r['id'] for r in trace['requirements']}==expected and all(r['tasks'] and r['blocks'] for r in trace['requirements']))
 checkpoint=read(PLAN/'source-checkpoint.json')
+for deliverable in ['dag.png','gantt-plan.png','PLAN.md','gantt-actual.png','compare.png','REPORT.md','BUG-HUNT.md','test-report/index.html','test-report/results.json','bug-hunt-runs/campaign.json']:
+    check(f'PROMPTS deliverable present: {deliverable}',(PLAN/deliverable).is_file())
+campaign=read(PLAN/'bug-hunt-runs/campaign.json')
+check('Recorded mutation campaign is ALL OK',campaign.get('ok') is True and len(campaign.get('runs',[]))==17)
 portable_source=(PLAN/checkpoint['source_root']).resolve()
 check('Planning source root is portable',portable_source==APP.resolve())
 state=read(APP/'.specify/feature.json.example')
@@ -103,6 +107,6 @@ check('New repository entry-document links resolve',not broken,str(broken))
 result={'kind':'repository-import-verification','passed':sum(x['passed'] for x in checks),
         'failed':sum(not x['passed'] for x in checks),'publication_files':len(paths),
         'publication_mib':round(sum((ROOT/p).stat().st_size for p in paths)/1048576,2),
-        'checks':checks,'canonical_runtime_acceptance':'Still pending; this script does not run the application acceptance suite.'}
+        'checks':checks,'canonical_runtime_acceptance':'Not run by this script; see docs/planning/egov-eservice/test-report and BUG-HUNT.md for recorded runs.'}
 print(json.dumps(result,ensure_ascii=True,indent=2))
 sys.exit(1 if result['failed'] else 0)

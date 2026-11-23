@@ -1,0 +1,188 @@
+{
+ "goal": "Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.",
+ "defaults": {
+  "difficulty": 1,
+  "timeout": 600
+ },
+ "nodes": [
+  {
+   "id": "B01",
+   "depends_on": [],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 1800,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B01 (1 ใน 14 บล็อก): Foundation carry-forward and reproducible packaging\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): handoffs/B01-baseline.md, compose.yaml, web/Dockerfile, .dockerignore. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B01-*.md describing interfaces for later blocks. T001-T020 are carried historical completions, not new pipeline results. Main week2_student is authoritative. Prepare a sanitized execution snapshot only after run authorization; never copy .env.local, var databases, node_modules, .next or evidence. Keep user DB intact. Own no existing feature source files. Compose is an additional PROMPTS delivery obligation, currently pending; do not claim Docker build/run passed.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/handoffs/B01-baseline.md (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Preserve the verified T001-T020 application; document reproducible Compose packaging and verify source/media hashes before any future run.\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ handoffs/B01-baseline.md\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "cyolo"
+  },
+  {
+   "id": "B02",
+   "depends_on": [],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 3600,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B02 (1 ใน 14 บล็อก): Independent source-oracle Playwright authoring\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/tests/e2e/source-helpers.ts, web/tests/e2e/drafts.spec.ts, web/tests/e2e/uploads.spec.ts, web/tests/e2e/payments.spec.ts, web/tests/e2e/citizen.spec.ts, web/tests/e2e/queue.spec.ts, web/tests/e2e/review.spec.ts, web/tests/e2e/sla.spec.ts, web/tests/e2e/approvals.spec.ts, web/tests/e2e/documents.spec.ts, web/tests/e2e/dashboard.spec.ts, web/tests/e2e/audit.spec.ts, web/tests/e2e/admin.spec.ts, web/tests/e2e/nfr.spec.ts, web/tests/e2e/nfr04-inspection.spec.ts, handoffs/B02-test-oracles.md. Do NOT read web/src or other app code; do not edit files owned by other blocks. Write handoffs/B02-*.md describing interfaces for later blocks. Read only TEST-PLAN.md, CONTRACT.md and TEST-DATA.md as oracle inputs, plus own output. Do not inspect application source, copied Spec Kit expectations or existing implementation-derived behavior. Existing AUTH01-04 and full RBAC03 are carried tests and must retain exact assertions. Implement remaining 46 canonical IDs, genuine boundary bytes, no skips/retries/passing placeholders. The NFR04 wrapper invokes the later inspector and is not storage proof by itself. No incoming web-block dependency; downstream builders may read these test files. Request clarification from orchestrator for source conflicts; do not invent expected outcomes.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/tests/e2e/source-helpers.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Author the missing canonical assertions from source, retain the five existing test IDs without duplicates, and discover exactly 51 IDs; execution awaits integration.\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/tests/e2e/source-helpers.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "yolo"
+  },
+  {
+   "id": "B03",
+   "depends_on": [
+    "B01",
+    "B02"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 5400,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B03 (1 ใน 14 บล็อก): Fees and saved-draft domain\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/fees.ts, web/src/server/domain/drafts.ts, web/src/server/http/features/drafts.ts, web/tests/unit/fees.test.ts, handoffs/B03-drafts.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B03-*.md describing interfaces for later blocks. Use integer baht; no EG before payment. B01 mutant affects only area101. Export HTTP feature handlers for later router assembly; do not edit the shared router. Codex builds, Claude reviews numbers via review node.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/fees.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): SV01 quantity 1-5, SV02 fixed fee, SV03 area 1-500 and 101 boundary; owner-only draft CRUD and fee lock obey source tests.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/handoffs/B01-baseline.md (ผลของ B01: Foundation carry-forward and reproducible packaging)\n- /workspace/plans/egov-eservice/app/web/tests/e2e/source-helpers.ts (ผลของ B02: Independent source-oracle Playwright authoring)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/fees.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "type": "review",
+   "worker": "cyolo",
+   "reviewer": "yolo",
+   "criteria": "SV01 quantity 1-5, SV02 fixed fee, SV03 area 1-500 and 101 boundary; owner-only draft CRUD and fee lock obey source tests. · ไฟล์ /workspace/plans/egov-eservice/app/web/src/server/domain/fees.ts มีอยู่จริงและตรงโจทย์ (เปิดไฟล์ตรวจเอง)",
+   "max_rounds": 2,
+   "review_difficulty": 3
+  },
+  {
+   "id": "B09",
+   "depends_on": [
+    "B01",
+    "B02"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 7200,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B09 (1 ใน 14 บล็อก): Business-day SLA and routed notifications\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/sla.ts, web/src/server/domain/notifications.ts, web/src/server/domain/lifecycle.ts, web/src/server/http/features/notifications.ts, web/src/app/notifications/page.tsx, web/src/components/CaseStatus.tsx, web/src/components/SlaLevel.tsx, web/src/components/notifications/NotificationBell.tsx, web/tests/unit/sla.test.ts, handoffs/B09-sla.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B09-*.md describing interfaces for later blocks. Build pure calculation and source/schema queries before payment/workflow writers; source event contracts are stable. Full event integration and end-to-end checks wait for B14. B03 weekend-only calendar must cover both initial/remaining values. Claude builds, Codex reviews arithmetic/calendar via review node. Do not edit shared RoleLayout; export a bell component for B14. Avoid a dependency cycle with payment.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/sla.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Cutoff16:30, business dates, pause extension, level boundaries and recipient/level deduplication match every source table; ordinary requests trigger lifecycle.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/handoffs/B01-baseline.md (ผลของ B01: Foundation carry-forward and reproducible packaging)\n- /workspace/plans/egov-eservice/app/web/tests/e2e/source-helpers.ts (ผลของ B02: Independent source-oracle Playwright authoring)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/sla.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "type": "review",
+   "worker": "yolo",
+   "reviewer": "cyolo",
+   "criteria": "Cutoff16:30, business dates, pause extension, level boundaries and recipient/level deduplication match every source table; ordinary requests trigger lifecycle. · ไฟล์ /workspace/plans/egov-eservice/app/web/src/server/domain/sla.ts มีอยู่จริงและตรงโจทย์ (เปิดไฟล์ตรวจเอง)",
+   "max_rounds": 2,
+   "review_difficulty": 3
+  },
+  {
+   "id": "B04",
+   "depends_on": [
+    "B03"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 2700,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B04 (1 ใน 14 บล็อก): Uploads and required-document completeness\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/uploads.ts, web/src/server/http/features/uploads.ts, web/src/components/uploads/UploadSlots.tsx, web/src/components/uploads/UploadSlots.module.css, web/tests/unit/uploads.test.ts, handoffs/B04-uploads.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B04-*.md describing interfaces for later blocks. Unpaid owned drafts only. Reject missing required documents before QR and payment callback; support body >=6MB without framework413. B02 mutant rejects only exact max. T028 composition belongs to B06; B04 owns the reusable UploadSlots module. Shared security/router changes go to B14.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/uploads.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Validate real magic bytes, inclusive 5242880-byte boundary, max five files, required slots and blueprint PDF; delete atomically without static public URLs.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/web/src/server/domain/fees.ts (ผลของ B03: Fees and saved-draft domain)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/uploads.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "cyolo"
+  },
+  {
+   "id": "B12",
+   "depends_on": [
+    "B01",
+    "B02"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 2700,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B12 (1 ใน 14 บล็อก): Read-only audit queries and CSV\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/audit.ts, web/src/server/output/csv.ts, web/src/server/http/features/audit.ts, web/src/app/audit/page.tsx, web/src/components/audit/AuditTable.tsx, handoffs/B12-audit.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B12-*.md describing interfaces for later blocks. Extend existing append-only audit module without changing writer signature; all event producers call the carried writer contract. Full16-action audit flow is verified in B14 after producers integrate. No other block edits audit.ts before final integration.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/audit.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Auditor-only read/filter/detail/export, stable Bangkok ordering and CSV snapshot-before-EXPORT work; mutation methods return405.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/handoffs/B01-baseline.md (ผลของ B01: Foundation carry-forward and reproducible packaging)\n- /workspace/plans/egov-eservice/app/web/tests/e2e/source-helpers.ts (ผลของ B02: Independent source-oracle Playwright authoring)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/audit.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "cyolo"
+  },
+  {
+   "id": "B07",
+   "depends_on": [
+    "B01",
+    "B02",
+    "B09"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 2700,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B07 (1 ใน 14 บล็อก): Department queues and exclusive claims\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/claims.ts, web/src/server/http/features/queue.ts, web/src/app/officer/queue/page.tsx, web/src/components/officer/QueueTable.tsx, web/src/components/officer/QueueTable.module.css, web/tests/integration/claims.test.ts, handoffs/B07-queue.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B07-*.md describing interfaces for later blocks. Snapshot role/dept. Preserve first registry claimant. B08 mutant deterministically bypasses already-owned guard; B09 mutant queue JSON leak only. Use B09 SLA text/status helpers. No e2e or shared router changes.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/claims.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Department queue ordering/filtering, 9->10 workload boundary and exclusive claim are correct; head is read-only and a second claimant gets409.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/handoffs/B01-baseline.md (ผลของ B01: Foundation carry-forward and reproducible packaging)\n- /workspace/plans/egov-eservice/app/web/tests/e2e/source-helpers.ts (ผลของ B02: Independent source-oracle Playwright authoring)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/sla.ts (ผลของ B09: Business-day SLA and routed notifications)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/claims.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "cyolo"
+  },
+  {
+   "id": "B13",
+   "depends_on": [
+    "B03",
+    "B09"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 2700,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B13 (1 ใน 14 บล็อก): Admin service, holiday and role settings\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/admin.ts, web/src/server/http/features/admin.ts, web/src/app/admin/services/page.tsx, web/src/app/admin/holidays/page.tsx, web/src/app/admin/users/page.tsx, web/src/components/admin/AdminForms.tsx, handoffs/B13-admin.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B13-*.md describing interfaces for later blocks. Use B03 fee/draft and B09 calendar interfaces. Existing session role snapshots remain intact. Record exact ADMIN_CHANGE; admin gains no case action permission. UI uses C tokens and scoped components.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/admin.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Fee/SLA integer bounds, duplicate-holiday409, preserved locked fee/due, self-change denial and next-login role changes match source.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/web/src/server/domain/fees.ts (ผลของ B03: Fees and saved-draft domain)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/sla.ts (ผลของ B09: Business-day SLA and routed notifications)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/admin.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "cyolo"
+  },
+  {
+   "id": "B05",
+   "depends_on": [
+    "B03",
+    "B04",
+    "B09"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 3600,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B05 (1 ใน 14 บล็อก): Payment and atomic EG/RC numbering\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/payments.ts, web/src/server/http/features/payments.ts, web/tests/integration/payments.test.ts, handoffs/B05-payments.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B05-*.md describing interfaces for later blocks. Read B09 initial SLA calculation and B03/B04 completeness interfaces. Implement real test pay callback, no partial writes, same suffix per EG/RC. B05 mutant accepts exactly900 only. Shared test-hook dispatcher remains B14 owned.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/payments.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): QR expires at 900 seconds, fee freezes, duplicate callbacks return original EG/RC, annual/concurrent numbering and case/receipt/audit writes are atomic.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/web/src/server/domain/fees.ts (ผลของ B03: Fees and saved-draft domain)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/uploads.ts (ผลของ B04: Uploads and required-document completeness)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/sla.ts (ผลของ B09: Business-day SLA and routed notifications)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/payments.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "cyolo"
+  },
+  {
+   "id": "B08",
+   "depends_on": [
+    "B04",
+    "B07"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 3600,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B08 (1 ใน 14 บล็อก): Review, routing and privacy controls\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/review.ts, web/src/server/security/attachment-policy.ts, web/src/server/http/features/review.ts, web/src/app/officer/cases/[caseNo]/page.tsx, web/src/components/officer/ReviewPanel.tsx, web/src/components/officer/ReviewPanel.module.css, handoffs/B08-review.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B08-*.md describing interfaces for later blocks. Only citizen owner/current or past officer department/head may read protected files; anonymous401, wrongrole403 and foreigncitizen404. Third-return UI absent in baseline. B11 omits UNMASK only, B12 permits third return. Do not edit B04 uploads or global policy; provide attachment-policy adapter for B14.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/review.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Holder-only return/forward, max two returns, reason>=10 trimmed characters, fixed service routing and committed UNMASK-before-reveal are enforced.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/web/src/server/domain/uploads.ts (ผลของ B04: Uploads and required-document completeness)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/claims.ts (ผลของ B07: Department queues and exclusive claims)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/review.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "yolo"
+  },
+  {
+   "id": "B11",
+   "depends_on": [
+    "B09"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 7200,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B11 (1 ใน 14 บล็อก): Dashboard KPIs and matching exports\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/dashboard.ts, web/src/server/output/dashboard-pdf.ts, web/src/server/output/xlsx.ts, web/src/server/http/features/dashboard.ts, web/src/app/dashboard/page.tsx, web/src/components/dashboard/Dashboard.module.css, handoffs/B11-dashboard.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B11-*.md describing interfaces for later blocks. Codex builds, Claude reviews KPI arithmetic via review node. Seed permits query implementation now; action/closure integration waits for B14. B10 divides by received only. Separate document-pdf.ts from dashboard-pdf.ts prevents shared PDF-file collisions.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/dashboard.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Source period/service KPIs, closure cutoff, half-up percentage, zero denominator and XLSX/PDF values agree; no applicant PII.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/web/src/server/domain/sla.ts (ผลของ B09: Business-day SLA and routed notifications)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/dashboard.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "type": "review",
+   "worker": "cyolo",
+   "reviewer": "yolo",
+   "criteria": "Source period/service KPIs, closure cutoff, half-up percentage, zero denominator and XLSX/PDF values agree; no applicant PII. · ไฟล์ /workspace/plans/egov-eservice/app/web/src/server/domain/dashboard.ts มีอยู่จริงและตรงโจทย์ (เปิดไฟล์ตรวจเอง)",
+   "max_rounds": 2,
+   "review_difficulty": 3
+  },
+  {
+   "id": "B06",
+   "depends_on": [
+    "B05"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 3600,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B06 (1 ใน 14 บล็อก): Citizen service screens, tracking and corrections\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/cases.ts, web/src/server/http/features/citizen-cases.ts, web/src/app/citizen/page.tsx, web/src/app/citizen/new/[service]/page.tsx, web/src/app/citizen/cases/[caseNo]/page.tsx, web/src/components/citizen/ServiceRequestForm.tsx, web/src/components/citizen/CitizenCaseActions.tsx, web/src/components/citizen/CitizenFlow.module.css, handoffs/B06-citizen.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B06-*.md describing interfaces for later blocks. Reuse C tokens and approved video; preserve greeting translateY12px and staff gap20px. Integrate B04 UploadSlots. Foreign/missing cases identical404; cancellation/claim race has one winner; correction returns previous holder even above10. B04/B06 mutants only specified behaviors. Shared CaseDetail and router assembly remain B14 owned.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/cases.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): Catalog -> saved draft -> attachments -> simulated QR -> receipt -> own status/timeline; cancellation and 167:59/168:00 correction boundaries match source.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/web/src/server/domain/payments.ts (ผลของ B05: Payment and atomic EG/RC numbering)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/cases.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "yolo"
+  },
+  {
+   "id": "B10",
+   "depends_on": [
+    "B08"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 3600,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B10 (1 ใน 14 บล็อก): Authorized approvals, signed PDF and public verify\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): web/src/server/domain/approvals.ts, web/src/server/domain/documents.ts, web/src/server/output/document-pdf.ts, web/src/server/http/features/decisions-documents.ts, web/src/app/head/approvals/page.tsx, web/src/app/verify/[code]/page.tsx, web/src/components/approvals/DecisionControls.tsx, web/src/components/documents/DocumentLinks.tsx, web/tests/unit/document-validity.test.ts, handoffs/B10-documents.md. Existing T001-T020 code in web/ may be read and extended through your own files; do not edit files owned by other blocks. Write handoffs/B10-*.md describing interfaces for later blocks. Implement sequential substeps: decisions then issuance/verify. APPROVED stays open until ISSUE. B07 bypasses only specified server check. Preserve source code K7M2Q9XA, exact found200/unknown404, ASCII extractable PDF number and leap-day clamp. Use approved3A on verification. Shared PDF facade, test tamper dispatcher and CaseDetail integration belong to B14.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/web/src/server/domain/approvals.ts (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): SV01 holder vs SV02/03 head authorization, actual signer/original registry issuer, unique DOC/signature/PDF and public mask/tamper/expiry all match source.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/web/src/server/domain/review.ts (ผลของ B08: Review, routing and privacy controls)\nห้ามแก้หรือลบไฟล์ของบล็อกอื่น เขียนเฉพาะ web/src/server/domain/approvals.ts\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "yolo"
+  },
+  {
+   "id": "B14",
+   "depends_on": [
+    "B02",
+    "B06",
+    "B10",
+    "B11",
+    "B12",
+    "B13"
+   ],
+   "difficulty": 3,
+   "cwd": "/workspace/plans/egov-eservice/app",
+   "timeout": 10800,
+   "prompt": "เป้าหมายรวมของโปรเจกต์: Continue the approved C-design municipal e-Service in app/ from completed T001-T020 to full acceptance: implement T021-T078 per REQUIREMENTS/CONTRACT/TEST-DATA/DECISIONS (sources in app/ root, read-only), Docker Compose one-command run, TEST_MODE=1, BUG_MODE per BUGS.md, and Playwright for all 51 TEST-PLAN TCs. Read app/handoffs/00-HANDOFF.md first.\nคุณรับผิดชอบบล็อก B14 (1 ใน 14 บล็อก): Exclusive integration, full acceptance and mutation evidence\nรายละเอียดงาน: FIRST read handoffs/00-HANDOFF.md (rules, preserved design, runtime notes). This block OWNS and must create/update ALL of these files (the single 'output' path is only the primary marker): handoffs/B14-final-evidence.md, web/src/server/http/router.ts, web/src/server/http/test-hooks.ts, web/src/server/security/policy.ts, web/src/server/security/serializers.ts, web/src/server/http/page-access.ts, web/src/components/CaseDetail.tsx, web/src/components/RoleLayout.tsx, web/src/styles/civic.css, web/src/server/output/pdf.ts, web/scripts/inspect-at-rest.ts, web/scripts/run-campaign.ts, web/scripts/compare-results.ts, web/tests/unit/time-boundaries.test.ts, web/tests/integration/transactions.test.ts, web/tests/integration/inspection.test.ts, web/README.md. Existing T001-T020 code in web/ may be read and extended through your own files; as the exclusive integrator you may edit earlier-owned files with an explicit integration diff. Write handoffs/B14-*.md describing interfaces for later blocks. Run alone, with no other writing or shared-DB tests. Assemble per-feature HTTP adapters and CaseDetail panels here. Only this final block may change earlier-owned files, with an explicit integration diff. Preserve source assertions; classify failures using source, never weaken expectations. Use isolated TEST_MODE DBs, never reset the user preview DB. Campaign runs the same unchanged suite; enforce required/allowed observed-failure sets, no skips/timeouts/infra failures. Store actual-vs-plan only after actual execution; do not manufacture REPORT/gantt-actual/compare artifacts now. Keep availability/capacity/TLS questions open. Recheck all source/token/media hashes and 20px login gap.\nไฟล์ผลที่ต้องเขียน: /workspace/plans/egov-eservice/app/handoffs/B14-final-evidence.md (โฟลเดอร์ทำงานร่วมของทีม = /workspace/plans/egov-eservice/app)\nเกณฑ์เสร็จ (ต้องตรวจได้): All features integrated; 51 canonical baseline cases pass twice on one server; 12 single/2 combined mutants, final clean baseline, NFR04 and disabled-hook evidence are real and complete.\nไฟล์ของบล็อกก่อนหน้าที่ต้องอ่านก่อนเริ่ม (อ่านเองจากไฟล์ ไม่ต้องให้ใครส่งเนื้อหามา):\n- /workspace/plans/egov-eservice/app/web/tests/e2e/source-helpers.ts (ผลของ B02: Independent source-oracle Playwright authoring)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/cases.ts (ผลของ B06: Citizen service screens, tracking and corrections)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/approvals.ts (ผลของ B10: Authorized approvals, signed PDF and public verify)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/dashboard.ts (ผลของ B11: Dashboard KPIs and matching exports)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/audit.ts (ผลของ B12: Read-only audit queries and CSV)\n- /workspace/plans/egov-eservice/app/web/src/server/domain/admin.ts (ผลของ B13: Admin service, holiday and role settings)\nบล็อกนี้เป็นบล็อกรวมระบบ/ทดสอบสุดท้าย (รันคนเดียว) แก้ไฟล์ของบล็อกอื่นได้เท่าที่จำเป็นเพื่อรวมและทดสอบ\nห้ามทำงานนอกโฟลเดอร์ app/ ของแผนนี้\nเมื่อเสร็จ ตอบสั้น ๆ 1–2 บรรทัดว่าเขียนไฟล์อะไร (path) และผ่านเกณฑ์เสร็จหรือไม่",
+   "account": "yolo"
+  }
+ ]
+}

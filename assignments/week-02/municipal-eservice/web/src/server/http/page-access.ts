@@ -1,6 +1,7 @@
 import type {Context} from './context.ts';
 import type {Principal} from '../security/policy.ts';
 import {landFor} from '../domain/auth.ts';
+import {citizenCaseVisible} from '../domain/cases.ts';
 import tokens from '../../../public/illustrations/design-tokens.json' with {type:'json'};
 export type PageDecision={kind:'allow'}|{kind:'redirect';location:string}|{kind:'forbidden'|'not-found'|'document-not-found'};
 export const PAGE_RULES:[RegExp,readonly string[]][]=[[/^\/citizen(?:\/.*)?$/,['citizen']],[/^\/officer\/(queue|cases\/[^/]+)$/,['officer','head']],[/^\/head\/approvals$/,['head']],[/^\/dashboard$/,['executive']],[/^\/audit$/,['auditor']],[/^\/admin\/(services|holidays|users)$/,['admin']],[/^\/notifications$/,['officer','head']]];
@@ -12,7 +13,10 @@ export function decidePage(ctx:Context,path:string,actor:Principal|null):PageDec
  if(!actor)return {kind:'redirect',location:'/login'};
  if(actor.registrationOnly)return {kind:'redirect',location:'/register'};
  if(!rule[1].includes(actor.role))return {kind:'forbidden'};
- const detail=/^\/(citizen|officer)\/cases\/([^/]+)$/.exec(path);if(detail){const c=ctx.db.prepare('SELECT applicant FROM cases WHERE case_no=?').get(detail[2]) as {applicant:string}|undefined;if(!c||(actor.role==='citizen'&&c.applicant!==actor.userId))return {kind:'not-found'};}
+ const detail=/^\/(citizen|officer)\/cases\/([^/]+)$/.exec(path);if(detail){
+ // B14: citizen visibility comes from B06 so the TEST_MODE B06 mutant reaches the page too.
+ if(actor.role==='citizen'){if(!citizenCaseVisible(ctx,actor,detail[2]))return {kind:'not-found'};}
+ else if(!ctx.db.prepare('SELECT 1 FROM cases WHERE case_no=?').get(detail[2]))return {kind:'not-found'};}
  return {kind:'allow'};
 }
 // HTTP status is decided by the custom server before Next renders any private page/RSC.

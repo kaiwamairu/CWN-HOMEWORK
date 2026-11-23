@@ -3,6 +3,7 @@ import { HttpError,json } from './errors.ts';
 import { seed } from '../db/seed.ts';
 import { readClock,setClock } from '../domain/clock.ts';
 import { pay } from '../domain/payments.ts';
+import { tamperDocument } from '../domain/documents.ts';
 export async function jsonBody(request:Request):Promise<Record<string,unknown>>{
  try{const body:unknown=await request.json();if(!body||typeof body!=='object'||Array.isArray(body))throw new Error();return body as Record<string,unknown>;}catch{throw new HttpError('INVALID_REQUEST');}
 }
@@ -15,6 +16,6 @@ export async function testHooks(request:Request,ctx:Context):Promise<Response>{
  throw new HttpError('METHOD_NOT_ALLOWED');
  }
  const payment=/^\/api\/test\/payments\/([^/]+)\/pay$/.exec(path);if(payment){if(request.method!=='POST')throw new HttpError('METHOD_NOT_ALLOWED');const body=await jsonBody(request);return json(pay(ctx.db,payment[1],body.amount,true,ctx.bugModes));}
- const tamper=/^\/api\/test\/documents\/([^/]+)\/tamper$/.exec(path);if(tamper){if(request.method!=='POST')throw new HttpError('METHOD_NOT_ALLOWED');const result=ctx.db.prepare("UPDATE documents SET applicant=applicant || ' (tampered)' WHERE doc_no=?").run(tamper[1]);if(!result.changes)throw new HttpError('NOT_FOUND');return json({ok:true});}
+ const tamper=/^\/api\/test\/documents\/([^/]+)\/tamper$/.exec(path);if(tamper){if(request.method!=='POST')throw new HttpError('METHOD_NOT_ALLOWED');if(!tamperDocument(ctx.db,tamper[1]))throw new HttpError('NOT_FOUND');return json({ok:true});}
  throw new HttpError('NOT_FOUND');
 }

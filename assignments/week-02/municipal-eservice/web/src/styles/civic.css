@@ -20,6 +20,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,[tabindex]:focus-visibl
 .entry-heading>p{padding:6px 10px;margin-left:-10px;border-radius:8px;background:linear-gradient(90deg,#f7f1e3ed,#f7f1e3d9 78%,transparent)}
 /* Local text contrast correction on the rendered cream surfaces; canonical tokens stay intact. */
 .eyebrow,.step-label,.calendar-month,.login-tabs button:not([aria-selected=true]),.service-id,.table-region th,.draft-list p,.account-info>span,.account-info small{color:#5e684e}
+/* B14: the account trigger is disabled only until hydration; keep its look unchanged meanwhile. */
+.profile-trigger:disabled{opacity:1;cursor:default}
 @keyframes greeting-reveal{from{opacity:0}to{opacity:1}}
 @supports not(backdrop-filter:blur(1px)){.panel,.entry-shell{background:var(--ds-glass-fallback)}}
 @media(min-width:851px) and (max-width:1150px){.role-shell{grid-template-columns:var(--ds-layout-sidebar-compact) minmax(0,1fr)}.sidebar{padding:23px 12px}.brand strong{font-size:23px}.nav-item{font-size:12px;padding:10px 9px;gap:8px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid>section:last-child{grid-column:1/-1}.content-pad{padding:25px}.profile-label{font-size:11px}.profile-label small{font-size:9px}}

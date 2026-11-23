@@ -1,0 +1,389 @@
+{
+  "startedAt": "2026-11-22T19:31:19.514Z",
+  "node": "v24.22.3",
+  "lockfileSha256": "877f76cba0b3fe1f4e2cf0be600fe2c29464109a762c568b3e81a41c52af2b36",
+  "runs": [
+    {
+      "step": "baseline",
+      "pass": 1,
+      "exitCode": 0,
+      "startedAt": "2026-11-22T19:31:24.834Z",
+      "finishedAt": "2026-11-22T19:36:28.966Z",
+      "total": 51,
+      "passed": 51,
+      "failed": [],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {}
+    },
+    {
+      "step": "baseline",
+      "pass": 2,
+      "exitCode": 0,
+      "startedAt": "2026-11-22T19:36:28.968Z",
+      "finishedAt": "2026-11-22T19:41:34.672Z",
+      "total": 51,
+      "passed": 51,
+      "failed": [],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {}
+    },
+    {
+      "step": "B01",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T19:41:37.345Z",
+      "finishedAt": "2026-11-22T19:46:50.584Z",
+      "total": 51,
+      "passed": 50,
+      "failed": [
+        "TC-FEE-01"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-FEE-01": "Error: area 101\n\nexpect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('fee-total')\nExpected: \"฿1,010\"\nReceived: \"฿1,000\"\nTimeout:  5000ms"
+      }
+    },
+    {
+      "step": "B02",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T19:46:53.225Z",
+      "finishedAt": "2026-11-22T19:52:29.285Z",
+      "total": 51,
+      "passed": 50,
+      "failed": [
+        "TC-UPLOAD-01"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-UPLOAD-01": "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('file-item')\nExpected: 1\nReceived: 0\nTimeout:  30000ms\n\nCall log:"
+      }
+    },
+    {
+      "step": "B03",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T19:52:31.957Z",
+      "finishedAt": "2026-11-22T19:57:29.724Z",
+      "total": 51,
+      "passed": 46,
+      "failed": [
+        "TC-NOTI-02",
+        "TC-RBAC-04",
+        "TC-SLA-01",
+        "TC-SLA-02",
+        "TC-SLA-03"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [
+        "TC-NOTI-02",
+        "TC-RBAC-04",
+        "TC-SLA-03"
+      ],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-RBAC-04": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: \"2026-12-08T16:30:00+07:00\"\nReceived: \"2026-12-04T16:30:00+07:00\"",
+        "TC-SLA-01": "Error: row c GET /api/cases/:caseNo dueAt\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"2026-12-08T16:30:00+07:00\"\nReceived: \"2026-12-07T16:30:00+07:00\"",
+        "TC-SLA-02": "Error: expect(received).toMatchObject(expected)\n\n- Expected  - 1\n+ Received  + 1\n\n  Object {\n-   \"dueAt\": \"2026-12-08T16:30:00+07:00\",\n+   \"dueAt\": \"2026-12-07T16:30:00+07:00\",",
+        "TC-SLA-03": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  getByTestId('sla-level')\nExpected: \"near\"\nReceived: \"normal\"\nTimeout:  5000ms\n\nCall log:",
+        "TC-NOTI-02": "Error: off.reg2 ส. 5 ธ.ค.: GET /api/notifications\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 0\n\n@@ -1,9 +1,8 @@"
+      }
+    },
+    {
+      "step": "B04",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T19:57:32.378Z",
+      "finishedAt": "2026-11-22T20:02:34.109Z",
+      "total": 51,
+      "passed": 50,
+      "failed": [
+        "TC-SLA-02"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-SLA-02": "Error: expect(received).toMatchObject(expected)\n\n- Expected  - 2\n+ Received  + 2\n\n  Object {\n-   \"dueAt\": \"2026-12-08T16:30:00+07:00\",\n-   \"slaLevel\": \"normal\","
+      }
+    },
+    {
+      "step": "B05",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:02:36.777Z",
+      "finishedAt": "2026-11-22T20:07:46.091Z",
+      "total": 51,
+      "passed": 50,
+      "failed": [
+        "TC-PAY-01"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-PAY-01": "Error: http://127.0.0.1:3100/api/test/payments/PP-0001/pay status · body {\"status\":\"PAID\",\"caseNo\":\"EG-2569-000031\",\"receiptNo\":\"RC-2569-000031\",\"duplicate\":false}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 410\nReceived: 200"
+      }
+    },
+    {
+      "step": "B06",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:07:48.748Z",
+      "finishedAt": "2026-11-22T20:12:58.117Z",
+      "total": 51,
+      "passed": 50,
+      "failed": [
+        "TC-RBAC-01"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-RBAC-01": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 404\nReceived: 200"
+      }
+    },
+    {
+      "step": "B07",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:13:00.784Z",
+      "finishedAt": "2026-11-22T20:18:08.488Z",
+      "total": 51,
+      "passed": 50,
+      "failed": [
+        "TC-RBAC-02"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-RBAC-02": "Error: http://127.0.0.1:3100/api/cases/EG-2569-000014/approve status · body {\"status\":\"APPROVED\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 403\nReceived: 200"
+      }
+    },
+    {
+      "step": "B08",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:18:11.161Z",
+      "finishedAt": "2026-11-22T20:23:27.419Z",
+      "total": 51,
+      "passed": 50,
+      "failed": [
+        "TC-QUEUE-02"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-QUEUE-02": "Error: expect(locator).toHaveText(expected) failed\n\nLocator: getByTestId('action-error')\nExpected: \"มีเจ้าหน้าที่รับเรื่องนี้แล้ว\"\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:"
+      }
+    },
+    {
+      "step": "B09",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:23:30.565Z",
+      "finishedAt": "2026-11-22T20:28:39.413Z",
+      "total": 51,
+      "passed": 50,
+      "failed": [
+        "TC-PDPA-02"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-PDPA-02": "Error: off.reg1 /api/officer/queue?filter=all: no 13-digit run\n\nexpect(received).not.toMatch(expected)\n\nExpected pattern: not /\\d{13}/\nReceived string:      \"{\\\"items\\\":[{\\\"caseNo\\\":\\\"EG-2569-000020\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-11-30T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"overdue\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000022\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-01T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000024\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-02T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000023\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000025\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000026\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000013\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000015\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000027\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000028\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000029\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000030\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000016\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-08T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000018\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000019\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"APPROVED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000012\\\",\\\"serviceId\\\":\\\"SV-03\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":1,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000021\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"}]}\""
+      }
+    },
+    {
+      "step": "B10",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:28:42.087Z",
+      "finishedAt": "2026-11-22T20:34:06.485Z",
+      "total": 51,
+      "passed": 48,
+      "failed": [
+        "TC-DASH-01",
+        "TC-DASH-02",
+        "TC-DASH-03"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [
+        "TC-DASH-01",
+        "TC-DASH-03"
+      ],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-DASH-01": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('kpi-ontime-pct')\nExpected: \"–\"\nReceived: \"0.0%\"\nTimeout:  5000ms\n\nCall log:",
+        "TC-DASH-02": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('kpi-ontime-pct')\nExpected: \"85.7%\"\nReceived: \"23.1%\"\nTimeout:  5000ms\n\nCall log:",
+        "TC-DASH-03": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('kpi-ontime-pct')\nExpected: \"85.7%\"\nReceived: \"23.1%\"\nTimeout:  5000ms\n\nCall log:"
+      }
+    },
+    {
+      "step": "B11",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:34:09.130Z",
+      "finishedAt": "2026-11-22T20:39:13.832Z",
+      "total": 51,
+      "passed": 49,
+      "failed": [
+        "TC-AUDIT-01",
+        "TC-PDPA-03"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-AUDIT-01": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 16\nReceived: 15",
+        "TC-PDPA-03": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('audit-count')\nExpected: \"1\"\nReceived: \"0\"\nTimeout:  5000ms\n\nCall log:"
+      }
+    },
+    {
+      "step": "B12",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:39:16.490Z",
+      "finishedAt": "2026-11-22T20:44:22.591Z",
+      "total": 51,
+      "passed": 50,
+      "failed": [
+        "TC-WORKFLOW-04"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-WORKFLOW-04": "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByTestId('return-btn')\nExpected: 0\nReceived: 1\nTimeout:  5000ms\n\nCall log:"
+      }
+    },
+    {
+      "step": "B03+B07",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:44:25.212Z",
+      "finishedAt": "2026-11-22T20:49:11.948Z",
+      "total": 51,
+      "passed": 45,
+      "failed": [
+        "TC-NOTI-02",
+        "TC-RBAC-02",
+        "TC-RBAC-04",
+        "TC-SLA-01",
+        "TC-SLA-02",
+        "TC-SLA-03"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [
+        "TC-NOTI-02",
+        "TC-RBAC-04",
+        "TC-SLA-03"
+      ],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-RBAC-04": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: \"2026-12-08T16:30:00+07:00\"\nReceived: \"2026-12-04T16:30:00+07:00\"",
+        "TC-RBAC-02": "Error: http://127.0.0.1:3100/api/cases/EG-2569-000014/approve status · body {\"status\":\"APPROVED\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 403\nReceived: 200",
+        "TC-SLA-01": "Error: row c GET /api/cases/:caseNo dueAt\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: \"2026-12-08T16:30:00+07:00\"\nReceived: \"2026-12-07T16:30:00+07:00\"",
+        "TC-SLA-02": "Error: expect(received).toMatchObject(expected)\n\n- Expected  - 1\n+ Received  + 1\n\n  Object {\n-   \"dueAt\": \"2026-12-08T16:30:00+07:00\",\n+   \"dueAt\": \"2026-12-07T16:30:00+07:00\",",
+        "TC-SLA-03": "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  getByTestId('sla-level')\nExpected: \"near\"\nReceived: \"normal\"\nTimeout:  5000ms\n\nCall log:",
+        "TC-NOTI-02": "Error: off.reg2 ส. 5 ธ.ค.: GET /api/notifications\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 0\n\n@@ -1,9 +1,8 @@"
+      }
+    },
+    {
+      "step": "B01+B05+B09",
+      "pass": 1,
+      "exitCode": 1,
+      "startedAt": "2026-11-22T20:49:14.585Z",
+      "finishedAt": "2026-11-22T20:54:21.696Z",
+      "total": 51,
+      "passed": 48,
+      "failed": [
+        "TC-FEE-01",
+        "TC-PAY-01",
+        "TC-PDPA-02"
+      ],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {
+        "TC-FEE-01": "Error: area 101\n\nexpect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('fee-total')\nExpected: \"฿1,010\"\nReceived: \"฿1,000\"\nTimeout:  5000ms",
+        "TC-PAY-01": "Error: http://127.0.0.1:3100/api/test/payments/PP-0001/pay status · body {\"status\":\"PAID\",\"caseNo\":\"EG-2569-000031\",\"receiptNo\":\"RC-2569-000031\",\"duplicate\":false}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 410\nReceived: 200",
+        "TC-PDPA-02": "Error: off.reg1 /api/officer/queue?filter=all: no 13-digit run\n\nexpect(received).not.toMatch(expected)\n\nExpected pattern: not /\\d{13}/\nReceived string:      \"{\\\"items\\\":[{\\\"caseNo\\\":\\\"EG-2569-000020\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-11-30T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"overdue\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000022\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-01T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000024\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-02T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"near\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000023\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg1\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000025\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000026\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-03T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000013\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000015\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000027\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000028\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000029\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000030\\\",\\\"serviceId\\\":\\\"SV-01\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"SUBMITTED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-04T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000016\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-08T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000018\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมชาย ใจดี\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-45-6\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1101700123456\\\"},{\\\"caseNo\\\":\\\"EG-2569-000019\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"APPROVED\\\",\\\"step\\\":null,\\\"owner\\\":null,\\\"dueAt\\\":\\\"2026-12-09T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"},{\\\"caseNo\\\":\\\"EG-2569-000012\\\",\\\"serviceId\\\":\\\"SV-03\\\",\\\"applicantName\\\":\\\"ปิติ มีสุข\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-01-5\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":1,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"1909900555015\\\"},{\\\"caseNo\\\":\\\"EG-2569-000021\\\",\\\"serviceId\\\":\\\"SV-02\\\",\\\"applicantName\\\":\\\"สมหญิง รักไทย\\\",\\\"idMasked\\\":\\\"X-XXXX-XXXXX-65-9\\\",\\\"status\\\":\\\"IN_REVIEW\\\",\\\"step\\\":null,\\\"owner\\\":\\\"off.reg2\\\",\\\"dueAt\\\":\\\"2026-12-11T16:30:00+07:00\\\",\\\"slaLevel\\\":\\\"normal\\\",\\\"idNo\\\":\\\"3100600987659\\\"}]}\""
+      }
+    },
+    {
+      "step": "final",
+      "pass": 1,
+      "exitCode": 0,
+      "startedAt": "2026-11-22T20:54:24.344Z",
+      "finishedAt": "2026-11-22T20:59:21.361Z",
+      "total": 51,
+      "passed": 51,
+      "failed": [],
+      "unexpectedFailures": [],
+      "missingFailures": [],
+      "acceptedSideEffects": [],
+      "problems": [],
+      "ok": true,
+      "failureMessages": {}
+    }
+  ],
+  "disabledHooks": {
+    "healthBefore": 200,
+    "probes": {
+      "POST /api/test/reset": 404,
+      "GET /api/test/clock": 404,
+      "PUT /api/test/clock": 404,
+      "POST /api/test/payments/PP-0001/pay": 404,
+      "POST /api/test/documents/DOC-2569-000001/tamper": 404
+    },
+    "allNotFound": true,
+    "seedDocumentStillValid": "VALID",
+    "bugModeIgnoredWithoutTestMode": "BUG_MODE=B01,B05 supplied; config drops bug modes when TEST_MODE!=1"
+  },
+  "finishedAt": "2026-11-22T20:59:21.450Z",
+  "ok": true
+}
