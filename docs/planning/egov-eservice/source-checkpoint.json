@@ -13,7 +13,6 @@
     "PROMPTS.md": "86a13d6fd397d2e3d4895103b9c42b2b287eeda2d991b2d64ef505ec2286ca8f",
     "specs/001-municipal-eservice/design-tokens.json": "ba9780181adf24c29c2aa7defe0af91502db7ee3a726a0f8532fe230c4ba6f62",
     "specs/001-municipal-eservice/design-tokens.css": "5b7c3728ae59c9eec216d40911b36a26c40b420f1eadfebdfccb942ef9cee147",
-    "specs/001-municipal-eservice/design-examples/c-civic-story/template.html": "f2c1027192a5d776728e8cb1bdb4421804eb9d23c3df1765caf4cdcb2e92310e",
     "web/public/illustrations/1A-municipal-office.mp4": "8a082e9ac8bff1e6204190ea2ab31fa988e406feae6d01a96f74071f65922078",
     "web/public/illustrations/1A-municipal-office.png": "6447bf6401afd9d35b7232342136db317e963259cb5ccf9ca4fdffe02e438311",
     "web/public/illustrations/2A-citizen-writing.mp4": "b16fc05c6754631b4c2291e2a2a440bbf02bd02758a5eece42086632df7d6a62",
@@ -76,5 +75,9 @@
     "web/node_modules",
     "web/.next",
     "web/evidence"
-  ]
+  ],
+  "omitted_from_repository": {
+    "specs/001-municipal-eservice/design-examples/c-civic-story/template.html": "f2c1027192a5d776728e8cb1bdb4421804eb9d23c3df1765caf4cdcb2e92310e",
+    "reason": "design-examples/ (design exploration archive) is not part of the submission; no application code or check loads it"
+  }
 }
